@@ -1,0 +1,20 @@
+{
+  "name": "Herb Trzebnica",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Trzebnica",
+  "description": "Coat of arms of Trzebnica (Herb Trzebnica), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Trzebnica%20COA%20alt.svg"
+  },
+  "tags": [
+    "poland",
+    "trzebnica",
+    "city"
+  ]
+}

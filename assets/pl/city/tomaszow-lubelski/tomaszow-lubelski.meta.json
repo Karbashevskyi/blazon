@@ -1,0 +1,20 @@
+{
+  "name": "Herb Tomaszów Lubelski",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Tomaszów Lubelski",
+  "description": "Coat of arms of Tomaszów Lubelski (Herb Tomaszów Lubelski), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Tomasz%C3%B3w%20Lubelski%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "tomaszow-lubelski",
+    "city"
+  ]
+}

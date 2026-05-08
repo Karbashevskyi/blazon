@@ -1,0 +1,20 @@
+{
+  "name": "Herb Andrychów",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Andrychów",
+  "description": "Coat of arms of Andrychów (Herb Andrychów), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Andrych%C3%B3w%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "andrychow",
+    "city"
+  ]
+}

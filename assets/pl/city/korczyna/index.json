@@ -1,0 +1,25 @@
+{
+  "id": "pl-city-korczyna",
+  "name": "Herb Korczyna",
+  "description": "Coat of arms of Korczyna (Herb Korczyna), a city in Poland.",
+  "svg": "<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   version=\"1.0\"\n   id=\"svg1340\"><title>Herb Korczyna</title><metadata\n     id=\"metadata1345\"><rdf:RDF><cc:Work\n         rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview\n     borderopacity=\"1.0\"\n     bordercolor=\"#666666\"\n     pagecolor=\"#ffffff\"\n     id=\"base\" /><defs\n     id=\"defs1343\" /><g\n     transform=\"matrix(6,0,0,6,-2.264069,-0.199942)\"\n     id=\"g1349\"><path\n       d=\"M 47.333067,120.3358 C 26.519099,105.56138 1.6030647,103.93771 1.6030647,66.955503 L 1.4429154,1.2214577 L 48.442915,1.2214577 L 95.442915,1.2214577 L 95.282766,64.893155 C 95.282766,112.11221 69.205794,105.62803 47.333067,120.3358 z \"\n       style=\"fill:#0079c2\"\n       id=\"path1353\" /><path\n       d=\"M 47.156765,105.14407 C 26.557694,105.14381 12.329454,89.554392 10.140987,76.33696 C 13.06538,79.659138 18.395583,84.318228 23.237346,86.35059 L 21.017487,88.636477 C 25.719167,94.881697 35.898849,99.962841 42.8103,99.292511 C 42.910508,99.282792 42.73269,93.804834 43.189302,63.099557 L 44.783654,57.476483 C 45.117836,46.979204 45.333825,30.069506 44.726306,29.635291 C 34.751548,22.505982 43.73887,25.278373 47.107936,26.808117 C 52.027684,24.477627 57.825261,23.433574 50.044499,29.595845 C 49.184358,30.277066 49.94606,48.386892 50.056183,57.536749 L 52.196806,63.295227 C 52.256293,93.253403 52.367706,99.301472 52.361603,99.247461 C 59.398034,99.430181 71.278598,95.764729 75.254379,88.481549 L 72.610645,86.149813 C 77.258115,84.562617 84.692518,79.478163 86.89171,75.395441 C 84.642371,89.464743 70.610943,105.14437 47.156765,105.14407 z \"\n       style=\"fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.40000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n       id=\"path1351\" /><path\n       d=\"M 47.672913,120.28888 C 31.95002,110.70365 0.80231345,101.05502 1.4429106,70.799086 L 1.4429106,1.2214577 L 95.442911,1.2214577 L 95.282762,72.260022 C 95.122613,106.54167 63.912327,110.52052 47.672913,120.28888 z \"\n       style=\"fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n       id=\"path3106\" /><path\n       d=\"M 53.966389,18.81918 C 53.966389,22.571402 50.924612,25.613179 47.17239,25.613179 C 43.420167,25.613179 40.37839,22.571402 40.37839,18.81918 C 40.37839,15.066957 43.420167,12.02518 47.17239,12.02518 C 50.924612,12.02518 53.966389,15.066957 53.966389,18.81918 z \"\n       style=\"opacity:1;fill:#0079c2;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:6.33333349;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\n       id=\"path3116\" /></g></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Korczyna",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Korczyna%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "korczyna",
+    "city"
+  ]
+}

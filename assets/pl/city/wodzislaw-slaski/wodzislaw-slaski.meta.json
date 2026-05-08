@@ -1,0 +1,20 @@
+{
+  "name": "Herb Wodzisław Śląski",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Wodzisław Śląski",
+  "description": "Coat of arms of Wodzisław Śląski (Herb Wodzisław Śląski), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Wodzis%C5%82aw%20%C5%9Al%C4%85ski%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "wodzislaw-slaski",
+    "city"
+  ]
+}

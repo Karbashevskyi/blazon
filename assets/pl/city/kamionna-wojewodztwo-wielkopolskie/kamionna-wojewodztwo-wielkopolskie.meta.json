@@ -1,0 +1,20 @@
+{
+  "name": "Herb Kamionna (województwo wielkopolskie)",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Kamionna (województwo wielkopolskie)",
+  "description": "Coat of arms of Kamionna (województwo wielkopolskie) (Herb Kamionna (województwo wielkopolskie)), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Kamionna%20%28wojew%C3%B3dztwo%20wielkopolskie%29%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "kamionna-wojewodztwo-wielkopolskie",
+    "city"
+  ]
+}

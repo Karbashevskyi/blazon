@@ -1,0 +1,20 @@
+{
+  "name": "Herb Piekary Śląskie",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Piekary Śląskie",
+  "description": "Coat of arms of Piekary Śląskie (Herb Piekary Śląskie), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Piekary%20%C5%9Al%C4%85skie%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "piekary-slaskie",
+    "city"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Herb Jelcz-Laskowice",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Jelcz-Laskowice",
+  "description": "Coat of arms of Jelcz-Laskowice (Herb Jelcz-Laskowice), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Jelcz-Laskowice%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "jelcz-laskowice",
+    "city"
+  ]
+}

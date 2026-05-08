@@ -1,0 +1,17 @@
+{
+  "name": "Herb Płocka",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Masovian Voivodeship",
+  "city": "Płock",
+  "description": "Coat of arms of Płock (Herb Płocka), a historic city on the Vistula River and the former capital of the Duchy of Masovia in the 11th and 12th centuries. The shield bears a black bear and a golden eagle, referencing the city's ducal heritage.",
+  "blazon": "Per fess: in chief gules, a bear passant sable; in base azure, an eagle displayed or, crowned or",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL_P%C5%82ock_COA.svg"
+  },
+  "tags": ["poland", "płock", "masovia", "masovian", "city", "historic", "bear", "eagle"]
+}

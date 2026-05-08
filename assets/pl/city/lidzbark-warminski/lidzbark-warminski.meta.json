@@ -1,0 +1,20 @@
+{
+  "name": "Herb Lidzbark Warmiński",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Lidzbark Warmiński",
+  "description": "Coat of arms of Lidzbark Warmiński (Herb Lidzbark Warmiński), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Lidzbark%20Warmi%C5%84ski%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "lidzbark-warminski",
+    "city"
+  ]
+}

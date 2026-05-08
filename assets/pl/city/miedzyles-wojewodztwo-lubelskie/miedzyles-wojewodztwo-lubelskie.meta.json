@@ -1,0 +1,20 @@
+{
+  "name": "Herb Międzyleś (województwo lubelskie)",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Międzyleś (województwo lubelskie)",
+  "description": "Coat of arms of Międzyleś (województwo lubelskie) (Herb Międzyleś (województwo lubelskie)), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Mi%C4%99dzyle%C5%9B%20%28wojew%C3%B3dztwo%20lubelskie%29%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "miedzyles-wojewodztwo-lubelskie",
+    "city"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Herb Grabów nad Prosną",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Grabów nad Prosną",
+  "description": "Coat of arms of Grabów nad Prosną (Herb Grabów nad Prosną), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Grab%C3%B3w%20nad%20Prosn%C4%85%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "grabow-nad-prosna",
+    "city"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Herb Lądek-Zdrój",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Lądek-Zdrój",
+  "description": "Coat of arms of Lądek-Zdrój (Herb Lądek-Zdrój), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20L%C4%85dek-Zdr%C3%B3j%20COA%201989-2015.svg"
+  },
+  "tags": [
+    "poland",
+    "ladek-zdroj",
+    "city"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "pl-city-ostrow-mazowiecka",
+  "name": "Herb Ostrów Mazowiecka",
+  "description": "Coat of arms of Ostrów Mazowiecka (Herb Ostrów Mazowiecka), a city in Poland.",
+  "svg": "<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   viewBox=\"0 0 196.15112 228.24982\"\n   version=\"1.1\"\n   id=\"svg1349\"><title>Herb Ostrów Mazowiecka</title><defs\n     id=\"defs1343\" /><sodipodi:namedview\n     id=\"base\"\n     pagecolor=\"#ffffff\"\n     bordercolor=\"#666666\"\n     borderopacity=\"1.0\"\n     showgrid=\"false\"\n     fit-margin-top=\"0\"\n     fit-margin-left=\"0\"\n     fit-margin-right=\"0\"\n     fit-margin-bottom=\"0\" /><metadata\n     id=\"metadata1346\"><rdf:RDF><cc:Work\n         rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><g\n     id=\"layer1\"\n     transform=\"translate(420.86723,27.279672)\"><path\n       style=\"fill:#048c3c;fill-opacity:1;fill-rule:nonzero;stroke:#001d00;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\n       d=\"m -419.46098,-25.873422 h 193.33863 V 83.112835 c -4.73151,55.844025 -33.86027,96.249405 -95.5496,116.451065 -65.5188,-21.01476 -96.14381,-60.73346 -97.78903,-116.451065 z\"\n       id=\"rect1308\" /><path\n       style=\"fill:#fcf105;fill-opacity:1;fill-rule:nonzero;stroke:#001d00;stroke-width:1.875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\n       d=\"m -327.02182,-10.175345 -0.50437,25.400001 -24.06881,-4.307748 -1.5627,8.648568 25.3752,8.863541 -0.41341,20.761524 -30.80742,-3.762045 -2.02572,8.185547 32.57682,8.87181 -0.37207,18.719271 -39.26582,-6.035808 -2.4722,10.004557 41.44037,11.542448 -0.34727,17.445959 -48.60892,-10.39316 -2.92695,11.36882 51.18861,16.71835 -0.38034,19.2071 h 16.79277 l -0.38034,-19.11614 51.45318,-16.80931 -2.92696,-11.36882 -48.87348,10.44277 -0.339,-17.429423 41.69668,-11.608594 -2.4722,-10.004557 -39.53041,6.077149 -0.37207,-18.686198 32.84141,-8.946224 -2.02572,-8.185547 -31.08027,3.795117 -0.40514,-20.695377 25.63978,-8.96276 -1.57097,-8.648568 -24.32513,4.357357 -0.50436,-25.44961 z\"\n       id=\"rect2188\" /><path\n       style=\"opacity:1;fill:#fcf105;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1\"\n       d=\"m -377.91277,2.6652156 c -14.67186,0.2629112 -26.49141,11.5654874 -26.49141,25.4496094 0,14.048753 12.10761,25.449606 27.02057,25.449609 2.84795,0 5.59073,-0.411681 8.16901,-1.182357 -10.9226,-3.264889 -18.84329,-12.901403 -18.84329,-24.267252 0,-11.365818 7.92074,-21.0023366 18.84329,-24.2672526 -2.57696,-0.7692998 -5.32288,-1.1823568 -8.16901,-1.1823568 -0.17476,0 -0.35519,-0.00312 -0.52916,0 z\"\n       id=\"path2226\" /><path\n       id=\"path2234\"\n       style=\"fill:#fcf105;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.875;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1\"\n       d=\"m -270.67116,25.425415 -12.34795,12.676578 18.07461,-2.418323 6.16749,16.847685 6.04271,-17.14037 17.57167,2.978216 -11.94684,-13.459862 11.71107,-13.146547 -17.94944,2.94967 -5.75371,-16.8763525 -5.99808,17.2881075 -18.43316,-2.192361 z\" /></g></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Ostrów Mazowiecka",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Ostr%C3%B3w%20Mazowiecka%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "ostrow-mazowiecka",
+    "city"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Herb Województwa Mazowieckiego",
+  "countryCode": "PL",
+  "type": "regional",
+  "level": "state",
+  "region": "Masovian Voivodeship",
+  "description": "Coat of arms of the Masovian Voivodeship (Województwo Mazowieckie), featuring the white Masovian eagle on a red field. The eagle with a crescent on its breast is derived from the historical coat of arms of the Duchy of Masovia.",
+  "blazon": "Gules, an eagle displayed argent, armed or, beaked or, with a crescent issuing from between the wings or",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL_wojew%C3%B3dztwo_mazowieckie_COA.svg"
+  },
+  "tags": ["poland", "masovia", "masovian", "voivodeship", "eagle", "state", "regional"]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Herb Lubsza (woj śląskie)",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Lubsza (woj śląskie)",
+  "description": "Coat of arms of Lubsza (woj śląskie) (Herb Lubsza (woj śląskie)), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Lubsza%20%28woj%20%C5%9Bl%C4%85skie%29%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "lubsza-woj-slaskie",
+    "city"
+  ]
+}

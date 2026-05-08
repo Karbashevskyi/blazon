@@ -1,0 +1,20 @@
+{
+  "name": "Herb Brześć Kujawski",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Brześć Kujawski",
+  "description": "Coat of arms of Brześć Kujawski (Herb Brześć Kujawski), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Brze%C5%9B%C4%87%20Kujawski%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "brzesc-kujawski",
+    "city"
+  ]
+}

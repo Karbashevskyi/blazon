@@ -1,0 +1,91 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   id="svg5284"><title>Herb Słupca</title>
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     id="namedview7"
+     showgrid="false"
+     units="px" />
+  <defs
+     id="defs5287">
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     transform="matrix(0.87245552,0,0,0.84469493,-6.5593788,6.6211907)"
+     id="g6328"
+     style="fill:#013893;fill-opacity:1;stroke:none;stroke-opacity:1">
+    <path
+       d="M 7.5182959,-7.8385587 7.5384545,511.85314 C 7.5427291,622.05413 66.732283,726.8018 160.2551,780.98979 c 111.89275,64.8317 221.92794,122.74336 221.92794,122.74336 0,0 132.45174,-68.77879 242.46011,-136.64025 116.59875,-71.92691 127.89442,-202.58165 127.8948,-249.74952 l 0.004,-525.1745485 z"
+       style="fill:#013893;fill-opacity:1;stroke:none;stroke-width:4.96689;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2699" />
+  </g>
+  <rect
+     style="fill:#f9df16;fill-opacity:1;stroke:none;stroke-width:0.086283;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+     id="rect847"
+     width="100.04902"
+     height="604.71643"
+     x="276.65857"
+     y="42.169125" />
+  <rect
+     style="fill:#f9df16;fill-opacity:1;stroke:none;stroke-width:0.0872199;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+     id="rect847-8"
+     width="101.55742"
+     height="608.74365"
+     x="292.74014"
+     y="-630.1413"
+     transform="rotate(90)" />
+  <rect
+     style="fill:#f9df16;fill-opacity:1;stroke:none;stroke-width:0.0502415;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+     id="rect864"
+     width="100.689"
+     height="275.28061"
+     x="73.949303"
+     y="206.90051" />
+  <rect
+     style="fill:#f9df16;fill-opacity:1;stroke:none;stroke-width:0.0502415;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+     id="rect864-8"
+     width="100.689"
+     height="275.28061"
+     x="478.65536"
+     y="206.90053" />
+  <rect
+     style="fill:#f9df16;fill-opacity:1;stroke:none;stroke-width:0.0502415;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+     id="rect864-8-2"
+     width="100.31918"
+     height="276.29541"
+     x="91.652893"
+     y="-465.01819"
+     transform="rotate(90)" />
+  <rect
+     style="fill:#f9df16;fill-opacity:1;stroke:none;stroke-width:0.0502415;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+     id="rect864-8-2-5"
+     width="100.31918"
+     height="276.29541"
+     x="496.87842"
+     y="-465.01819"
+     transform="rotate(90)" />
+</svg>

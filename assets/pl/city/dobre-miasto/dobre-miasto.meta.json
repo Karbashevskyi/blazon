@@ -1,0 +1,20 @@
+{
+  "name": "Herb Dobre Miasto",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Dobre Miasto",
+  "description": "Coat of arms of Dobre Miasto (Herb Dobre Miasto), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Dobre%20Miasto%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "dobre-miasto",
+    "city"
+  ]
+}

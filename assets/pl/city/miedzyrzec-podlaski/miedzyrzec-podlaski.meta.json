@@ -1,0 +1,20 @@
+{
+  "name": "Herb Międzyrzec Podlaski",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Międzyrzec Podlaski",
+  "description": "Coat of arms of Międzyrzec Podlaski (Herb Międzyrzec Podlaski), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Mi%C4%99dzyrzec%20Podlaski%20COA%20old.svg"
+  },
+  "tags": [
+    "poland",
+    "miedzyrzec-podlaski",
+    "city"
+  ]
+}

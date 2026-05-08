@@ -1,0 +1,18 @@
+{
+  "name": "Herb Warszawy",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Masovian Voivodeship",
+  "city": "Warsaw",
+  "description": "Coat of arms of Warsaw (Herb Warszawy), the capital city of Poland. Features the legendary Warsaw Mermaid (Syrenka Warszawska) armed with a golden sword and a small golden shield on a crimson field, crowned with a royal crown. The coat of arms was officially confirmed in 1622. The motto «Semper Invicta» (Always Unconquered) appears on the full (great) version.",
+  "blazon": "Gules, a mermaid argent, scaled and finned or, crowned or, holding in the dexter hand a sword erect or and in the sinister a roundel gules.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL_Warszawa_COA.svg",
+    "author": "Wikimedia Commons contributors"
+  },
+  "tags": ["poland", "warsaw", "warszawa", "mermaid", "syrenka", "city", "capital", "masovian", "pl"]
+}

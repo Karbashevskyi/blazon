@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="Coat of Arms of Warsaw">
+  <title>Herb Warszawy — Coat of Arms of Warsaw</title>
+  <desc>The Warsaw Mermaid (Syrenka Warszawska): a mermaid armed with a sword and shield on a crimson field.</desc>
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e02020"/>
+      <stop offset="100%" stop-color="#9b1212"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#C8960C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── Shield ─────────────────────────────────────────────────── -->
+  <path
+    d="M18 18 H182 V155 Q100 238 100 238 Q100 238 18 155 Z"
+    fill="url(#shieldGrad)"
+    stroke="#6b0f0f"
+    stroke-width="2.5"
+  />
+
+  <!-- ── Syrenka (Warsaw Mermaid) ───────────────────────────────── -->
+  <g transform="translate(100,118)" fill="url(#goldGrad)" stroke="#8B6914" stroke-width="1.3" stroke-linejoin="round">
+
+    <!-- Crown -->
+    <path d="M-16 -90 L-10 -82 L-5 -90 L0 -82 L5 -90 L10 -82 L16 -90 L14 -96 L-14 -96 Z" stroke-width="1"/>
+
+    <!-- Head -->
+    <ellipse cx="0" cy="-73" rx="16" ry="17" stroke-width="1.2"/>
+
+    <!-- Flowing hair -->
+    <path d="M-16 -80 Q-30 -58 -24 -38" fill="none" stroke="#8B6914" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M16 -80 Q30 -58 24 -38" fill="none" stroke="#8B6914" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Neck & upper body / torso -->
+    <path d="M-10 -57 Q-18 -30 -15 -6 Q-6 4 6 4 Q18 -6 15 -30 Q12 -48 10 -57 Z"/>
+
+    <!-- Scale texture on torso -->
+    <path d="M-9 -42 Q0 -38 9 -42" fill="none" stroke="#7a5c10" stroke-width="0.9"/>
+    <path d="M-11 -30 Q0 -26 11 -30" fill="none" stroke="#7a5c10" stroke-width="0.9"/>
+    <path d="M-10 -18 Q0 -14 10 -18" fill="none" stroke="#7a5c10" stroke-width="0.9"/>
+
+    <!-- Fish tail -->
+    <path d="M-15 -6 Q-26 30 -20 60 Q-10 72 0 68 Q10 72 20 60 Q26 30 15 -6 Z"/>
+
+    <!-- Tail scale texture -->
+    <path d="M-14 10 Q0 15 14 10" fill="none" stroke="#7a5c10" stroke-width="0.9"/>
+    <path d="M-16 26 Q0 31 16 26" fill="none" stroke="#7a5c10" stroke-width="0.9"/>
+    <path d="M-17 42 Q0 47 17 42" fill="none" stroke="#7a5c10" stroke-width="0.9"/>
+
+    <!-- Left tail fin -->
+    <path d="M-20 60 Q-46 84 -38 100 Q-22 92 -16 74"/>
+    <!-- Right tail fin -->
+    <path d="M20 60 Q46 84 38 100 Q22 92 16 74"/>
+
+  </g>
+
+  <!-- ── Sword (right hand, dexter) ─────────────────────────────── -->
+  <g fill="#D0D0D0" stroke="#999" stroke-linecap="round">
+    <!-- Blade -->
+    <line x1="136" y1="68" x2="172" y2="26" stroke="#D0D0D0" stroke-width="3.5"/>
+    <!-- Point -->
+    <polygon points="172,26 176,18 168,22" fill="#D0D0D0" stroke="none"/>
+    <!-- Crossguard -->
+    <rect x="127" y="63" width="18" height="5" rx="2" stroke-width="0.8"/>
+    <!-- Grip -->
+    <rect x="132" y="68" width="8" height="12" rx="2" fill="#8B6914" stroke="#6b4a0a" stroke-width="0.8"/>
+    <!-- Pommel -->
+    <ellipse cx="136" cy="82" rx="6" ry="5" stroke-width="0.8"/>
+  </g>
+
+  <!-- ── Small shield (left hand, sinister) ─────────────────────── -->
+  <g transform="translate(38, 74)">
+    <path
+      d="M0 0 L30 0 L30 26 Q15 40 15 40 Q15 40 0 26 Z"
+      fill="#CC1111"
+      stroke="#FFD700"
+      stroke-width="1.8"
+    />
+    <!-- Cross on small shield -->
+    <path
+      d="M15 4 L15 24 M6 13 L24 13"
+      stroke="#FFD700"
+      stroke-width="2.2"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

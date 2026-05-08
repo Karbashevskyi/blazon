@@ -1,0 +1,20 @@
+{
+  "name": "Herb Maciejowice",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Maciejowice",
+  "description": "Coat of arms of Maciejowice (Herb Maciejowice), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Maciejowice%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "maciejowice",
+    "city"
+  ]
+}

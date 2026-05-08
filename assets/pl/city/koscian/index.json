@@ -1,0 +1,25 @@
+{
+  "id": "pl-city-koscian",
+  "name": "Herb Kościan",
+  "description": "Coat of arms of Kościan (Herb Kościan), a city in Poland.",
+  "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><title>Herb Kościan</title><path d=\"M103.75 359.5a161.8 161.8 0 0 0-3.812 34.938c0 115.601 123.224 209.437 275.062 209.437s275.062-93.836 275.063-209.437c0-11.906-1.302-23.574-3.813-34.938h-17.469a151.3 151.3 0 0 1 3.657 33c0 108.195-115.328 196-257.438 196s-257.437-87.805-257.437-196c0-11.246 1.263-22.27 3.656-33z\" style=\"fill:#cd0002;fill-opacity:1;stroke:#000;stroke-width:3.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"/><path d=\"M507.573 364.532h-270.47C239.687 515.312 215.157 671.257 194.5 813h355.676c-20.656-141.743-45.185-297.688-42.603-448.468z\" style=\"fill:#cd0002;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:3.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"/><path d=\"M372.33 76.415 127.186 364.567l488.996-4.616z\" style=\"fill:#01cdfd;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:3.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"/><path d=\"m3.746 4.701 1.572 569.974C15.339 755.486 177.978 882.8 375.92 882.8c204.395 0 370.334-153.299 370.334-342.372l-.736-535.726z\" style=\"fill:none;fill-opacity:1;stroke:#000;stroke-width:7.48476124;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"/><path d=\"M659.09 385.426H90.91V270.702h62.577l1.647 62.577h67.385l-1.543-62.577h61.97v62.577h62.144l1.115-62.577h57.59l1.114 62.577h62.146v-62.577h61.969l-1.543 62.577h67.385l1.647-62.577h62.577z\" style=\"fill:#cd0002;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:3.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"/><path d=\"M88.755 48.23a31.194 26.985 0 1 1-62.389 0 31.194 26.985 0 1 1 62.389 0z\" style=\"fill:#fdcf02;fill-opacity:1;stroke:#000;stroke-width:2.98400807;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" transform=\"matrix(1.17315 0 0 1.3462 305.36 4.041)\"/><path d=\"M288.894 427.144h63.259v135.583h-63.259zm104.295 0h63.259v135.583h-63.259zm-17.651 174.368c-30.396-.954-62.25 24.136-62.25 50.192l-8.8 119.613H450.5L436.16 640.95h-.326c-6.069-22.631-28.585-38.441-60.296-39.437z\" style=\"fill:#000;fill-opacity:1;stroke:#000;stroke-width:3.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"/></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Kościan",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Ko%C5%9Bcian%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "koscian",
+    "city"
+  ]
+}

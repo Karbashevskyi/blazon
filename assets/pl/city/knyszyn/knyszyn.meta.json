@@ -1,0 +1,20 @@
+{
+  "name": "Herb Knyszyn",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Knyszyn",
+  "description": "Coat of arms of Knyszyn (Herb Knyszyn), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Knyszyn%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "knyszyn",
+    "city"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Herb Oleśnica (świętokrzyskie)",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Oleśnica (świętokrzyskie)",
+  "description": "Coat of arms of Oleśnica (świętokrzyskie) (Herb Oleśnica (świętokrzyskie)), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Ole%C5%9Bnica%20%28%C5%9Bwi%C4%99tokrzyskie%29%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "olesnica-swietokrzyskie",
+    "city"
+  ]
+}

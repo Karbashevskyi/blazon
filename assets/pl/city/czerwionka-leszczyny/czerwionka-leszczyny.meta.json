@@ -1,0 +1,20 @@
+{
+  "name": "Herb Czerwionka-Leszczyny",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Czerwionka-Leszczyny",
+  "description": "Coat of arms of Czerwionka-Leszczyny (Herb Czerwionka-Leszczyny), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Czerwionka-Leszczyny%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "czerwionka-leszczyny",
+    "city"
+  ]
+}

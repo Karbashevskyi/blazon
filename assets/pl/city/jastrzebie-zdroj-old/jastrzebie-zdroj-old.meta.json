@@ -1,0 +1,20 @@
+{
+  "name": "Herb Jastrzębie-Zdrój old",
+  "countryCode": "PL",
+  "type": "municipal",
+  "level": "city",
+  "region": "Poland",
+  "city": "Jastrzębie-Zdrój old",
+  "description": "Coat of arms of Jastrzębie-Zdrój old (Herb Jastrzębie-Zdrój old), a city in Poland.",
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Jastrz%C4%99bie-Zdr%C3%B3j%20old%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "jastrzebie-zdroj-old",
+    "city"
+  ]
+}
