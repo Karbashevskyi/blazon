@@ -1,0 +1,33 @@
+import type { CoatOfArms } from '@blazon/types';
+
+/**
+ * Herb Grodków — Polish coat of arms (Grodków)
+ * @id pl-city-grodkow
+ */
+const grodkow: CoatOfArms = {
+  "id": "pl-city-grodkow",
+  "name": "Herb Grodków",
+  "description": "Coat of arms of Grodków (Herb Grodków), a city in Poland.",
+  "svg": "<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   version=\"1.1\"\n   id=\"svg2\"\n   viewBox=\"-35.18 -39.32 1071.36 1183.19\"><title>Herb Grodków</title><defs\n     id=\"defs4\" /><metadata\n     id=\"metadata7\"><rdf:RDF><cc:Work\n         rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><g\n     transform=\"translate(186.21429,-142.94435)\"\n     id=\"layer1\"><path\n       id=\"path4\"\n       d=\"m 810.28571,746.99433 c 0,131.55 -52.26,257.70997 -145.28,350.71997 -93.02,93.02 -219.18,145.28 -350.72,145.28 -131.55,0 -257.71,-52.26 -350.72,-145.28 -93.02,-93.02 -145.28,-219.17997 -145.28,-350.71997 l 0.504,-599.54998 990.99,0 z\"\n       style=\"fill:#ffffff;stroke:#000000;stroke-width:9\" /><path\n       d=\"m 103.88715,724.59823 -36.4042,392.17207 c 161.7968,0 323.5936,0 485.3904,0 l -36.4042,-392.17207\"\n       style=\"fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n       id=\"path3366-5\" /><path\n       d=\"m 232.19085,661.24253 0,-318.88807 41.9255,0 0,-138.17036 -36.4624,0 0,71.5768 -36.4623,0 0,-71.5768 -36.4624,0 0,71.5768 -36.4623,0 0,-71.5768 -36.4624,0 0,71.5768 -36.4624,0 0,-71.5768 -36.46242,0 0,138.17036 41.92562,0 0,318.88807\"\n       style=\"fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n       id=\"path3368-1\" /><path\n       d=\"m 566.81574,661.24253 0,-318.88807 41.9255,0 0,-138.17036 -36.4624,0 0,71.5768 -36.4623,0 0,-71.5768 -36.4624,0 0,71.5768 -36.4623,0 0,-71.5768 -36.4624,0 0,71.5768 -36.4624,0 0,-71.5768 -36.46242,0 0,138.17036 41.92562,0 0,318.88807\"\n       style=\"fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n       id=\"path3368-1-1\" /><path\n       id=\"path3385\"\n       d=\"m 688.50305,744.45503 -748.43467,0 0,-158.8546 83.15941,0 0,74 83.15936,0 0,-74 83.1595,0 0,74 83.1594,0 0,-74 83.1594,0 0,74 83.1594,0 0,-74 83.1594,0 0,74 83.1594,0 0,-74 83.1594,0 z\"\n       style=\"fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /><g\n       transform=\"matrix(1.054058,0,0,1.054058,-213.0482,109.17361)\"\n       id=\"g4154\"><path\n         style=\"fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:5.49508953;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n         d=\"m 496.39242,627.78236 c 0,0 -83.7164,41.69542 -83.7164,118.19165 l 0,135.72871 167.4328,0 0,-135.72871 c 0,-76.48955 -83.7164,-118.19165 -83.7164,-118.19165 z\"\n         id=\"path4451\" /><path\n         style=\"fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:5.49508953;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n         d=\"m 495.82812,652.00781 c -7.5443,4.11724 -14.55088,8.93128 -21.17968,14.42578 8.60695,9.44722 16.11935,20.5054 21.79101,31.62696 5.64942,-11.49746 13.11227,-22.05182 21.65039,-31.58008 -6.70275,-5.63071 -13.95502,-10.61045 -21.63867,-14.80664 l -0.62305,0.33398 z\"\n         id=\"path4449\" /><path\n         style=\"fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:5.49508953;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n         d=\"m 458.00195,682.85742 c -14.98319,17.82438 -26.60599,40.50912 -24.52086,64.3963 -0.1569,37.68946 0.0648,75.37902 0.0697,113.06855 17.14193,0 34.28386,0 51.42578,0 -0.14573,-42.66299 0.29104,-85.39013 -0.21762,-128.01315 -4.08516,-18.46495 -13.27388,-36.16683 -25.72769,-50.64701 l -0.65252,0.75777 -0.37678,0.43754 z\"\n         id=\"path4447\" /><path\n         style=\"fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:5.49508953;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n         d=\"m 532.69727,682.91016 c -12.33085,15.07782 -22.09988,33.1464 -24.88868,52.375 0,41.67903 0,83.35807 0,125.03711 17.18425,0 34.36849,0 51.55274,0 -0.14544,-42.65394 0.29044,-85.37177 -0.21717,-127.9859 -4.11888,-18.60024 -13.29601,-36.14291 -25.56604,-50.47114 l -0.64453,0.76458 -0.23632,0.28035 z\"\n         id=\"path3356-9\" /></g><path\n       id=\"path4427\"\n       d=\"m 146.49804,367.32596 c 0,0 -48.32481,26.77128 -48.32481,75.88704 l 0,87.14703 96.64962,0 0,-87.14703 c 0,-49.11147 -48.32481,-75.88704 -48.32481,-75.88704 z\"\n       style=\"fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /><path\n       id=\"path4427-4\"\n       d=\"m 481.12293,367.32596 c 0,0 -48.32481,26.77128 -48.32481,75.88704 l 0,87.14703 96.64962,0 0,-87.14703 c 0,-49.11147 -48.32481,-75.88704 -48.32481,-75.88704 z\"\n       style=\"fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /></g></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Grodków",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Grodk%C3%B3w%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "grodkow",
+    "city"
+  ]
+} as const;
+
+export { grodkow };

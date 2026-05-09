@@ -24,6 +24,7 @@
           <a href="#getting-started">Get Started</a>
           <a href="#api">API</a>
           <a href="#packages">Packages</a>
+          <a href="#game">Quiz</a>
           <a href="https://github.com/blazon-registry/blazon" target="_blank" rel="noopener">GitHub</a>
         </nav>
       </div>
@@ -99,8 +100,14 @@
 
           <div id="tab-vanilla" class="tab-content">
             <h3>Install</h3>
-            <pre><code class="language-bash">pnpm add @blazon/core @blazon/types</code></pre>
-            <h3>Usage</h3>
+            <pre><code class="language-bash">pnpm add @blazon/core @blazon/country-poland @blazon/types</code></pre>
+            <h3>Tree-shakeable static imports</h3>
+            <pre><code class="language-typescript">// Import only the cities you need — the rest are tree-shaken away
+import { warszawa, krakow, wroclaw } from '@blazon/country-poland';
+
+console.log(warszawa.name);  // 'Herb Warszawy'
+console.log(krakow.svg);     // inline SVG string</code></pre>
+            <h3>Or register a lazy HTTP loader</h3>
             <pre><code class="language-typescript">import {
   registerCountry,
   getCountryRegistry,
@@ -113,33 +120,27 @@ registerCountry('PL', () =>
   fetch('/registries/pl.json').then(r => r.json())
 );
 
-// Load the country registry on demand
+// Load on demand
 const registry = await getCountryRegistry('PL');
 console.log(registry?.entries.length, 'entries loaded');
 
-// Find by ID
-const warsaw = getById('pl-city-warszawa');
-
-// Search with filters
-const cities = searchRegistry({
-  countryCode: 'PL',
-  level: 'city',
-  limit: 10,
-});</code></pre>
+// Find by ID or search
+const city = getById('pl-city-warszawa');
+const cities = searchRegistry({ countryCode: 'PL', level: 'city', limit: 10 });</code></pre>
           </div>
 
           <div id="tab-angular" class="tab-content" hidden>
             <h3>Install</h3>
-            <pre><code class="language-bash">pnpm add @blazon/ngx @blazon/core @blazon/types</code></pre>
+            <pre><code class="language-bash">pnpm add @blazon/ngx @blazon/core @blazon/country-poland @blazon/types</code></pre>
             <h3>Tree-shakeable — provide only what you need</h3>
             <pre><code class="language-typescript">// app.config.ts
-import { warsaw, krakow } from '@blazon/core';
+import { warszawa, krakow } from '@blazon/country-poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    // Only Warsaw and Kraków are bundled — everything else is tree-shaken away
-    provideBlazonIcons([warsaw, krakow]),
+    // Only Warszawa and Kraków are bundled — everything else is tree-shaken away
+    provideBlazonIcons([warszawa, krakow]),
   ],
 };</code></pre>
             <h3>Or load the full collection lazily</h3>
@@ -208,13 +209,40 @@ export class MyComponent {}</code></pre>
             </div>
             <div class="package-card">
               <h3><code>@blazon/core</code></h3>
-              <p>Framework-agnostic registry engine. Singleton registry, search, validation, lazy HTTP loading, and tree-shakeable per-city exports.</p>
+              <p>Framework-agnostic registry engine. Singleton registry, search, validation, and lazy HTTP loading. Pure engine — no country data included.</p>
+            </div>
+            <div class="package-card">
+              <h3><code>@blazon/country-poland</code></h3>
+              <p>495 Polish city coats of arms as tree-shakeable named exports. <code>import { warszawa, krakow } from '@blazon/country-poland'</code></p>
             </div>
             <div class="package-card">
               <h3><code>@blazon/ngx</code></h3>
-              <p>Angular adapter. Accepts either <code>provideBlazonIcons([warsaw])</code> for tree-shaking or a lazy-loader config object.</p>
+              <p>Angular adapter (v16+). Use <code>provideBlazonIcons([warszawa])</code> for static tree-shaking or a lazy-loader config for HTTP loading.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Heraldry Quiz -->
+      <section id="game" class="section">
+        <div class="container">
+          <h2>Heraldry Quiz</h2>
+          <p class="section-intro">Перевір своє знання гербів польських міст.</p>
+
+          <div class="game-header">
+            <div class="game-modes" role="group" aria-label="Game mode">
+              <button class="game-mode-btn" data-mode="type-name">✍ Впиши назву</button>
+              <button class="game-mode-btn game-mode-btn--active" data-mode="pick-name">🏷 Вибери назву</button>
+              <button class="game-mode-btn" data-mode="pick-coat">🛡 Вибери герб</button>
+            </div>
+            <div class="game-score-bar" aria-live="polite">
+              <span class="game-score-label">Рахунок:</span>
+              <span id="game-score-correct">0</span>/<span id="game-score-total">0</span>
+              <span id="game-streak" hidden class="game-streak">🔥&thinsp;<span id="game-streak-count">0</span></span>
+            </div>
+          </div>
+
+          <div id="game-area" class="game-area"></div>
         </div>
       </section>
     </main>

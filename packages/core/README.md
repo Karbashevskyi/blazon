@@ -1,6 +1,9 @@
 # @blazon/core
 
 > Framework-agnostic Blazon heraldry registry engine.
+>
+> Country data lives in separate packages (e.g. [`@blazon/country-poland`](../country-poland)).
+> `@blazon/core` is a pure engine — no SVG data is bundled.
 
 ## Install
 
@@ -21,14 +24,14 @@ import {
   getRegistry,
 } from '@blazon/core';
 
-// Register a lazy country loader
+// Register a lazy country loader (called at most once, result is cached)
 registerCountry('PL', () => fetch('/registries/pl.json').then(r => r.json()));
 
-// Load on demand (cached after first call)
+// Load on demand
 const registry = await getCountryRegistry('PL');
 
 // Get by ID (from already-loaded registries)
-const coat = getById('pl-city-warsaw');
+const coat = getById('pl-city-warszawa');
 
 // Search with filters and pagination
 const results = searchRegistry({
@@ -38,6 +41,17 @@ const results = searchRegistry({
   limit: 10,
   offset: 0,
 });
+```
+
+### Tree-shaking with `@blazon/country-poland`
+
+For static imports, use the country package directly — the registry engine is not needed:
+
+```ts
+import { warszawa, krakow } from '@blazon/country-poland';
+
+console.log(warszawa.name); // 'Herb Warszawy'
+console.log(krakow.svg);    // inline SVG string
 ```
 
 ### BlazonRegistry singleton

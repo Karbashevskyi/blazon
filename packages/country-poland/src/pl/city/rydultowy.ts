@@ -1,0 +1,33 @@
+import type { CoatOfArms } from '@blazon/types';
+
+/**
+ * Herb Rydułtowy — Polish coat of arms (Rydułtowy)
+ * @id pl-city-rydultowy
+ */
+const rydultowy: CoatOfArms = {
+  "id": "pl-city-rydultowy",
+  "name": "Herb Rydułtowy",
+  "description": "Coat of arms of Rydułtowy (Herb Rydułtowy), a city in Poland.",
+  "svg": "<svg role=\"img\" viewBox=\"-28.48 -33.87 856.75 1007.16\"\n   xmlns=\"http://www.w3.org/2000/svg\"\n   id=\"svg3004\"\n   version=\"1.1\"><title>Herb Rydułtowy</title><metadata\n     id=\"metadata3010\"><rdf:RDF><cc:Work\n         rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /></cc:Work></rdf:RDF></metadata><defs\n     id=\"defs3008\" /><sodipodi:namedview\n     pagecolor=\"#ffffff\"\n     bordercolor=\"#666666\"\n     borderopacity=\"1\"\n     objecttolerance=\"10\"\n     gridtolerance=\"10\"\n     guidetolerance=\"10\"\n     id=\"namedview3006\"\n     showgrid=\"false\"\n     fit-margin-top=\"0\"\n     fit-margin-left=\"0\"\n     fit-margin-right=\"0\"\n     fit-margin-bottom=\"0\" /><g\n     id=\"g3012\"\n     transform=\"matrix(1.25,0,0,-1.25,-1.1525444,940.09084)\"><g\n       id=\"g3070\"\n       transform=\"matrix(9.4678814,0,0,9.4678814,-7.0664894,-5.0619725)\"><path\n         d=\"m 68.1461,31.2234 c 4e-4,-0.0382 0.0019,-0.0765 0.0019,-0.1152 0,-16.6484 -15.0558,-30.22695 -33.5148,-30.22695 -18.4594,0 -33.51523,13.57855 -33.51523,30.22695 0,0.0387 0.00156,0.077 0.00156,0.1152 l -0.00156,0 0,48.4555 67.03003,0 0,-48.4555 -0.0019,0\"\n         style=\"fill:#0e88d3;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3016\" /><path\n         d=\"m 68.1461,31.2234 c 4e-4,-0.0382 0.0019,-0.0765 0.0019,-0.1152 0,-16.6484 -15.0558,-30.22695 -33.5148,-30.22695 -18.4594,0 -33.51523,13.57855 -33.51523,30.22695 0,0.0387 0.00156,0.077 0.00156,0.1152 l -0.00156,0 0,48.4555 67.03003,0 0,-48.4555 -0.0019,0 z\"\n         style=\"fill:none;stroke:#231f20;stroke-width:0.56693;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.61310005;stroke-opacity:1;stroke-dasharray:none\"\n         id=\"path3018\" /><path\n         d=\"M 5.58789,56.1621 24.4441,75.5191 25.4648,74.593 6.57695,55.2359 5.58789,56.1621\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3020\" /><path\n         d=\"m 7.47422,56.1562 2.58048,-2.9007 1.3215,-0.3703 -0.384,1.3023 -2.74962,2.7668 -0.76836,-0.7981\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3022\" /><path\n         d=\"m 10.0973,58.8445 2.5804,-2.9011 1.3215,-0.3704 -0.384,1.3024 -2.7496,2.7668 -0.7683,-0.7977\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3024\" /><path\n         d=\"m 12.825,61.6277 2.5805,-2.9011 1.3215,-0.37 -0.384,1.302 -2.7496,2.7672 -0.7684,-0.7981\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3026\" /><path\n         d=\"m 18.2641,67.2113 2.58,-2.9008 1.3215,-0.3703 -0.384,1.3024 -2.7496,2.7668 -0.7679,-0.7981\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3028\" /><path\n         d=\"m 21.0527,70.0734 2.5805,-2.9011 1.3215,-0.3703 -0.384,1.3023 -2.7496,2.7668 -0.7684,-0.7977\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3030\" /><path\n         d=\"m 23.6645,72.7422 2.5804,-2.9012 1.3215,-0.3699 -0.384,1.3019 -2.7496,2.7668 -0.7683,-0.7976\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3032\" /><path\n         d=\"M 15.3914,64.2648 54.8508,15.8602 56.141,17.0211 16.6012,65.5297 15.3914,64.2648\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3034\" /><path\n         d=\"m 63.9863,56.1621 -18.8562,19.357 -1.0207,-0.9261 18.8879,-19.3571 0.989,0.9262\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3036\" /><path\n         d=\"m 62.0996,56.1562 -2.5805,-2.9007 -1.3214,-0.3703 0.3843,1.3023 2.7496,2.7668 0.768,-0.7981\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3038\" /><path\n         d=\"m 59.477,58.8445 -2.5805,-2.9011 -1.3215,-0.3704 0.384,1.3024 2.7496,2.7668 0.7684,-0.7977\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3040\" /><path\n         d=\"m 56.7492,61.6277 -2.5804,-2.9011 -1.3215,-0.37 0.3839,1.302 2.7497,2.7672 0.7683,-0.7981\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3042\" /><path\n         d=\"m 51.3102,67.2113 -2.5805,-2.9008 -1.3215,-0.3703 0.3844,1.3024 2.7496,2.7668 0.768,-0.7981\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3044\" /><path\n         d=\"m 48.5211,70.0734 -2.5801,-2.9011 -1.3219,-0.3703 0.3844,1.3023 2.7496,2.7668 0.768,-0.7977\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3046\" /><path\n         d=\"m 45.9098,72.7422 -2.5805,-2.9012 -1.3215,-0.3699 0.384,1.3019 2.7496,2.7668 0.7684,-0.7976\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3048\" /><path\n         d=\"M 54.1824,64.2648 14.7234,15.8602 13.4332,17.0211 52.973,65.5297 54.1824,64.2648\"\n         style=\"fill:#fddd04;fill-opacity:1;fill-rule:evenodd;stroke:none\"\n         id=\"path3050\" /></g></g></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Rydułtowy",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Rydu%C5%82towy%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "rydultowy",
+    "city"
+  ]
+} as const;
+
+export { rydultowy };

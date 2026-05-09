@@ -1,0 +1,33 @@
+import type { CoatOfArms } from '@blazon/types';
+
+/**
+ * Herb Lubaczów — Polish coat of arms (Lubaczów)
+ * @id pl-city-lubaczow
+ */
+const lubaczow: CoatOfArms = {
+  "id": "pl-city-lubaczow",
+  "name": "Herb Lubaczów",
+  "description": "Coat of arms of Lubaczów (Herb Lubaczów), a city in Poland.",
+  "svg": "<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd\"\n   viewBox=\"-30.70 -10.81 271.40 318.62\"\n   id=\"svg2\"\n   version=\"1.0\"><title>Herb Lubaczów</title><metadata\n   id=\"metadata14\"><rdf:RDF><cc:Work\n       rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type\n         rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview\n   guidetolerance=\"10.0\"\n   gridtolerance=\"10.0\"\n   objecttolerance=\"10.0\"\n   borderopacity=\"1.0\"\n   bordercolor=\"#666666\"\n   pagecolor=\"#ffffff\"\n   id=\"base\" /><defs\n   id=\"defs4\"><style\n   type=\"text/css\"\n   id=\"style6\">\n   \n    .str1 {stroke:#1F1A17;stroke-width:1.4}\n    .str0 {stroke:#171A1C;stroke-width:1.5}\n    .fil0 {fill:#D62926}\n    .fil1 {fill:#E3AB0D}\n   \n  </style></defs><g\n   id=\"Warstwa_x0020_1\"\n   transform=\"matrix(1.3229709,0,0,1.3229709,-33.298557,-37.041221)\"><metadata\n   id=\"CorelCorpID_0Corel-Layer\" /><g\n   id=\"_74162760\"><path\n   id=\"_73372968\"\n   class=\"fil0 str0\"\n   d=\"M 199.287,28.7489 C 198.8309,74.9323 200.1888,120.0606 199.027,163.8529 C 197.0369,238.8686 123.3774,251.794 104.428,251.7431 C 58.171,251.6186 9.557,217.3164 9.7259,167.9875 C 9.8398,134.7394 10.2491,105.1576 9.5624,28.7485 L 199.2874,28.7485 L 199.287,28.7489 z \"\n   style=\"fill:#d62926;stroke:#171a1c;stroke-width:1.5\" /><path\n   id=\"_73373088\"\n   class=\"fil1 str1\"\n   d=\"M 127.326,189.792 C 112.5778,192.205 96.701,190.8467 86.7849,189.9112 C 84.5969,175.9937 83.2337,164.9244 84.1462,137.9725 C 84.3594,131.6809 84.5377,119.715 85.4113,110.7097 C 87.1154,94.7458 89.0536,73.4532 107.0157,53.8917 C 94.0125,57.544 72.1917,59.3847 58.805,55.8429 C 68.638,67.3717 68.8392,94.0333 69.451,109.216 C 70.3007,146.214 69.7065,183.8948 57.4804,204.792 C 79.1958,202.5144 128.5685,194.9534 151.7738,214.0367 C 152.6509,200.115 156.0916,189.1205 162.3224,176.3445 C 150.8688,183.6496 140.7792,187.5909 127.326,189.792 L 127.326,189.792 z \"\n   style=\"fill:#e3ab0d;stroke:#1f1a17;stroke-width:1.39999998\" /></g></g></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Lubaczów",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Lubacz%C3%B3w%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "lubaczow",
+    "city"
+  ]
+} as const;
+
+export { lubaczow };

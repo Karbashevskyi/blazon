@@ -5,14 +5,17 @@
  * Provides the registry singleton, search engine, validation layer,
  * and lazy-loading infrastructure.
  *
+ * Country-specific data lives in separate packages:
+ *   - Poland → `@blazon/country-poland`
+ *
  * @example
  * ```ts
- * import { getRegistry, registerCountry, getById, search } from '@blazon/core';
+ * import { registerCountry, getById, searchRegistry } from '@blazon/core';
+ * import { warszawa, krakow } from '@blazon/country-poland';
  *
- * registerCountry('PL', () => import('./data/pl.json'));
- *
- * const warsaw = await getById('pl-city-warszawa');
- * const cities = search({ countryCode: 'PL', level: 'city' });
+ * registerCountry('PL', () => fetch('/registries/pl.json').then(r => r.json()));
+ * const warsaw = getById('pl-city-warszawa');
+ * const cities = searchRegistry({ countryCode: 'PL', level: 'city' });
  * ```
  *
  * @packageDocumentation
@@ -34,29 +37,15 @@ export {
 
 export { createFetchLoader, parseCountryRegistry, type FetchOptions } from './infrastructure/loader.js';
 
-// ─── Polish coat of arms ───────────────────────────────────────────────────
-//
-// Tree-shakeable exports: import individual cities or the full collection.
-//
-// @example
-// ```ts
-// import { warsaw } from '@blazon/core';
-// import { plCities } from '@blazon/core';
-// ```
-
-export * from './pl/index.js';
-
 // ─── Convenience facade ────────────────────────────────────────────────────
 //
-// These module-level functions delegate to the global singleton registry.
-// They are the recommended public API for most consumers.
+// Module-level functions that delegate to the global singleton registry.
 
 import type { CoatOfArms, CountryRegistry, RegistryLoader, SearchQuery } from '@blazon/types';
 import { BlazonRegistry } from './domain/registry.js';
 
 /**
  * Returns the global `BlazonRegistry` singleton.
- * Use the module-level helpers (`getById`, `search`, etc.) in most cases.
  */
 export function getRegistry(): BlazonRegistry {
   return BlazonRegistry.getInstance();
@@ -64,9 +53,6 @@ export function getRegistry(): BlazonRegistry {
 
 /**
  * Registers a lazy loader for a country's data against the global registry.
- *
- * @param code - ISO 3166-1 alpha-2 country code
- * @param loader - Async factory that resolves to the country's registry data
  */
 export function registerCountry(code: string, loader: RegistryLoader): void {
   BlazonRegistry.getInstance().registerCountry(code, loader);
@@ -74,8 +60,6 @@ export function registerCountry(code: string, loader: RegistryLoader): void {
 
 /**
  * Retrieves a coat of arms by ID from already-loaded registries.
- *
- * @param id - The unique coat of arms identifier
  */
 export function getById(id: string): CoatOfArms | undefined {
   return BlazonRegistry.getInstance().getById(id);
@@ -83,8 +67,6 @@ export function getById(id: string): CoatOfArms | undefined {
 
 /**
  * Searches all loaded registries using the given query.
- *
- * @param query - Search filters and pagination options
  */
 export function searchRegistry(query: SearchQuery): readonly CoatOfArms[] {
   return BlazonRegistry.getInstance().search(query);
@@ -93,9 +75,8 @@ export function searchRegistry(query: SearchQuery): readonly CoatOfArms[] {
 /**
  * Loads and returns the registry for a given country.
  * Triggers the registered loader if the country has not been loaded yet.
- *
- * @param code - ISO 3166-1 alpha-2 country code
  */
 export function getCountryRegistry(code: string): Promise<CountryRegistry | undefined> {
   return BlazonRegistry.getInstance().getCountryRegistry(code);
 }
+

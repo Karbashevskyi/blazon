@@ -8,6 +8,7 @@ export default defineConfig({
     alias: {
       '@blazon/types': resolve(__dirname, '../../packages/types/src/index.ts'),
       '@blazon/core': resolve(__dirname, '../../packages/core/src/index.ts'),
+      '@blazon/country-poland': resolve(__dirname, '../../packages/country-poland/src/index.ts'),
     },
   },
   build: {

@@ -2,8 +2,8 @@
 """
 Generate TypeScript constant exports for each Polish city coat of arms.
 Produces:
-  packages/core/src/pl/city/{slug}.ts  — individual city constant
-  packages/core/src/pl/index.ts         — barrel re-export of all cities
+  packages/country-poland/src/pl/city/{slug}.ts  — individual city constant
+  packages/country-poland/src/pl/index.ts         — barrel re-export of all cities
 """
 import json
 import pathlib
@@ -11,7 +11,7 @@ import re
 import sys
 
 ASSETS_DIR = pathlib.Path("assets/pl/city")
-OUT_DIR = pathlib.Path("packages/core/src/pl")
+OUT_DIR = pathlib.Path("packages/country-poland/src/pl")
 
 TEMPLATE = """\
 import type {{ CoatOfArms }} from '@blazon/types';

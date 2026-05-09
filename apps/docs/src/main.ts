@@ -16,6 +16,7 @@ import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
 import bash from 'highlight.js/lib/languages/bash';
 import 'highlight.js/styles/github-dark.css';
+import { initGame } from './game.js';
 
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('bash', bash);
@@ -185,4 +186,5 @@ void (async () => {
   await getCountryRegistry('PL');
   await runSearch();
   hljs.highlightAll();
+  initGame(cityEntries);
 })();

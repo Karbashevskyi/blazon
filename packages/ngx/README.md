@@ -1,22 +1,39 @@
 # @blazon/ngx
 
-> Angular 19+ adapter for the Blazon heraldry registry.
+> Angular 16+ adapter for the Blazon heraldry registry.
 > Provides `provideBlazonIcons()` and the standalone `<blazon-icon>` component.
 
 ## Requirements
 
-- Angular ≥ 19
+- Angular ≥ 16
 - `@blazon/core` ≥ 0.1.0
 
 ## Install
 
 ```bash
-pnpm add @blazon/ngx @blazon/core @blazon/types
+pnpm add @blazon/ngx @blazon/core @blazon/country-poland @blazon/types
 ```
 
 ## Setup
 
-Register the provider in your application config:
+### Option 1 — Tree-shakeable static imports (recommended for known icons)
+
+Import only the cities you need. Everything else is tree-shaken out of the bundle:
+
+```ts
+// app.config.ts
+import { ApplicationConfig } from '@angular/core';
+import { warszawa, krakow, wroclaw } from '@blazon/country-poland';
+import { provideBlazonIcons } from '@blazon/ngx';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBlazonIcons([warszawa, krakow, wroclaw]),
+  ],
+};
+```
+
+### Option 2 — Lazy HTTP loader (for large or dynamic collections)
 
 ```ts
 // app.config.ts
@@ -46,17 +63,16 @@ export const appConfig: ApplicationConfig = {
 import { BlazonIconComponent } from '@blazon/ngx';
 
 @Component({
-  standalone: true,
   imports: [BlazonIconComponent],
   template: `
     <!-- Basic usage -->
-    <blazon-icon id="pl-city-warsaw" />
+    <blazon-icon id="pl-city-warszawa" />
 
     <!-- With explicit size and accessible label -->
-    <blazon-icon id="pl-city-warsaw" [size]="64" alt="Warsaw coat of arms" />
+    <blazon-icon id="pl-city-warszawa" [size]="64" alt="Warsaw coat of arms" />
 
     <!-- CSS custom property for responsive sizing -->
-    <blazon-icon id="pl-city-warsaw" style="--blazon-size: 3rem" />
+    <blazon-icon id="pl-city-warszawa" style="--blazon-size: 3rem" />
   `,
 })
 export class MyComponent {}
@@ -66,7 +82,7 @@ export class MyComponent {}
 
 | Input | Type | Required | Description |
 |-------|------|----------|-------------|
-| `id` | `string` | ✅ | Registry ID, e.g. `"pl-city-warsaw"` |
+| `id` | `string` | ✅ | Registry ID, e.g. `"pl-city-warszawa"` |
 | `alt` | `string` | — | Accessible label (`aria-label`). Defaults to the entry's `name`. |
 | `size` | `number` | — | Pixel size applied to width and height. |
 

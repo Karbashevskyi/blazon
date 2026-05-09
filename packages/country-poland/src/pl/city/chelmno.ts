@@ -1,0 +1,33 @@
+import type { CoatOfArms } from '@blazon/types';
+
+/**
+ * Herb Chełmno — Polish coat of arms (Chełmno)
+ * @id pl-city-chelmno
+ */
+const chelmno: CoatOfArms = {
+  "id": "pl-city-chelmno",
+  "name": "Herb Chełmno",
+  "description": "Coat of arms of Chełmno (Herb Chełmno), a city in Poland.",
+  "svg": "<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   viewBox=\"-8.13 -9.16 244.51 282.90\"\n   version=\"1.1\"\n   id=\"svg1640\"><title>Herb Chełmno</title><defs\n     id=\"defs1634\" /><sodipodi:namedview\n     id=\"base\"\n     pagecolor=\"#ffffff\"\n     bordercolor=\"#666666\"\n     borderopacity=\"1.0\"\n     showgrid=\"false\"\n     units=\"px\" /><metadata\n     id=\"metadata1637\"><rdf:RDF><cc:Work\n         rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /><dc:title /></cc:Work></rdf:RDF></metadata><g\n     id=\"layer1\"><g\n       id=\"g908\"><g\n         id=\"g894\"\n         transform=\"matrix(0.86983194,0,0,0.86983194,-233.13111,-77.926752)\"><path\n           style=\"fill:#e70000;fill-opacity:1;stroke:#000000;stroke-width:3.04167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n           d=\"M 269.53945,91.109169 H 528.09038 V 264.94673 c 0,38.25278 -15.07637,69.71066 -36.60696,90.38382 -22.43257,21.53922 -58.39175,37.16187 -91.81031,36.91139 -35.78129,-0.26819 -68.3221,-13.71156 -90.22709,-35.01339 -21.84036,-21.23899 -39.90657,-54.59445 -39.90657,-92.28182 z\"\n           id=\"path841-1-6-7\" /><path\n           d=\"m 269.6916,184.03543 c 0,0 8.09196,-17.69565 25.82059,-18.09496 28.04669,-0.6317 24.37517,39.43324 51.10181,40.15137 26.72664,0.71812 23.43009,-40.62526 53.8394,-40.15137 30.40933,0.47389 24.42122,40.11883 52.6227,40.15137 28.20149,0.0325 20.55838,-40.48647 53.07896,-40.15137 17.48862,0.18021 21.93527,18.09496 21.93527,18.09496 -0.14789,17.13836 0,48.45517 0,48.45517 C 539.20984,333.30111 476.03651,391.88535 399.68786,391.72513 293.63606,391.50259 264.34546,290.68498 269.6916,250.91434 Z\"\n           style=\"fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.831965;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:9.6;stroke-opacity:1\"\n           id=\"path5185-9-7\" /><g\n           transform=\"matrix(1.706756,0,0,1.6221834,563.57534,192.95082)\"\n           style=\"fill:#ffffff;fill-opacity:1\"\n           id=\"g5183-1\"><path\n             d=\"m -171.78075,34.692777 c 0,0 3.99717,-9.096964 14.38449,-9.343117 16.43275,-0.389415 15.07661,24.308777 29.9409,24.751468 14.86429,0.44269 13.72785,-25.0436 31.544872,-24.751468 17.817027,0.292132 14.308553,24.731407 30.831997,24.751468 16.523444,0.02006 12.045294,-24.958042 31.099325,-24.751468 10.246699,0.11109 13.524196,10.843206 13.524196,10.843206 -0.08665,10.565015 -0.962316,20.797971 -3.855466,30.181861 0,0 -5.419889,-5.209434 -9.66873,-5.397953 -17.396347,-0.771869 -15.149163,24.368949 -31.099325,24.923258 -15.950163,0.554309 -13.291697,-24.526007 -30.831997,-24.923258 -17.540302,-0.397251 -15.030782,25.523597 -31.544872,24.634849 -16.5141,-0.888748 -12.78372,-24.726833 -29.9409,-24.634849 -6.24955,0.0335 -10.97999,5.213998 -10.97999,5.213998 -2.1844,-3.301441 -4.61468,-20.31611 -3.4045,-31.497995 z\"\n             style=\"opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:9.6;stroke-opacity:1\"\n             id=\"path5185-92\" /></g><path\n           style=\"fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.04177;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"\n           d=\"M 269.53945,91.109169 H 528.09038 V 264.94673 c 0,38.25279 -15.07637,69.71066 -36.60696,90.38382 -22.43257,21.53922 -58.39175,37.16187 -91.81031,36.91139 -35.78129,-0.26819 -68.32209,-13.71155 -90.22709,-35.01339 -21.84035,-21.23899 -39.90657,-54.59444 -39.90657,-92.28182 z\"\n           id=\"path841-1-0\" /><path\n           d=\"m 391.30014,152.33442 c -4.03702,0 -7.42038,9.13708 -7.42038,9.13708 v -22.88732 c 0,0 3.38336,9.13708 7.42038,9.13708 h 6.05717 v -6.05717 c 0,-4.03703 -8.52871,-7.42038 -8.52871,-7.42038 h 21.67059 c 0,0 -8.52871,3.38335 -8.52871,7.42038 v 6.05717 h 6.05109 c 4.03702,0 8.02874,-9.13708 8.02874,-9.13708 v 22.88732 c 0,0 -3.99172,-9.13708 -8.02874,-9.13708 h -6.05109 v 11.52629 c 0,0 2.3944,1.17531 5.48694,3.77026 h -15.58705 c 3.09254,-2.59495 5.48694,-3.77026 5.48694,-3.77026 v -11.52629 z\"\n           id=\"path4-2\"\n           style=\"stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" /><path\n           id=\"path918-6\"\n           style=\"fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.363086;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill\"\n           d=\"m 410.76551,169.38082 c 0,3.00636 -4.96915,4.6013 -11.0989,4.6013 -6.12978,1e-5 -11.09894,-1.59493 -11.09894,-4.6013 0,-3.00638 4.96916,-6.28574 11.09894,-6.28574 6.12975,0 11.0989,3.27937 11.0989,6.28574 z\" /></g></g></g></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Chełmno",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Che%C5%82mno%20COA%20%28do%202000%29.svg"
+  },
+  "tags": [
+    "poland",
+    "chelmno",
+    "city"
+  ]
+} as const;
+
+export { chelmno };
