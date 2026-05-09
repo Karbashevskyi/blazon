@@ -23,25 +23,28 @@ hljs.registerLanguage('bash', bash);
 
 // ─── Load all generated city entries via Vite glob import ─────────────────
 
-const cityModules = import.meta.glob('../../../assets/pl/city/*/index.json', {
-  eager: true,
-}) as Record<string, CoatOfArms>;
+const cityModules = import.meta.glob<CoatOfArms>(
+  '../../../assets/pl/city/*/index.json',
+  { eager: true },
+);
 
 const cityEntries: CoatOfArms[] = Object.values(cityModules);
 
 // Register Poland loader
-registerCountry('PL', async () => ({
-  countryCode: 'PL',
-  name: 'Poland',
-  entries: cityEntries,
-}));
+registerCountry('PL', () =>
+  Promise.resolve({
+    countryCode: 'PL',
+    name: 'Poland',
+    entries: cityEntries,
+  }),
+);
 
 // ─── DOM helpers ──────────────────────────────────────────────────────────
 
-function el<T extends HTMLElement>(id: string): T {
+function el(id: string): HTMLElement {
   const element = document.getElementById(id);
   if (element === null) throw new Error(`Element #${id} not found`);
-  return element as T;
+  return element;
 }
 
 function escapeHtml(raw: string): string {
@@ -54,13 +57,13 @@ function escapeHtml(raw: string): string {
 
 // ─── Demo registry viewer ─────────────────────────────────────────────────
 
-const resultsGrid = el<HTMLDivElement>('results');
-const detailPanel = el<HTMLDivElement>('detail-panel');
-const coatDetail = el<HTMLDivElement>('coat-detail');
-const resultsMeta = el<HTMLParagraphElement>('results-count');
-const searchInput = el<HTMLInputElement>('search-input');
-const countryFilter = el<HTMLSelectElement>('country-filter');
-const levelFilter = el<HTMLSelectElement>('level-filter');
+const resultsGrid = el('results') as HTMLDivElement;
+const detailPanel = el('detail-panel') as HTMLDivElement;
+const coatDetail = el('coat-detail') as HTMLDivElement;
+const resultsMeta = el('results-count') as HTMLParagraphElement;
+const searchInput = el('search-input') as HTMLInputElement;
+const countryFilter = el('country-filter') as HTMLSelectElement;
+const levelFilter = el('level-filter') as HTMLSelectElement;
 let selectedCoatId: string | null = null;
 
 function renderResults(coats: readonly CoatOfArms[]): void {
@@ -143,12 +146,12 @@ levelFilter.addEventListener('change', () => void runSearch());
 resultsGrid.addEventListener('click', (e) => {
   const target = (e.target as HTMLElement).closest<HTMLButtonElement>('.result-item');
   if (target === null) return;
-  const id = target.dataset['id'];
+  const id = target.dataset.id;
   if (id === undefined) return;
   selectedCoatId = id;
 
   resultsGrid.querySelectorAll<HTMLButtonElement>('.result-item').forEach((item) => {
-    const isActive = item.dataset['id'] === id;
+    const isActive = item.dataset.id === id;
     item.classList.toggle('result-item--active', isActive);
     item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
@@ -164,7 +167,7 @@ tabsContainer?.addEventListener('click', (e) => {
   const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.tab');
   if (btn === null) return;
 
-  const tabId = btn.dataset['tab'];
+  const tabId = btn.dataset.tab;
   if (tabId === undefined) return;
 
   tabsContainer.querySelectorAll<HTMLButtonElement>('.tab').forEach((t) => {
@@ -182,7 +185,7 @@ tabsContainer?.addEventListener('click', (e) => {
 
 // ─── Bootstrap ────────────────────────────────────────────────────────────
 
-void (async () => {
+void (async (): Promise<void> => {
   await getCountryRegistry('PL');
   await runSearch();
   hljs.highlightAll();

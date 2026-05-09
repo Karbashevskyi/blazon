@@ -49,7 +49,7 @@ function pickRandom<T>(pool: readonly T[], count: number, exclude?: T): T[] {
 function shuffle<T>(arr: T[]): T[] {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j]!, arr[i]!];
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
 }
@@ -64,7 +64,7 @@ export function initGame(cityEntries: CoatOfArms[]): void {
 
   // ── State ────────────────────────────────────────────────────────────
   let mode: GameMode = 'pick-name';
-  let current: CoatOfArms = cityEntries[0]!;
+  let current: CoatOfArms = cityEntries[0];
   let options: CoatOfArms[] = [];
   let answered = false;
   let lastCorrect = false;
@@ -119,20 +119,20 @@ export function initGame(cityEntries: CoatOfArms[]): void {
     const cls = lastCorrect ? 'game-feedback--correct' : 'game-feedback--wrong';
     const icon = lastCorrect ? '✓' : '✗';
     const text = lastCorrect
-      ? 'Правильно!'
-      : `Правильна відповідь: <strong>${escHtml(cityLabel(current))}</strong>`;
+      ? 'Correct!'
+      : `Correct answer: <strong>${escHtml(cityLabel(current))}</strong>`;
     return `<div class="game-feedback ${cls}" role="alert">${icon} ${text}</div>`;
   }
 
   function nextBtnHtml(): string {
-    return `<button class="btn btn-primary game-next-btn">Далі →</button>`;
+    return `<button class="btn btn-primary game-next-btn">Next →</button>`;
   }
 
   // ── Mode: type-name ──────────────────────────────────────────────────
   function renderTypeName(): void {
-    gameArea!.innerHTML = `
+    gameArea.innerHTML = `
       <div class="game-card" data-mode="type-name">
-        <p class="game-question">Якому місту належить цей герб?</p>
+        <p class="game-question">Which city does this coat of arms belong to?</p>
         <div class="game-coat-display">
           <div class="game-coat-svg">${current.svg}</div>
         </div>
@@ -144,13 +144,13 @@ export function initGame(cityEntries: CoatOfArms[]): void {
                    class="game-type-input"
                    id="game-type-input"
                    type="text"
-                   placeholder="Назва міста…"
+                   placeholder="City name…"
                    autocomplete="off"
                    spellcheck="false"
                  />
                  <div class="game-type-actions">
-                   <button type="submit" class="btn btn-primary">Перевірити</button>
-                   <button type="button" class="btn btn-secondary game-skip-btn">Пропустити</button>
+                   <button type="submit" class="btn btn-primary">Check</button>
+                   <button type="button" class="btn btn-secondary game-skip-btn">Skip</button>
                  </div>
                </form>`
         }
@@ -176,9 +176,9 @@ export function initGame(cityEntries: CoatOfArms[]): void {
 
   // ── Mode: pick-name ──────────────────────────────────────────────────
   function renderPickName(): void {
-    gameArea!.innerHTML = `
+    gameArea.innerHTML = `
       <div class="game-card" data-mode="pick-name">
-        <p class="game-question">Яке місто має цей герб?</p>
+        <p class="game-question">Which city has this coat of arms?</p>
         <div class="game-coat-display">
           <div class="game-coat-svg">${current.svg}</div>
         </div>
@@ -201,29 +201,29 @@ export function initGame(cityEntries: CoatOfArms[]): void {
       </div>`;
 
     if (!answered) {
-      gameArea!.querySelectorAll<HTMLButtonElement>('.game-option-btn').forEach((btn) => {
+      gameArea.querySelectorAll<HTMLButtonElement>('.game-option-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
-          const id = btn.dataset['id'];
+          const id = btn.dataset.id;
           if (id === undefined) return;
           const isOk = id === current.id;
-          gameArea!.querySelectorAll<HTMLButtonElement>('.game-option-btn').forEach((b) => {
+          gameArea.querySelectorAll<HTMLButtonElement>('.game-option-btn').forEach((b) => {
             b.disabled = true;
-            if (b.dataset['id'] === current.id) b.classList.add('game-option-btn--correct');
+            if (b.dataset.id === current.id) b.classList.add('game-option-btn--correct');
             else if (b === btn && !isOk) b.classList.add('game-option-btn--wrong');
           });
           onAnswer(isOk, id);
         });
       });
     } else {
-      gameArea!.querySelector<HTMLButtonElement>('.game-next-btn')?.addEventListener('click', newRound);
+      gameArea.querySelector<HTMLButtonElement>('.game-next-btn')?.addEventListener('click', newRound);
     }
   }
 
   // ── Mode: pick-coat ──────────────────────────────────────────────────
   function renderPickCoat(): void {
-    gameArea!.innerHTML = `
+    gameArea.innerHTML = `
       <div class="game-card" data-mode="pick-coat">
-        <p class="game-question">Який герб належить місту <strong>${escHtml(cityLabel(current))}</strong>?</p>
+        <p class="game-question">Which coat of arms belongs to <strong>${escHtml(cityLabel(current))}</strong>?</p>
         <div class="game-coat-options">
           ${options
             .map((opt) => {
@@ -245,21 +245,21 @@ export function initGame(cityEntries: CoatOfArms[]): void {
       </div>`;
 
     if (!answered) {
-      gameArea!.querySelectorAll<HTMLButtonElement>('.game-coat-option-btn').forEach((btn) => {
+      gameArea.querySelectorAll<HTMLButtonElement>('.game-coat-option-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
-          const id = btn.dataset['id'];
+          const id = btn.dataset.id;
           if (id === undefined) return;
           const isOk = id === current.id;
-          gameArea!.querySelectorAll<HTMLButtonElement>('.game-coat-option-btn').forEach((b) => {
+          gameArea.querySelectorAll<HTMLButtonElement>('.game-coat-option-btn').forEach((b) => {
             b.disabled = true;
-            if (b.dataset['id'] === current.id) b.classList.add('game-coat-option-btn--correct');
+            if (b.dataset.id === current.id) b.classList.add('game-coat-option-btn--correct');
             else if (b === btn && !isOk) b.classList.add('game-coat-option-btn--wrong');
           });
           onAnswer(isOk, id);
         });
       });
     } else {
-      gameArea!.querySelector<HTMLButtonElement>('.game-next-btn')?.addEventListener('click', newRound);
+      gameArea.querySelector<HTMLButtonElement>('.game-next-btn')?.addEventListener('click', newRound);
     }
   }
 
@@ -273,7 +273,7 @@ export function initGame(cityEntries: CoatOfArms[]): void {
   // ── Mode-switching buttons ────────────────────────────────────────────
   document.querySelectorAll<HTMLButtonElement>('.game-mode-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const newMode = btn.dataset['mode'] as GameMode | undefined;
+      const newMode = btn.dataset.mode as GameMode | undefined;
       if (newMode === undefined) return;
       mode = newMode;
       document.querySelectorAll<HTMLButtonElement>('.game-mode-btn').forEach((b) => {
