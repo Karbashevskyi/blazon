@@ -80,7 +80,7 @@ function parseArgs(argv: string[]): ParsedArgs {
         parsed.help = true;
         break;
       default:
-        if (arg !== undefined && !arg.startsWith('--')) {
+        if (!arg.startsWith('--')) {
           parsed.inputDir = arg;
         }
     }

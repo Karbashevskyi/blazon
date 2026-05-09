@@ -17,3 +17,5 @@
  */
 
 export * from './pl/index.js';
+export { plCurrentCities } from './pl/current.js';
+export { plHistoricalCities } from './pl/historical.js';
