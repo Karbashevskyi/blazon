@@ -59,6 +59,7 @@ function escapeHtml(raw: string): string {
 
 const resultsGrid = el('results') as HTMLDivElement;
 const detailPanel = el('detail-panel') as HTMLDivElement;
+const detailPanelEmpty = el('detail-panel-empty') as HTMLDivElement;
 const coatDetail = el('coat-detail') as HTMLDivElement;
 const resultsMeta = el('results-count') as HTMLParagraphElement;
 const searchInput = el('search-input') as HTMLInputElement;
@@ -87,10 +88,17 @@ function renderResults(coats: readonly CoatOfArms[]): void {
   resultsMeta.textContent = coats.length === 0
     ? 'No results found.'
     : `Showing ${String(coats.length)} result${coats.length === 1 ? '' : 's'}`;
+
+  // Show/hide empty-state placeholder based on selection
+  if (selectedCoatId === null) {
+    detailPanel.hidden = true;
+    detailPanelEmpty.hidden = false;
+  }
 }
 
 function renderDetail(coat: CoatOfArms): void {
   detailPanel.hidden = false;
+  detailPanelEmpty.hidden = true;
   coatDetail.innerHTML = `
     <div class="coat-detail">
       <div class="coat-detail__svg-wrap">${coat.svg}</div>
@@ -188,6 +196,15 @@ tabsContainer?.addEventListener('click', (e) => {
 void (async (): Promise<void> => {
   await getCountryRegistry('PL');
   await runSearch();
+
+  // Auto-select the first coat on startup
+  const firstCoat = getById(cityEntries[0]?.id ?? '');
+  if (firstCoat !== undefined && selectedCoatId === null) {
+    selectedCoatId = firstCoat.id;
+    renderResults(searchRegistry({}));
+    renderDetail(firstCoat);
+  }
+
   hljs.highlightAll();
   initGame(cityEntries);
 })();

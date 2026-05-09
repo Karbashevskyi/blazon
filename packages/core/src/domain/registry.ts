@@ -20,6 +20,7 @@ export class BlazonRegistry {
   private readonly _loaders = new Map<string, RegistryLoader>();
   private readonly _pendingLoads = new Map<string, Promise<CountryRegistry>>();
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   private constructor() {}
 
   /**
@@ -166,7 +167,7 @@ export class BlazonRegistry {
    *
    * @param codes - Array of ISO 3166-1 alpha-2 country codes
    */
-  preload(codes: readonly string[]): Promise<ReadonlyArray<CountryRegistry | undefined>> {
+  preload(codes: readonly string[]): Promise<readonly (CountryRegistry | undefined)[]> {
     return Promise.all(codes.map((code) => this.getCountryRegistry(code)));
   }
 

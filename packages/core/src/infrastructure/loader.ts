@@ -65,19 +65,19 @@ export function parseCountryRegistry(raw: unknown, context = ''): CountryRegistr
 
   const obj = raw as Record<string, unknown>;
 
-  if (typeof obj['countryCode'] !== 'string') {
+  if (typeof obj.countryCode !== 'string') {
     throw new Error(`${context}: Registry must have a string "countryCode" field`);
   }
 
-  if (typeof obj['name'] !== 'string') {
+  if (typeof obj.name !== 'string') {
     throw new Error(`${context}: Registry must have a string "name" field`);
   }
 
-  if (!Array.isArray(obj['entries'])) {
+  if (!Array.isArray(obj.entries)) {
     throw new Error(`${context}: Registry "entries" must be an array`);
   }
 
-  const entries = obj['entries'] as unknown[];
+  const entries = obj.entries as unknown[];
 
   for (const [i, entry] of entries.entries()) {
     assertCoatOfArms(entry, `${context}.entries[${String(i)}]`);

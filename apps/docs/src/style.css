@@ -224,6 +224,18 @@ h3 {
   overflow-y: auto;
 }
 
+.demo-panel--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12rem;
+}
+
+.demo-panel__empty-hint {
+  color: var(--color-muted, #999);
+  font-size: 0.95rem;
+}
+
 .demo-panel {
   background: white;
   border: 1px solid var(--color-border);

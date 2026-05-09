@@ -41,20 +41,20 @@ export function validateCoatOfArms(raw: unknown): ValidationResult {
   validateString(obj, 'name', errors, { required: true, minLength: 1 });
   validateString(obj, 'svg', errors, { required: true, minLength: 1 });
 
-  if (obj['metadata'] !== undefined) {
-    errors.push(...validateMetadata(obj['metadata']));
+  if (obj.metadata !== undefined) {
+    errors.push(...validateMetadata(obj.metadata));
   } else {
     errors.push({ field: 'metadata', message: 'metadata is required' });
   }
 
-  if (obj['license'] !== undefined) {
-    errors.push(...validateLicense(obj['license']));
+  if (obj.license !== undefined) {
+    errors.push(...validateLicense(obj.license));
   } else {
     errors.push({ field: 'license', message: 'license is required' });
   }
 
-  if (obj['tags'] !== undefined) {
-    if (!Array.isArray(obj['tags']) || !obj['tags'].every((t) => typeof t === 'string')) {
+  if (obj.tags !== undefined) {
+    if (!Array.isArray(obj.tags) || !obj.tags.every((t) => typeof t === 'string')) {
       errors.push({ field: 'tags', message: 'tags must be an array of strings' });
     }
   }
@@ -71,32 +71,32 @@ function validateMetadata(raw: unknown): ValidationError[] {
 
   const m = raw as Record<string, unknown>;
 
-  if (typeof m['countryCode'] !== 'string' || !/^[A-Z]{2}$/.test(m['countryCode'])) {
+  if (typeof m.countryCode !== 'string' || !/^[A-Z]{2}$/.test(m.countryCode)) {
     errors.push({
       field: 'metadata.countryCode',
       message: 'countryCode must be a 2-letter ISO 3166-1 alpha-2 code (uppercase)',
     });
   }
 
-  if (typeof m['type'] !== 'string' || !VALID_COAT_TYPES.has(m['type'])) {
+  if (typeof m.type !== 'string' || !VALID_COAT_TYPES.has(m.type)) {
     errors.push({
       field: 'metadata.type',
       message: `type must be one of: ${[...VALID_COAT_TYPES].join(', ')}`,
     });
   }
 
-  if (typeof m['level'] !== 'string' || !VALID_LEVELS.has(m['level'])) {
+  if (typeof m.level !== 'string' || !VALID_LEVELS.has(m.level)) {
     errors.push({
       field: 'metadata.level',
       message: `level must be one of: ${[...VALID_LEVELS].join(', ')}`,
     });
   }
 
-  if (m['createdAt'] !== undefined && !isIso8601Date(m['createdAt'])) {
+  if (m.createdAt !== undefined && !isIso8601Date(m.createdAt)) {
     errors.push({ field: 'metadata.createdAt', message: 'createdAt must be an ISO 8601 date string' });
   }
 
-  if (m['updatedAt'] !== undefined && !isIso8601Date(m['updatedAt'])) {
+  if (m.updatedAt !== undefined && !isIso8601Date(m.updatedAt)) {
     errors.push({ field: 'metadata.updatedAt', message: 'updatedAt must be an ISO 8601 date string' });
   }
 
