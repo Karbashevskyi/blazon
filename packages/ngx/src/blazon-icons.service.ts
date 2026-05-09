@@ -115,6 +115,6 @@ export class BlazonIconsService implements OnDestroy {
  */
 function deriveCountryCode(id: string): string | undefined {
   const segment = id.split('-')[0];
-  if (segment === undefined || segment.length !== 2) return undefined;
+  if (segment.length !== 2) return undefined;
   return segment.toUpperCase();
 }
