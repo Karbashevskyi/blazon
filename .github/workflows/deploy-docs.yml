@@ -34,7 +34,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build docs
-        run: pnpm --filter @blazon/docs build
+        run: pnpm turbo build --filter "@blazon/docs"
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -17,10 +17,10 @@
  * };
  *
  * // component.ts
- * import { BlazonIconComponent } from '@blazon/ngx';
+ * import { BlazonIcon } from '@blazon/ngx';
  *
  * @Component({
- *   imports: [BlazonIconComponent],
+ *   imports: [BlazonIcon],
  *   template: `<blazon-icon id="pl-city-warszawa" [size]="48" />`,
  * })
  * export class MyComponent {}
@@ -30,6 +30,8 @@
  */
 
 export { provideBlazonIcons } from './provide-blazon-icons.js';
-export { BlazonIconComponent } from './blazon-icon.component.js';
+export { BlazonIcon } from './blazon-icon.component.js';
+/** @deprecated Use `BlazonIcon` instead */
+export { BlazonIcon as BlazonIconComponent } from './blazon-icon.component.js';
 export { BlazonIconsService, BLAZON_ICONS_CONFIG_TOKEN, BLAZON_ICONS_ENTRIES_TOKEN } from './blazon-icons.service.js';
 export { type BlazonIconsConfig } from './blazon-icons.config.js';

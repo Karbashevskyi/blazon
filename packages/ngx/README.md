@@ -60,10 +60,10 @@ export const appConfig: ApplicationConfig = {
 ## `<blazon-icon>` Component
 
 ```ts
-import { BlazonIconComponent } from '@blazon/ngx';
+import { BlazonIcon } from '@blazon/ngx';
 
 @Component({
-  imports: [BlazonIconComponent],
+  imports: [BlazonIcon],
   template: `
     <!-- Basic usage -->
     <blazon-icon id="pl-city-warszawa" />

@@ -75,7 +75,7 @@ import { BlazonIconsService } from './blazon-icons.service.js';
     `,
   ],
 })
-export class BlazonIconComponent implements OnInit, OnChanges {
+export class BlazonIcon implements OnInit, OnChanges {
   /**
    * The unique coat of arms identifier, e.g. `"pl-city-warszawa"`.
    * Required. Changing this input triggers a new registry lookup.

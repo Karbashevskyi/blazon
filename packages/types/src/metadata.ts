@@ -28,6 +28,20 @@ export interface CoatMetadata {
   /** Dominant tinctures appearing in the arms */
   readonly colors?: readonly HeraldricTincture[];
 
+  /**
+   * ISO 3166-1 alpha-2 code of the country where this city is physically located today.
+   * Present only when different from `countryCode` — indicates a historically Polish
+   * city that is now part of another sovereign state (e.g. `"UA"` for Ukraine).
+   */
+  readonly currentCountryCode?: string;
+
+  /**
+   * Modern name of the city in the language of its current country, when it differs
+   * from the historical name stored in `city` (e.g. `"Kamianets-Podilskyi"` for
+   * the historically Polish `"Kamieniec Podolski"`).
+   */
+  readonly modernCityName?: string;
+
   /** ISO 8601 date when this entry was first added to the registry */
   readonly createdAt?: string;
 

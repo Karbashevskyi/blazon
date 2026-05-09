@@ -131,10 +131,10 @@ export const appConfig: ApplicationConfig = {
 
 ```ts
 // my.component.ts
-import { BlazonIconComponent } from '@blazon/ngx';
+import { BlazonIcon } from '@blazon/ngx';
 
 @Component({
-  imports: [BlazonIconComponent],
+  imports: [BlazonIcon],
   template: `<blazon-icon id="pl-city-warszawa" [size]="64" />`,
 })
 export class MyComponent {}
@@ -212,7 +212,7 @@ import { plCities } from '@blazon/country-poland';
 Angular 16+ standalone adapter.
 
 - `provideBlazonIcons(config)` — accepts an array of `CoatOfArms` objects (tree-shaking) or a lazy-loader config
-- `BlazonIconComponent` — standalone `<blazon-icon>` with signal-based loading state
+- `BlazonIcon` — standalone `<blazon-icon>` with signal-based loading state
 - `BlazonIconsService` — injectable wrapper around `BlazonRegistry`
 
 ---
