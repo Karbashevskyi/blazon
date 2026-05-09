@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta -->
+    <meta name="description" content="Test your knowledge of Polish city coats of arms. 3 game modes, 490+ cities." />
+    <meta name="theme-color" content="#7c2d12" />
+
+    <!-- Open Graph (social sharing) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://karbashevskyi.github.io/blazon/game/" />
+    <meta property="og:title" content="Blazon Quiz — Polish Coats of Arms" />
+    <meta property="og:description" content="Test your knowledge of Polish city coats of arms. 3 game modes, 490+ cities." />
+    <meta property="og:site_name" content="Blazon" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Blazon Quiz — Polish Coats of Arms" />
+    <meta name="twitter:description" content="Test your knowledge of Polish city coats of arms. 3 game modes, 490+ cities." />
+
+    <title>Blazon Quiz — Polish Coats of Arms</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-brand">
+          <a href="/blazon/" class="header-brand-link">
+            <span class="header-logo" aria-hidden="true">⚜</span>
+            <span class="header-title">Blazon</span>
+          </a>
+          <span class="header-tagline">Heraldry Quiz</span>
+        </div>
+        <nav class="header-nav">
+          <a id="docs-link" href="/blazon/">Documentation</a>
+          <div id="lang-switcher" class="lang-switcher" aria-label="Language selector"></div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-content">
+          <h1 id="page-title" class="hero-title">Blazon Quiz — Polish Coats of Arms</h1>
+          <p id="page-subtitle" class="hero-subtitle">How well do you know the heraldry of Polish cities?</p>
+        </div>
+      </section>
+
+      <!-- Game -->
+      <section class="section">
+        <div class="container">
+          <!-- Game header: mode selector + score -->
+          <div class="game-header">
+            <div class="game-modes">
+              <button
+                class="game-mode-btn game-mode-btn--active"
+                data-mode="pick-name"
+                data-mode-label="pick-name"
+              >
+                Pick a name
+              </button>
+              <button
+                class="game-mode-btn"
+                data-mode="pick-coat"
+                data-mode-label="pick-coat"
+              >
+                Pick a coat
+              </button>
+              <button
+                class="game-mode-btn"
+                data-mode="type-name"
+                data-mode-label="type-name"
+              >
+                Type the name
+              </button>
+            </div>
+
+            <div class="game-score-bar">
+              <span id="game-score-label" class="game-score-label">Score:</span>
+              <span id="game-score-correct">0</span>
+              <span class="game-score-label">/</span>
+              <span id="game-score-total">0</span>
+              <span id="game-streak" class="game-streak" hidden>
+                <span id="game-streak-count"></span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Game area (rendered by JS) -->
+          <div class="game-area">
+            <div id="game-area"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <a href="https://github.com/Karbashevskyi/blazon" target="_blank" rel="noopener">
+            GitHub
+          </a>
+          &nbsp;·&nbsp;
+          Data: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>
+          &nbsp;·&nbsp;
+          MIT License
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

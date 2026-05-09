@@ -36,6 +36,14 @@ jobs:
       - name: Build docs
         run: pnpm turbo build --filter "@blazon/docs"
 
+      - name: Build game (quiz)
+        run: pnpm turbo build --filter "@blazon/game"
+
+      - name: Merge game into docs dist
+        run: |
+          mkdir -p apps/docs/dist/game
+          cp -r apps/game/dist/. apps/docs/dist/game/
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/docs/dist

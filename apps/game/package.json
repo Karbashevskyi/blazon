@@ -2,14 +2,24 @@
   "name": "@blazon/game",
   "version": "0.0.0",
   "private": true,
-  "description": "Blazon heraldry game — work in progress",
+  "description": "Blazon Heraldry Quiz — multi-language quiz game for Polish coats of arms",
   "type": "module",
   "scripts": {
-    "dev": "echo 'Game app coming soon'",
-    "build": "echo 'Game app coming soon'",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
     "clean": "rimraf dist"
   },
+  "dependencies": {
+    "@blazon/core": "workspace:*",
+    "@blazon/poland": "workspace:*",
+    "@blazon/types": "workspace:*"
+  },
   "devDependencies": {
+    "typescript": "catalog:",
+    "vite": "catalog:",
     "rimraf": "catalog:"
   }
 }
