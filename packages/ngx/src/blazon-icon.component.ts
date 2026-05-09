@@ -1,8 +1,8 @@
 import {
   Component,
   Input,
-  OnChanges,
-  OnInit,
+  type OnChanges,
+  type OnInit,
   signal,
   inject,
   ChangeDetectionStrategy,
@@ -106,7 +106,7 @@ export class BlazonIcon implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // Skip the initial change — ngOnInit handles that
-    if (!changes['id']?.isFirstChange()) {
+    if (!changes.id.isFirstChange()) {
       void this._load(this.id);
     }
   }
@@ -119,8 +119,8 @@ export class BlazonIcon implements OnInit, OnChanges {
       const coat = await this._service.resolve(id);
       const raw = coat?.svg ?? this._service.fallbackSvg;
 
-      if (raw !== null && raw !== undefined) {
-        const safe = this._sanitizer.sanitize(SecurityContext.HTML, raw as string);
+      if (raw !== null) {
+        const safe = this._sanitizer.sanitize(SecurityContext.HTML, raw);
         this.svgContent.set(safe);
         if (this.alt === undefined && coat !== undefined) {
           this.alt = coat.name;
