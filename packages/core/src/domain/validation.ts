@@ -1,6 +1,13 @@
 import type { CoatOfArms } from '@blazon/types';
 
-const VALID_COAT_TYPES = new Set(['national', 'regional', 'municipal', 'historical', 'ecclesiastical', 'other']);
+const VALID_COAT_TYPES = new Set([
+  'national',
+  'regional',
+  'municipal',
+  'historical',
+  'ecclesiastical',
+  'other',
+]);
 const VALID_LEVELS = new Set(['national', 'state', 'county', 'city', 'district', 'village']);
 
 /**
@@ -93,11 +100,17 @@ function validateMetadata(raw: unknown): ValidationError[] {
   }
 
   if (m.createdAt !== undefined && !isIso8601Date(m.createdAt)) {
-    errors.push({ field: 'metadata.createdAt', message: 'createdAt must be an ISO 8601 date string' });
+    errors.push({
+      field: 'metadata.createdAt',
+      message: 'createdAt must be an ISO 8601 date string',
+    });
   }
 
   if (m.updatedAt !== undefined && !isIso8601Date(m.updatedAt)) {
-    errors.push({ field: 'metadata.updatedAt', message: 'updatedAt must be an ISO 8601 date string' });
+    errors.push({
+      field: 'metadata.updatedAt',
+      message: 'updatedAt must be an ISO 8601 date string',
+    });
   }
 
   return errors;
@@ -147,7 +160,10 @@ function validateString(
   }
 
   if (value.length < minLength) {
-    errors.push({ field, message: `${field} must have at least ${String(minLength)} character(s)` });
+    errors.push({
+      field,
+      message: `${field} must have at least ${String(minLength)} character(s)`,
+    });
   }
 }
 

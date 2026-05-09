@@ -17,7 +17,13 @@
     "release": "turbo build && changeset publish",
     "clean": "turbo clean && rimraf node_modules"
   },
-  "keywords": ["heraldry", "coat-of-arms", "blazon", "registry", "angular"],
+  "keywords": [
+    "heraldry",
+    "coat-of-arms",
+    "blazon",
+    "registry",
+    "angular"
+  ],
   "author": "Blazon Contributors",
   "license": "MIT",
   "packageManager": "pnpm@10.33.1",

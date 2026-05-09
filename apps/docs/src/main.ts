@@ -5,12 +5,7 @@
  * No framework dependency — plain TypeScript with the Vite dev server.
  */
 
-import {
-  registerCountry,
-  getCountryRegistry,
-  searchRegistry,
-  getById,
-} from '@blazon/core';
+import { registerCountry, getCountryRegistry, searchRegistry, getById } from '@blazon/core';
 import type { CoatOfArms, SearchQuery } from '@blazon/types';
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
@@ -23,10 +18,9 @@ hljs.registerLanguage('bash', bash);
 
 // ─── Load all generated city entries via Vite glob import ─────────────────
 
-const cityModules = import.meta.glob<CoatOfArms>(
-  '../../../assets/pl/city/*/index.json',
-  { eager: true },
-);
+const cityModules = import.meta.glob<CoatOfArms>('../../../assets/pl/city/*/index.json', {
+  eager: true,
+});
 
 const cityEntries: CoatOfArms[] = Object.values(cityModules);
 
@@ -74,20 +68,19 @@ function renderResults(coats: readonly CoatOfArms[]): void {
   }
 
   resultsGrid.innerHTML = coats
-    .map(
-      (c) => {
-        const isActive = selectedCoatId === c.id;
-        return `<button class="result-item${isActive ? ' result-item--active' : ''}" data-id="${escapeHtml(c.id)}" tabindex="0" aria-pressed="${isActive ? 'true' : 'false'}">
+    .map((c) => {
+      const isActive = selectedCoatId === c.id;
+      return `<button class="result-item${isActive ? ' result-item--active' : ''}" data-id="${escapeHtml(c.id)}" tabindex="0" aria-pressed="${isActive ? 'true' : 'false'}">
           <div class="result-item__svg">${c.svg}</div>
           <span class="result-item__name">${escapeHtml(c.name)}</span>
         </button>`;
-      },
-    )
+    })
     .join('');
 
-  resultsMeta.textContent = coats.length === 0
-    ? 'No results found.'
-    : `Showing ${String(coats.length)} result${coats.length === 1 ? '' : 's'}`;
+  resultsMeta.textContent =
+    coats.length === 0
+      ? 'No results found.'
+      : `Showing ${String(coats.length)} result${coats.length === 1 ? '' : 's'}`;
 
   // Show/hide empty-state placeholder based on selection
   if (selectedCoatId === null) {

@@ -17,7 +17,13 @@ export type HeraldricTincture =
 /**
  * Classification of a coat of arms by the type of entity it represents.
  */
-export type CoatType = 'national' | 'regional' | 'municipal' | 'historical' | 'ecclesiastical' | 'other';
+export type CoatType =
+  | 'national'
+  | 'regional'
+  | 'municipal'
+  | 'historical'
+  | 'ecclesiastical'
+  | 'other';
 
 /**
  * The administrative or geographic level of the entity the coat represents.

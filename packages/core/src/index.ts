@@ -35,7 +35,11 @@ export {
 
 // ─── Infrastructure ────────────────────────────────────────────────────────
 
-export { createFetchLoader, parseCountryRegistry, type FetchOptions } from './infrastructure/loader.js';
+export {
+  createFetchLoader,
+  parseCountryRegistry,
+  type FetchOptions,
+} from './infrastructure/loader.js';
 
 // ─── Convenience facade ────────────────────────────────────────────────────
 //
@@ -79,4 +83,3 @@ export function searchRegistry(query: SearchQuery): readonly CoatOfArms[] {
 export function getCountryRegistry(code: string): Promise<CountryRegistry | undefined> {
   return BlazonRegistry.getInstance().getCountryRegistry(code);
 }
-

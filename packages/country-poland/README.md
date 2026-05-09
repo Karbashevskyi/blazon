@@ -17,9 +17,9 @@ Import only the cities you use. All other exports are removed by your bundler.
 ```ts
 import { warszawa, krakow, wroclaw, poznan } from '@blazon/country-poland';
 
-console.log(warszawa.id);    // 'pl-city-warszawa'
-console.log(warszawa.name);  // 'Herb Warszawy'
-console.log(warszawa.svg);   // inline SVG string (no external request)
+console.log(warszawa.id); // 'pl-city-warszawa'
+console.log(warszawa.name); // 'Herb Warszawy'
+console.log(warszawa.svg); // inline SVG string (no external request)
 ```
 
 ### Full collection
@@ -64,15 +64,15 @@ export const appConfig: ApplicationConfig = {
 
 Each city is exported as a `camelCase` identifier matching its slug:
 
-| Import name | City | ID |
-|-------------|------|----|
-| `warszawa` | Herb Warszawy | `pl-city-warszawa` |
-| `krakow` | Herb Krakowa | `pl-city-krakow` |
-| `wroclaw` | Herb Wrocławia | `pl-city-wroclaw` |
-| `poznan` | Herb Poznania | `pl-city-poznan` |
-| `gdansk` | Herb Gdańska | `pl-city-gdansk` |
-| `lodz` | Herb Łodzi | `pl-city-lodz` |
-| … | 495 cities total | — |
+| Import name | City             | ID                 |
+| ----------- | ---------------- | ------------------ |
+| `warszawa`  | Herb Warszawy    | `pl-city-warszawa` |
+| `krakow`    | Herb Krakowa     | `pl-city-krakow`   |
+| `wroclaw`   | Herb Wrocławia   | `pl-city-wroclaw`  |
+| `poznan`    | Herb Poznania    | `pl-city-poznan`   |
+| `gdansk`    | Herb Gdańska     | `pl-city-gdansk`   |
+| `lodz`      | Herb Łodzi       | `pl-city-lodz`     |
+| …           | 495 cities total | —                  |
 
 ## Data
 

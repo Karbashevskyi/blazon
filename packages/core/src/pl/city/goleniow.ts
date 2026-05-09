@@ -5,29 +5,25 @@ import type { CoatOfArms } from '@blazon/types';
  * @id pl-city-goleniow
  */
 const goleniow: CoatOfArms = {
-  "id": "pl-city-goleniow",
-  "name": "Herb Goleniów",
-  "description": "Coat of arms of Goleniów (Herb Goleniów), a city in Poland.",
-  "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 750 875\"><title>Herb Goleniów</title><path d=\"M4.605 4.053v527.425h.428c14.956 300.206 201.94 187.285 371.17 339.701 170.523-155.144 359.19-39.362 371.598-348.263L745.875 4.053z\" style=\"fill:#0755b5;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:6.8497076px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"/><use xlink:href=\"#a\" width=\"750\" height=\"887.5\" transform=\"translate(257 -273)\"/><path d=\"M228.074 389.354c1.454 134.612-97.373 196.19-173.071 259.144 203.948 11.441 296.55-124.964 296.056-256.483-.492-130.518-60.447-269.713-277.011-263.283 92.52 88.433 152.572 126.002 154.026 260.622zm282.128 0c-1.454 134.612 97.372 196.19 173.07 259.144-203.948 11.441-296.55-124.964-296.055-256.483.491-130.518 60.446-269.713 277.01-263.282-92.519 88.432-152.571 126.001-154.025 260.62z\" style=\"fill:#fffe2f;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:7.77325916px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"/><path id=\"a\" d=\"m31.648 62.093-8.756.044-4.173 6.39-4.416-7.56-7.621-.42 4.339-7.604-3.447-6.81 8.755-.044 4.174-6.39 4.416 7.56 7.62.42-4.338 7.604z\" style=\"fill:#dfdfdd;fill-opacity:1;stroke:#2877c9;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" transform=\"matrix(6.47782 -.32263 .34003 6.14642 -29.157 73.268)\"/><use xlink:href=\"#a\" width=\"750\" height=\"887.5\" transform=\"translate(498)\"/><use xlink:href=\"#a\" width=\"750\" height=\"887.5\" transform=\"translate(255.445 258.916)\"/></svg>",
-  "metadata": {
-    "countryCode": "PL",
-    "type": "municipal",
-    "level": "city",
-    "region": "Poland",
-    "city": "Goleniów",
-    "updatedAt": "2026-05-08"
+  id: 'pl-city-goleniow',
+  name: 'Herb Goleniów',
+  description: 'Coat of arms of Goleniów (Herb Goleniów), a city in Poland.',
+  svg: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 750 875"><title>Herb Goleniów</title><path d="M4.605 4.053v527.425h.428c14.956 300.206 201.94 187.285 371.17 339.701 170.523-155.144 359.19-39.362 371.598-348.263L745.875 4.053z" style="fill:#0755b5;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:6.8497076px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/><use xlink:href="#a" width="750" height="887.5" transform="translate(257 -273)"/><path d="M228.074 389.354c1.454 134.612-97.373 196.19-173.071 259.144 203.948 11.441 296.55-124.964 296.056-256.483-.492-130.518-60.447-269.713-277.011-263.283 92.52 88.433 152.572 126.002 154.026 260.622zm282.128 0c-1.454 134.612 97.372 196.19 173.07 259.144-203.948 11.441-296.55-124.964-296.055-256.483.491-130.518 60.446-269.713 277.01-263.282-92.519 88.432-152.571 126.001-154.025 260.62z" style="fill:#fffe2f;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:7.77325916px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/><path id="a" d="m31.648 62.093-8.756.044-4.173 6.39-4.416-7.56-7.621-.42 4.339-7.604-3.447-6.81 8.755-.044 4.174-6.39 4.416 7.56 7.62.42-4.338 7.604z" style="fill:#dfdfdd;fill-opacity:1;stroke:#2877c9;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="matrix(6.47782 -.32263 .34003 6.14642 -29.157 73.268)"/><use xlink:href="#a" width="750" height="887.5" transform="translate(498)"/><use xlink:href="#a" width="750" height="887.5" transform="translate(255.445 258.916)"/></svg>',
+  metadata: {
+    countryCode: 'PL',
+    type: 'municipal',
+    level: 'city',
+    region: 'Poland',
+    city: 'Goleniów',
+    updatedAt: '2026-05-08',
   },
-  "license": {
-    "spdx": "CC0-1.0",
-    "name": "Creative Commons Zero v1.0 Universal",
-    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "source": "https://commons.wikimedia.org/wiki/File:POL%20Goleni%C3%B3w%20COA.svg"
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+    source: 'https://commons.wikimedia.org/wiki/File:POL%20Goleni%C3%B3w%20COA.svg',
   },
-  "tags": [
-    "poland",
-    "goleniow",
-    "city"
-  ]
+  tags: ['poland', 'goleniow', 'city'],
 } as const;
 
 export { goleniow };

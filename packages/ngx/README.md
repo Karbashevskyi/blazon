@@ -27,9 +27,7 @@ import { warszawa, krakow, wroclaw } from '@blazon/country-poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBlazonIcons([warszawa, krakow, wroclaw]),
-  ],
+  providers: [provideBlazonIcons([warszawa, krakow, wroclaw])],
 };
 ```
 
@@ -45,8 +43,8 @@ export const appConfig: ApplicationConfig = {
     provideBlazonIcons({
       // Lazy loaders — invoked at most once per country
       loaders: {
-        PL: () => fetch('/registries/pl.json').then(r => r.json()),
-        DE: () => import('./registries/de').then(m => m.default),
+        PL: () => fetch('/registries/pl.json').then((r) => r.json()),
+        DE: () => import('./registries/de').then((m) => m.default),
       },
       // Eagerly pre-load on bootstrap (optional)
       preload: ['PL'],
@@ -80,11 +78,11 @@ export class MyComponent {}
 
 ### Inputs
 
-| Input | Type | Required | Description |
-|-------|------|----------|-------------|
-| `id` | `string` | ✅ | Registry ID, e.g. `"pl-city-warszawa"` |
-| `alt` | `string` | — | Accessible label (`aria-label`). Defaults to the entry's `name`. |
-| `size` | `number` | — | Pixel size applied to width and height. |
+| Input  | Type     | Required | Description                                                      |
+| ------ | -------- | -------- | ---------------------------------------------------------------- |
+| `id`   | `string` | ✅       | Registry ID, e.g. `"pl-city-warszawa"`                           |
+| `alt`  | `string` | —        | Accessible label (`aria-label`). Defaults to the entry's `name`. |
+| `size` | `number` | —        | Pixel size applied to width and height.                          |
 
 ## `BlazonIconsService`
 

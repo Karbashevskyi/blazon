@@ -25,15 +25,15 @@ This project follows the [Contributor Covenant](https://www.contributor-covenant
 
 ## Ways to Contribute
 
-| Contribution type | Where to start |
-|-------------------|----------------|
-| Add a coat of arms | [Adding a Coat of Arms](#adding-a-coat-of-arms) |
-| Report a bug | [Open an issue](https://github.com/blazon-registry/blazon/issues) with the `bug` label |
-| Request a feature | [Open an issue](https://github.com/blazon-registry/blazon/issues) with the `enhancement` label |
-| Fix a bug | Find an issue labelled `good first issue` or `help wanted` |
-| Improve docs | Edit `README.md`, `CONTRIBUTING.md`, or files in `apps/docs/` |
-| Add a framework adapter | Discuss in an issue first — adapters must follow the architecture rules |
-| Improve the generator | Work in `tools/generator/` |
+| Contribution type       | Where to start                                                                                 |
+| ----------------------- | ---------------------------------------------------------------------------------------------- |
+| Add a coat of arms      | [Adding a Coat of Arms](#adding-a-coat-of-arms)                                                |
+| Report a bug            | [Open an issue](https://github.com/blazon-registry/blazon/issues) with the `bug` label         |
+| Request a feature       | [Open an issue](https://github.com/blazon-registry/blazon/issues) with the `enhancement` label |
+| Fix a bug               | Find an issue labelled `good first issue` or `help wanted`                                     |
+| Improve docs            | Edit `README.md`, `CONTRIBUTING.md`, or files in `apps/docs/`                                  |
+| Add a framework adapter | Discuss in an issue first — adapters must follow the architecture rules                        |
+| Improve the generator   | Work in `tools/generator/`                                                                     |
 
 ---
 
@@ -183,6 +183,7 @@ pnpm typecheck
 ### 6. Open a pull request
 
 Include:
+
 - The `.svg` file
 - The `.meta.json` sidecar
 - The generated `index.json`
@@ -208,12 +209,12 @@ Include:
 
 ### Architecture constraints
 
-| Rule | Rationale |
-|------|-----------|
-| No business logic in adapters | Keeps `core` testable and framework-portable |
-| No DOM API in `@blazon/core` | Core must run in Node.js and browsers equally |
-| All validation at system boundaries | Don't validate already-validated domain objects |
-| Named exports only (no default exports) | Supports tree-shaking and consistent imports |
+| Rule                                    | Rationale                                       |
+| --------------------------------------- | ----------------------------------------------- |
+| No business logic in adapters           | Keeps `core` testable and framework-portable    |
+| No DOM API in `@blazon/core`            | Core must run in Node.js and browsers equally   |
+| All validation at system boundaries     | Don't validate already-validated domain objects |
+| Named exports only (no default exports) | Supports tree-shaking and consistent imports    |
 
 ### Commit messages
 
@@ -258,12 +259,12 @@ Blazon uses [Changesets](https://github.com/changesets/changesets) for version m
 
 ### Semver policy
 
-| Change type | Version bump |
-|-------------|-------------|
-| Bug fix, documentation | `patch` |
-| New feature, new export | `minor` |
-| Breaking API change | `major` |
-| New asset only | No package version bump needed |
+| Change type             | Version bump                   |
+| ----------------------- | ------------------------------ |
+| Bug fix, documentation  | `patch`                        |
+| New feature, new export | `minor`                        |
+| Breaking API change     | `major`                        |
+| New asset only          | No package version bump needed |
 
 ---
 

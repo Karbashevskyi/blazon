@@ -10,18 +10,18 @@ pnpm add @blazon/types
 
 ## Exports
 
-| Type | Description |
-|------|-------------|
-| `CoatOfArms` | Primary domain entity |
-| `CountryRegistry` | A country's collection of coats of arms |
-| `RegistryLoader` | Lazy factory: `() => Promise<CountryRegistry>` |
-| `CoatMetadata` | Heraldic and administrative metadata |
-| `AssetLicense` | SPDX-based license descriptor |
-| `SearchQuery` | Search and filter parameters |
-| `SearchResult<T>` | Paginated result wrapper |
-| `CoatType` | `'national' \| 'regional' \| 'municipal' \| ...` |
+| Type                  | Description                                          |
+| --------------------- | ---------------------------------------------------- |
+| `CoatOfArms`          | Primary domain entity                                |
+| `CountryRegistry`     | A country's collection of coats of arms              |
+| `RegistryLoader`      | Lazy factory: `() => Promise<CountryRegistry>`       |
+| `CoatMetadata`        | Heraldic and administrative metadata                 |
+| `AssetLicense`        | SPDX-based license descriptor                        |
+| `SearchQuery`         | Search and filter parameters                         |
+| `SearchResult<T>`     | Paginated result wrapper                             |
+| `CoatType`            | `'national' \| 'regional' \| 'municipal' \| ...`     |
 | `AdministrativeLevel` | `'national' \| 'state' \| 'county' \| 'city' \| ...` |
-| `HeraldricTincture` | Classic heraldic colours and metals |
+| `HeraldricTincture`   | Classic heraldic colours and metals                  |
 
 ## Example
 

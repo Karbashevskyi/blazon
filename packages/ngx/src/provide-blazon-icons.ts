@@ -1,6 +1,10 @@
 import { makeEnvironmentProviders, type EnvironmentProviders } from '@angular/core';
 import type { CoatOfArms } from '@blazon/types';
-import { BlazonIconsService, BLAZON_ICONS_CONFIG_TOKEN, BLAZON_ICONS_ENTRIES_TOKEN } from './blazon-icons.service.js';
+import {
+  BlazonIconsService,
+  BLAZON_ICONS_CONFIG_TOKEN,
+  BLAZON_ICONS_ENTRIES_TOKEN,
+} from './blazon-icons.service.js';
 import type { BlazonIconsConfig } from './blazon-icons.config.js';
 
 /**

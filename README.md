@@ -70,8 +70,8 @@ pnpm add @blazon/core @blazon/country-poland @blazon/types
 ```ts
 import { warszawa, krakow, wroclaw } from '@blazon/country-poland';
 
-console.log(warszawa.name);  // 'Herb Warszawy'
-console.log(krakow.svg);     // inline SVG string
+console.log(warszawa.name); // 'Herb Warszawy'
+console.log(krakow.svg); // inline SVG string
 ```
 
 **Or load dynamically via HTTP:**
@@ -80,7 +80,7 @@ console.log(krakow.svg);     // inline SVG string
 import { registerCountry, getCountryRegistry, getById, searchRegistry } from '@blazon/core';
 
 // Register a lazy loader (called at most once, result is cached)
-registerCountry('PL', () => fetch('/registries/pl.json').then(r => r.json()));
+registerCountry('PL', () => fetch('/registries/pl.json').then((r) => r.json()));
 
 // Load on demand
 const registry = await getCountryRegistry('PL');
@@ -107,9 +107,7 @@ import { warszawa, krakow } from '@blazon/country-poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBlazonIcons([warszawa, krakow]),
-  ],
+  providers: [provideBlazonIcons([warszawa, krakow])],
 };
 ```
 
@@ -122,7 +120,7 @@ import { provideBlazonIcons } from '@blazon/ngx';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBlazonIcons({
-      loaders: { PL: () => fetch('/registries/pl.json').then(r => r.json()) },
+      loaders: { PL: () => fetch('/registries/pl.json').then((r) => r.json()) },
       preload: ['PL'],
     }),
   ],
@@ -144,13 +142,13 @@ export class MyComponent {}
 
 ## Core API
 
-| Function | Description |
-|----------|-------------|
-| `registerCountry(code, loader)` | Register a lazy loader for a country's registry data |
-| `getCountryRegistry(code)` | Load and return a country's full registry (async, cached) |
-| `getById(id)` | Retrieve a coat of arms by unique ID from loaded registries |
-| `searchRegistry(query)` | Search all loaded registries with filter + pagination |
-| `getRegistry()` | Access the global `BlazonRegistry` singleton directly |
+| Function                        | Description                                                 |
+| ------------------------------- | ----------------------------------------------------------- |
+| `registerCountry(code, loader)` | Register a lazy loader for a country's registry data        |
+| `getCountryRegistry(code)`      | Load and return a country's full registry (async, cached)   |
+| `getById(id)`                   | Retrieve a coat of arms by unique ID from loaded registries |
+| `searchRegistry(query)`         | Search all loaded registries with filter + pagination       |
+| `getRegistry()`                 | Access the global `BlazonRegistry` singleton directly       |
 
 ### Search Query
 
@@ -158,11 +156,11 @@ export class MyComponent {}
 import type { SearchQuery } from '@blazon/types';
 
 const query: SearchQuery = {
-  text: 'mermaid',        // full-text across name, description, blazon
-  countryCode: 'PL',      // ISO 3166-1 alpha-2 (case-insensitive)
-  level: 'city',          // 'national' | 'state' | 'county' | 'city' | 'district' | 'village'
-  type: 'municipal',      // 'national' | 'regional' | 'municipal' | 'historical' | 'ecclesiastical' | 'other'
-  tags: ['capital'],      // all tags must match (AND)
+  text: 'mermaid', // full-text across name, description, blazon
+  countryCode: 'PL', // ISO 3166-1 alpha-2 (case-insensitive)
+  level: 'city', // 'national' | 'state' | 'county' | 'city' | 'district' | 'village'
+  type: 'municipal', // 'national' | 'regional' | 'municipal' | 'historical' | 'ecclesiastical' | 'other'
+  tags: ['capital'], // all tags must match (AND)
   limit: 20,
   offset: 0,
 };
@@ -176,14 +174,14 @@ const query: SearchQuery = {
 
 Zero-runtime TypeScript type definitions. All exports are `type`-only.
 
-| Type | Description |
-|------|-------------|
-| `CoatOfArms` | Primary domain entity — id, name, svg, metadata, license, tags |
-| `CountryRegistry` | A country's collection of coats of arms |
-| `CoatMetadata` | Heraldic and administrative metadata |
-| `AssetLicense` | SPDX-based license descriptor |
-| `SearchQuery` | Search and filter parameters |
-| `RegistryLoader` | Lazy factory: `() => Promise<CountryRegistry>` |
+| Type              | Description                                                    |
+| ----------------- | -------------------------------------------------------------- |
+| `CoatOfArms`      | Primary domain entity — id, name, svg, metadata, license, tags |
+| `CountryRegistry` | A country's collection of coats of arms                        |
+| `CoatMetadata`    | Heraldic and administrative metadata                           |
+| `AssetLicense`    | SPDX-based license descriptor                                  |
+| `SearchQuery`     | Search and filter parameters                                   |
+| `RegistryLoader`  | Lazy factory: `() => Promise<CountryRegistry>`                 |
 
 ### `@blazon/core`
 
@@ -310,6 +308,7 @@ Blazon follows clean DDD-inspired boundaries:
 ```
 
 **Rules:**
+
 - Adapters (`ngx`, future `react`, `vue`) import from `core` but never duplicate logic
 - `core` imports from `types` only
 - `types` has zero dependencies

@@ -11,7 +11,10 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
@@ -24,6 +27,12 @@
     "rimraf": "catalog:",
     "typescript": "catalog:"
   },
-  "keywords": ["blazon", "heraldry", "coat-of-arms", "poland", "polish"],
+  "keywords": [
+    "blazon",
+    "heraldry",
+    "coat-of-arms",
+    "poland",
+    "polish"
+  ],
   "license": "MIT"
 }

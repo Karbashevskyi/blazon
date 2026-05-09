@@ -52,6 +52,9 @@ export function search(entries: readonly CoatOfArms[], query: SearchQuery): read
  * Returns the total count of matching results without slicing.
  * Useful for building pagination metadata.
  */
-export function count(entries: readonly CoatOfArms[], query: Omit<SearchQuery, 'limit' | 'offset'>): number {
+export function count(
+  entries: readonly CoatOfArms[],
+  query: Omit<SearchQuery, 'limit' | 'offset'>,
+): number {
   return search(entries, query).length;
 }

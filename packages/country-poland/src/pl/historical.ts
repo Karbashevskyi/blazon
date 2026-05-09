@@ -3,5 +3,5 @@ import { plCities } from './index.js';
 
 /** Historically Polish cities now located in other countries. */
 export const plHistoricalCities: readonly CoatOfArms[] = plCities.filter(
-  (c) => !!c.metadata.currentCountryCode
+  (c) => !!c.metadata.currentCountryCode,
 );

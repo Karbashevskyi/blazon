@@ -28,10 +28,7 @@
  */
 
 import { resolve } from 'node:path';
-import {
-  generateFromDirectory,
-  generateCountryBundle,
-} from '../src/registry-generator.js';
+import { generateFromDirectory, generateCountryBundle } from '../src/registry-generator.js';
 
 interface ParsedArgs {
   inputDir: string;
@@ -170,16 +167,12 @@ async function main(): Promise<void> {
         `\n[DRY RUN] ${String(results.length)} entries found. Run with --write to persist.\n`,
       );
     } else {
-      process.stdout.write(
-        `\n✔ Generated ${String(results.length)} registry entries.\n`,
-      );
+      process.stdout.write(`\n✔ Generated ${String(results.length)} registry entries.\n`);
     }
   }
 }
 
 main().catch((err: unknown) => {
-  process.stderr.write(
-    `Error: ${err instanceof Error ? err.message : String(err)}\n`,
-  );
+  process.stderr.write(`Error: ${err instanceof Error ? err.message : String(err)}\n`);
   process.exit(1);
 });

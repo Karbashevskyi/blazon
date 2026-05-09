@@ -6,6 +6,19 @@
  * @packageDocumentation
  */
 
-export { generateEntry, generateFromDirectory, generateCountryBundle, buildCountryBundle, deriveId, slugify } from './registry-generator.js';
-export { processSvg, stripComments, trimWhitespace, ensureXmlns, assertIsSvg } from './svg-parser.js';
+export {
+  generateEntry,
+  generateFromDirectory,
+  generateCountryBundle,
+  buildCountryBundle,
+  deriveId,
+  slugify,
+} from './registry-generator.js';
+export {
+  processSvg,
+  stripComments,
+  trimWhitespace,
+  ensureXmlns,
+  assertIsSvg,
+} from './svg-parser.js';
 export type { GeneratorInput, GeneratorResult, GeneratorOptions, GeneratedEntry } from './types.js';

@@ -31,5 +31,9 @@
 
 export { provideBlazonIcons } from './provide-blazon-icons.js';
 export { BlazonIcon as BlazonIconComponent } from './blazon-icon.component.js';
-export { BlazonIconsService, BLAZON_ICONS_CONFIG_TOKEN, BLAZON_ICONS_ENTRIES_TOKEN } from './blazon-icons.service.js';
+export {
+  BlazonIconsService,
+  BLAZON_ICONS_CONFIG_TOKEN,
+  BLAZON_ICONS_ENTRIES_TOKEN,
+} from './blazon-icons.service.js';
 export { type BlazonIconsConfig } from './blazon-icons.config.js';

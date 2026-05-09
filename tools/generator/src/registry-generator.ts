@@ -1,12 +1,7 @@
 import { readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import { join, basename, extname, dirname, resolve } from 'node:path';
 import { processSvg } from './svg-parser.js';
-import type {
-  GeneratorInput,
-  GeneratorResult,
-  GeneratedEntry,
-  GeneratorOptions,
-} from './types.js';
+import type { GeneratorInput, GeneratorResult, GeneratedEntry, GeneratorOptions } from './types.js';
 
 /**
  * Derives a Blazon registry ID from a file path.
@@ -14,7 +9,10 @@ import type {
  * Convention: path segments relative to the assets root are used.
  * Example: `assets/pl/city/warszawa/warszawa.svg` → `pl-city-warszawa`
  */
-export function deriveId(svgPath: string, input: Pick<GeneratorInput, 'countryCode' | 'level' | 'city' | 'region'>): string {
+export function deriveId(
+  svgPath: string,
+  input: Pick<GeneratorInput, 'countryCode' | 'level' | 'city' | 'region'>,
+): string {
   const parts: string[] = [input.countryCode.toLowerCase()];
 
   if (input.level === 'city' || input.level === 'district' || input.level === 'village') {
@@ -38,9 +36,24 @@ export function deriveId(svgPath: string, input: Pick<GeneratorInput, 'countryCo
 export function slugify(name: string): string {
   // Handle characters that NFD decomposition doesn't cover (e.g. Polish Ł, ł)
   const special: Record<string, string> = {
-    Ł: 'l', ł: 'l', Ó: 'o', ó: 'o', Ź: 'z', ź: 'z', Ż: 'z', ż: 'z',
-    Ń: 'n', ń: 'n', Ę: 'e', ę: 'e', Ą: 'a', ą: 'a', Ć: 'c', ć: 'c',
-    Ś: 's', ś: 's',
+    Ł: 'l',
+    ł: 'l',
+    Ó: 'o',
+    ó: 'o',
+    Ź: 'z',
+    ź: 'z',
+    Ż: 'z',
+    ż: 'z',
+    Ń: 'n',
+    ń: 'n',
+    Ę: 'e',
+    ę: 'e',
+    Ą: 'a',
+    ą: 'a',
+    Ć: 'c',
+    ć: 'c',
+    Ś: 's',
+    ś: 's',
   };
   return name
     .split('')
@@ -114,9 +127,7 @@ export async function generateFromDirectory(
   for (const svgPath of svgFiles) {
     const meta = await loadSidecarMeta(svgPath);
     if (meta === null) {
-      process.stderr.write(
-        `[blazon-generate] Skipping ${svgPath}: no .meta.json sidecar found\n`,
-      );
+      process.stderr.write(`[blazon-generate] Skipping ${svgPath}: no .meta.json sidecar found\n`);
       continue;
     }
 
@@ -161,10 +172,7 @@ async function loadSidecarMeta(svgPath: string): Promise<GeneratorInput | null> 
   const dir = dirname(svgPath);
   const base = basename(svgPath, '.svg');
 
-  const candidates = [
-    join(dir, `${base}.meta.json`),
-    join(dir, 'meta.json'),
-  ];
+  const candidates = [join(dir, `${base}.meta.json`), join(dir, 'meta.json')];
 
   for (const candidate of candidates) {
     try {

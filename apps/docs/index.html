@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Blazon — Open-source heraldry registry with universal core and framework adapters" />
+    <meta
+      name="description"
+      content="Blazon — Open-source heraldry registry with universal core and framework adapters"
+    />
     <title>Blazon — Heraldry Registry</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -25,7 +28,9 @@
           <a href="#api">API</a>
           <a href="#packages">Packages</a>
           <a href="#game">Quiz</a>
-          <a href="https://github.com/Karbashevskyi/blazon" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/Karbashevskyi/blazon" target="_blank" rel="noopener"
+            >GitHub</a
+          >
         </nav>
       </div>
     </header>
@@ -36,8 +41,8 @@
         <div class="container">
           <h1 class="hero-title">Universal Heraldry Registry</h1>
           <p class="hero-subtitle">
-            A typed, tree-shakeable, framework-agnostic registry for coats of arms.
-            Works with any JavaScript framework — Angular, React, Vue, or vanilla.
+            A typed, tree-shakeable, framework-agnostic registry for coats of arms. Works with any
+            JavaScript framework — Angular, React, Vue, or vanilla.
           </p>
           <div class="hero-actions">
             <a href="#getting-started" class="btn btn-primary">Get Started</a>
@@ -85,7 +90,11 @@
               <h3>Detail</h3>
               <div id="coat-detail"></div>
             </div>
-            <div class="demo-panel demo-panel--detail demo-panel--empty" id="detail-panel-empty" hidden>
+            <div
+              class="demo-panel demo-panel--detail demo-panel--empty"
+              id="detail-panel-empty"
+              hidden
+            >
               <p class="demo-panel__empty-hint">Select a coat of arms</p>
             </div>
           </div>
@@ -183,19 +192,31 @@ export class MyComponent {}</code></pre>
           <div class="api-grid">
             <div class="api-card">
               <h3><code>getById(id)</code></h3>
-              <p>Retrieves a coat of arms by unique ID from loaded registries. Returns <code>CoatOfArms | undefined</code>.</p>
+              <p>
+                Retrieves a coat of arms by unique ID from loaded registries. Returns
+                <code>CoatOfArms | undefined</code>.
+              </p>
             </div>
             <div class="api-card">
               <h3><code>searchRegistry(query)</code></h3>
-              <p>Searches all loaded registries. Supports text, country, level, type, tags, and pagination filters.</p>
+              <p>
+                Searches all loaded registries. Supports text, country, level, type, tags, and
+                pagination filters.
+              </p>
             </div>
             <div class="api-card">
               <h3><code>getCountryRegistry(code)</code></h3>
-              <p>Lazily loads and returns the registry for a country. Returns <code>Promise&lt;CountryRegistry | undefined&gt;</code>.</p>
+              <p>
+                Lazily loads and returns the registry for a country. Returns
+                <code>Promise&lt;CountryRegistry | undefined&gt;</code>.
+              </p>
             </div>
             <div class="api-card">
               <h3><code>registerCountry(code, loader)</code></h3>
-              <p>Registers a lazy loader for a country's data. The loader is invoked at most once; results are cached.</p>
+              <p>
+                Registers a lazy loader for a country's data. The loader is invoked at most once;
+                results are cached.
+              </p>
             </div>
           </div>
         </div>
@@ -208,19 +229,32 @@ export class MyComponent {}</code></pre>
           <div class="packages-grid">
             <div class="package-card">
               <h3><code>@blazon/types</code></h3>
-              <p>Zero-runtime TypeScript type definitions. All domain types: <code>CoatOfArms</code>, <code>CountryRegistry</code>, <code>CoatMetadata</code>, <code>AssetLicense</code>, <code>SearchQuery</code>.</p>
+              <p>
+                Zero-runtime TypeScript type definitions. All domain types: <code>CoatOfArms</code>,
+                <code>CountryRegistry</code>, <code>CoatMetadata</code>, <code>AssetLicense</code>,
+                <code>SearchQuery</code>.
+              </p>
             </div>
             <div class="package-card">
               <h3><code>@blazon/core</code></h3>
-              <p>Framework-agnostic registry engine. Singleton registry, search, validation, and lazy HTTP loading. Pure engine — no country data included.</p>
+              <p>
+                Framework-agnostic registry engine. Singleton registry, search, validation, and lazy
+                HTTP loading. Pure engine — no country data included.
+              </p>
             </div>
             <div class="package-card">
               <h3><code>@blazon/country-poland</code></h3>
-              <p>495 Polish city coats of arms as tree-shakeable named exports. <code>import { warszawa, krakow } from '@blazon/country-poland'</code></p>
+              <p>
+                495 Polish city coats of arms as tree-shakeable named exports.
+                <code>import { warszawa, krakow } from '@blazon/country-poland'</code>
+              </p>
             </div>
             <div class="package-card">
               <h3><code>@blazon/ngx</code></h3>
-              <p>Angular adapter (v16+). Use <code>provideBlazonIcons([warszawa])</code> for static tree-shaking or a lazy-loader config for HTTP loading.</p>
+              <p>
+                Angular adapter (v16+). Use <code>provideBlazonIcons([warszawa])</code> for static
+                tree-shaking or a lazy-loader config for HTTP loading.
+              </p>
             </div>
           </div>
         </div>
@@ -235,13 +269,17 @@ export class MyComponent {}</code></pre>
           <div class="game-header">
             <div class="game-modes" role="group" aria-label="Game mode">
               <button class="game-mode-btn" data-mode="type-name">✍ Type the name</button>
-              <button class="game-mode-btn game-mode-btn--active" data-mode="pick-name">🏷 Pick the name</button>
+              <button class="game-mode-btn game-mode-btn--active" data-mode="pick-name">
+                🏷 Pick the name
+              </button>
               <button class="game-mode-btn" data-mode="pick-coat">🛡 Pick the coat</button>
             </div>
             <div class="game-score-bar" aria-live="polite">
               <span class="game-score-label">Score:</span>
               <span id="game-score-correct">0</span>/<span id="game-score-total">0</span>
-              <span id="game-streak" hidden class="game-streak">🔥&thinsp;<span id="game-streak-count">0</span></span>
+              <span id="game-streak" hidden class="game-streak"
+                >🔥&thinsp;<span id="game-streak-count">0</span></span
+              >
             </div>
           </div>
 
@@ -254,15 +292,25 @@ export class MyComponent {}</code></pre>
       <div class="container">
         <p>
           Blazon is open-source software released under the
-          <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>.
-          Built with ❤ by the community.
+          <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener"
+            >MIT License</a
+          >. Built with ❤ by the community.
         </p>
         <p>
-          <a href="https://github.com/Karbashevskyi/blazon" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/Karbashevskyi/blazon" target="_blank" rel="noopener"
+            >GitHub</a
+          >
           &middot;
-          <a href="https://github.com/Karbashevskyi/blazon/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a>
+          <a
+            href="https://github.com/Karbashevskyi/blazon/blob/main/CONTRIBUTING.md"
+            target="_blank"
+            rel="noopener"
+            >Contributing</a
+          >
           &middot;
-          <a href="https://github.com/Karbashevskyi/blazon/issues" target="_blank" rel="noopener">Issues</a>
+          <a href="https://github.com/Karbashevskyi/blazon/issues" target="_blank" rel="noopener"
+            >Issues</a
+          >
         </p>
       </div>
     </footer>

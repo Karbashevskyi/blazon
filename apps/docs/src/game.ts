@@ -163,7 +163,9 @@ export function initGame(cityEntries: CoatOfArms[]): void {
         const input = document.getElementById('game-type-input') as HTMLInputElement | null;
         const val = normalize(input?.value ?? '');
         const correct = normalize(cityLabel(current));
-        const isOk = val.length >= 2 && (val === correct || correct.startsWith(val) || val.startsWith(correct));
+        const isOk =
+          val.length >= 2 &&
+          (val === correct || correct.startsWith(val) || val.startsWith(correct));
         onAnswer(isOk, 'typed');
       });
       document.querySelector<HTMLButtonElement>('.game-skip-btn')?.addEventListener('click', () => {
@@ -171,7 +173,9 @@ export function initGame(cityEntries: CoatOfArms[]): void {
       });
       setTimeout(() => document.getElementById('game-type-input')?.focus(), 50);
     } else {
-      document.querySelector<HTMLButtonElement>('.game-next-btn')?.addEventListener('click', newRound);
+      document
+        .querySelector<HTMLButtonElement>('.game-next-btn')
+        ?.addEventListener('click', newRound);
     }
   }
 
@@ -216,7 +220,9 @@ export function initGame(cityEntries: CoatOfArms[]): void {
         });
       });
     } else {
-      gameArea.querySelector<HTMLButtonElement>('.game-next-btn')?.addEventListener('click', newRound);
+      gameArea
+        .querySelector<HTMLButtonElement>('.game-next-btn')
+        ?.addEventListener('click', newRound);
     }
   }
 
@@ -260,7 +266,9 @@ export function initGame(cityEntries: CoatOfArms[]): void {
         });
       });
     } else {
-      gameArea.querySelector<HTMLButtonElement>('.game-next-btn')?.addEventListener('click', newRound);
+      gameArea
+        .querySelector<HTMLButtonElement>('.game-next-btn')
+        ?.addEventListener('click', newRound);
     }
   }
 

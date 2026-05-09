@@ -49,9 +49,7 @@ export function stripDoctype(svg: string): string {
 export function assertIsSvg(content: string, filePath: string): void {
   const hasRoot = /<svg[\s>]/i.test(content);
   if (!hasRoot) {
-    throw new Error(
-      `File does not appear to contain an SVG root element: ${filePath}`,
-    );
+    throw new Error(`File does not appear to contain an SVG root element: ${filePath}`);
   }
 }
 

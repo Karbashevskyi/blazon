@@ -25,7 +25,7 @@ import {
 } from '@blazon/core';
 
 // Register a lazy country loader (called at most once, result is cached)
-registerCountry('PL', () => fetch('/registries/pl.json').then(r => r.json()));
+registerCountry('PL', () => fetch('/registries/pl.json').then((r) => r.json()));
 
 // Load on demand
 const registry = await getCountryRegistry('PL');
@@ -51,7 +51,7 @@ For static imports, use the country package directly — the registry engine is 
 import { warszawa, krakow } from '@blazon/country-poland';
 
 console.log(warszawa.name); // 'Herb Warszawy'
-console.log(krakow.svg);    // inline SVG string
+console.log(krakow.svg); // inline SVG string
 ```
 
 ### BlazonRegistry singleton
@@ -73,7 +73,9 @@ import { validateCoatOfArms, isCoatOfArms, assertCoatOfArms } from '@blazon/core
 const result = validateCoatOfArms(unknownData);
 
 // Type guard
-if (isCoatOfArms(unknownData)) { /* narrowed to CoatOfArms */ }
+if (isCoatOfArms(unknownData)) {
+  /* narrowed to CoatOfArms */
+}
 
 // Throws with descriptive message if invalid
 assertCoatOfArms(unknownData, 'loading pl.json');
@@ -84,9 +86,12 @@ assertCoatOfArms(unknownData, 'loading pl.json');
 ```ts
 import { createFetchLoader } from '@blazon/core';
 
-registerCountry('PL', createFetchLoader('PL', {
-  baseUrl: '/assets/registries/',
-}));
+registerCountry(
+  'PL',
+  createFetchLoader('PL', {
+    baseUrl: '/assets/registries/',
+  }),
+);
 ```
 
 ## Architecture
