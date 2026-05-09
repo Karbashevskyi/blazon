@@ -9,6 +9,9 @@
     <a href="https://www.npmjs.com/package/@blazon/core">
       <img src="https://img.shields.io/npm/v/@blazon/core?style=flat-square&label=%40blazon%2Fcore" alt="npm @blazon/core" />
     </a>
+    <a href="https://www.npmjs.com/package/@blazon/country-poland">
+      <img src="https://img.shields.io/npm/v/@blazon/country-poland?style=flat-square&label=%40blazon%2Fcountry-poland" alt="npm @blazon/country-poland" />
+    </a>
     <a href="https://www.npmjs.com/package/@blazon/ngx">
       <img src="https://img.shields.io/npm/v/@blazon/ngx?style=flat-square&label=%40blazon%2Fngx" alt="npm @blazon/ngx" />
     </a>
