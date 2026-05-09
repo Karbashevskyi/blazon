@@ -51,6 +51,48 @@ export class BlazonRegistry {
     this._loaders.set(normalizeCode(code), loader);
   }
 
+  /**
+   * Registers individual coat of arms entries directly (tree-shakeable API).
+   * Entries are grouped by country code and stored immediately — no loader
+   * needed. Duplicate IDs within a country are ignored.
+   *
+   * Use this when bundling only the icons you need:
+   * @example
+   * ```ts
+   * import { warsaw } from '@blazon/core';
+   * registry.registerEntries([warsaw]);
+   * ```
+   */
+  registerEntries(entries: readonly CoatOfArms[]): void {
+    const byCountry = new Map<string, CoatOfArms[]>();
+    for (const entry of entries) {
+      const code = normalizeCode(entry.metadata.countryCode);
+      const bucket = byCountry.get(code) ?? [];
+      bucket.push(entry);
+      byCountry.set(code, bucket);
+    }
+
+    for (const [code, newEntries] of byCountry) {
+      const existing = this._registries.get(code);
+      if (existing !== undefined) {
+        const existingIds = new Set(existing.entries.map((e) => e.id));
+        const toAdd = newEntries.filter((e) => !existingIds.has(e.id));
+        if (toAdd.length > 0) {
+          this._registries.set(code, {
+            ...existing,
+            entries: [...existing.entries, ...toAdd],
+          });
+        }
+      } else {
+        this._registries.set(code, {
+          countryCode: code,
+          name: code,
+          entries: newEntries,
+        });
+      }
+    }
+  }
+
   // ─── Querying ──────────────────────────────────────────────────────────────
 
   /**

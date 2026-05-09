@@ -1,0 +1,33 @@
+import type { CoatOfArms } from '@blazon/types';
+
+/**
+ * Herb Skaryszew — Polish coat of arms (Skaryszew)
+ * @id pl-city-skaryszew
+ */
+const skaryszew: CoatOfArms = {
+  "id": "pl-city-skaryszew",
+  "name": "Herb Skaryszew",
+  "description": "Coat of arms of Skaryszew (Herb Skaryszew), a city in Poland.",
+  "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd\" viewBox=\"-31.35 -50.36 3477.65 4100.14\"><title>Herb Skaryszew</title><path fill=\"#1d1d1b\" d=\"M99.5 101.5h3218v2350h-4c-17.06 289.05-109.89 550.39-278.5 784-151.35 205.05-340.18 365.55-566.5 481.5q-415.155 207.615-879 177c-338.56-24.58-641.555-139.58-909-345Q387.648 3319.695 230 2983.5c-97.931-213.99-141.597-438.66-131-674q.75-1104 .5-2208\" style=\"opacity:.999\"/><path fill=\"#e20613\" d=\"M1900.5 1228.5h771v385h-772v772h772v385h-771v771h-386v-771h-771v-385h772v-772h-772v-385h771c1-256.833 1.33-513.833 1-771h384c-.33 257.167 0 514.167 1 771\" style=\"opacity:1\"/><path fill=\"#b84f36\" d=\"M1900.5 1228.5c-1-256.833-1.33-513.833-1-771h-384c.33 257.167 0 514.167-1 771v-772h386z\" style=\"opacity:1\"/><path fill=\"#a65640\" d=\"M743.5 1613.5h772v772h-772c256.83-1 513.83-1.33 771-1v-770c-257.17.33-514.17 0-771-1m1928 0c-256.83 1-513.83 1.33-771 1v770c257.17-.33 514.17 0 771 1h-772v-772z\" style=\"opacity:1\"/></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Skaryszew",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20Skaryszew%20COA.svg"
+  },
+  "tags": [
+    "poland",
+    "skaryszew",
+    "city"
+  ]
+} as const;
+
+export { skaryszew };

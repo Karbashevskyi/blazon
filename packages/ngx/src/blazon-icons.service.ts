@@ -12,6 +12,15 @@ export const BLAZON_ICONS_CONFIG_TOKEN = new InjectionToken<BlazonIconsConfig>(
 );
 
 /**
+ * Angular injection token for statically-registered `CoatOfArms` entries.
+ * Each call to `provideBlazonIcons([...])` contributes a batch.
+ * Using `multi: true` so multiple providers merge cleanly.
+ */
+export const BLAZON_ICONS_ENTRIES_TOKEN = new InjectionToken<readonly CoatOfArms[][]>(
+  'BLAZON_ICONS_ENTRIES',
+);
+
+/**
  * Angular service that wraps `BlazonRegistry` for use in the Angular DI system.
  *
  * This service is the single point of contact between Angular components
@@ -24,8 +33,15 @@ export const BLAZON_ICONS_CONFIG_TOKEN = new InjectionToken<BlazonIconsConfig>(
 export class BlazonIconsService implements OnDestroy {
   private readonly _registry = BlazonRegistry.getInstance();
   private readonly _config = inject(BLAZON_ICONS_CONFIG_TOKEN);
+  private readonly _staticEntries = inject(BLAZON_ICONS_ENTRIES_TOKEN, { optional: true }) ?? [];
 
   constructor() {
+    // Register statically-provided icons (tree-shakeable array API)
+    const flat = this._staticEntries.flat();
+    if (flat.length > 0) {
+      this._registry.registerEntries(flat);
+    }
+
     // Register all configured country loaders
     const { loaders = {} } = this._config;
     for (const [code, loader] of Object.entries(loaders)) {

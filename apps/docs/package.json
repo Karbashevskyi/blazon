@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@blazon/core": "workspace:*",
-    "@blazon/types": "workspace:*"
+    "@blazon/types": "workspace:*",
+    "highlight.js": "^11.11.1"
   },
   "devDependencies": {
     "typescript": "catalog:",

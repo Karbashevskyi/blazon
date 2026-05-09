@@ -12,6 +12,13 @@ import {
   getById,
 } from '@blazon/core';
 import type { CoatOfArms, SearchQuery } from '@blazon/types';
+import hljs from 'highlight.js/lib/core';
+import typescript from 'highlight.js/lib/languages/typescript';
+import bash from 'highlight.js/lib/languages/bash';
+import 'highlight.js/styles/github-dark.css';
+
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('bash', bash);
 
 // ─── Load all generated city entries via Vite glob import ─────────────────
 
@@ -53,15 +60,23 @@ const resultsMeta = el<HTMLParagraphElement>('results-count');
 const searchInput = el<HTMLInputElement>('search-input');
 const countryFilter = el<HTMLSelectElement>('country-filter');
 const levelFilter = el<HTMLSelectElement>('level-filter');
+let selectedCoatId: string | null = null;
 
 function renderResults(coats: readonly CoatOfArms[]): void {
+  const visibleIds = new Set(coats.map((coat) => coat.id));
+  if (selectedCoatId !== null && !visibleIds.has(selectedCoatId)) {
+    selectedCoatId = null;
+  }
+
   resultsGrid.innerHTML = coats
     .map(
-      (c) =>
-        `<button class="result-item" data-id="${escapeHtml(c.id)}" tabindex="0">
+      (c) => {
+        const isActive = selectedCoatId === c.id;
+        return `<button class="result-item${isActive ? ' result-item--active' : ''}" data-id="${escapeHtml(c.id)}" tabindex="0" aria-pressed="${isActive ? 'true' : 'false'}">
           <div class="result-item__svg">${c.svg}</div>
           <span class="result-item__name">${escapeHtml(c.name)}</span>
-        </button>`,
+        </button>`;
+      },
     )
     .join('');
 
@@ -76,6 +91,7 @@ function renderDetail(coat: CoatOfArms): void {
     <div class="coat-detail">
       <div class="coat-detail__svg-wrap">${coat.svg}</div>
       <div class="coat-detail__meta">
+        <div class="meta-row meta-row--current"><span class="meta-label">Viewing</span><strong>${escapeHtml(coat.name)}</strong></div>
         <div class="meta-row"><span class="meta-label">Name</span><span>${escapeHtml(coat.name)}</span></div>
         <div class="meta-row"><span class="meta-label">ID</span><code>${escapeHtml(coat.id)}</code></div>
         <div class="meta-row"><span class="meta-label">Country</span><span>${escapeHtml(coat.metadata.countryCode)}</span></div>
@@ -83,7 +99,7 @@ function renderDetail(coat: CoatOfArms): void {
         <div class="meta-row"><span class="meta-label">Type</span><span>${escapeHtml(coat.metadata.type)}</span></div>
         ${coat.metadata.blazon ? `<div class="meta-row"><span class="meta-label">Blazon</span><em>${escapeHtml(coat.metadata.blazon)}</em></div>` : ''}
         <div class="meta-row"><span class="meta-label">License</span><a href="${escapeHtml(coat.license.url)}" target="_blank" rel="noopener">${escapeHtml(coat.license.spdx)}</a></div>
-        ${coat.tags ? `<div class="meta-row"><span class="meta-label">Tags</span><span>${coat.tags.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join(' ')}</span></div>` : ''}
+        ${coat.tags ? `<div class="meta-row"><span class="meta-label">Tags</span><span class="meta-tags">${coat.tags.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join('')}</span></div>` : ''}
       </div>
     </div>`;
 }
@@ -101,7 +117,7 @@ async function runSearch(): Promise<void> {
   if (levelVal.length > 0) {
     query = {
       ...query,
-      level: levelVal as SearchQuery['level'],
+      level: levelVal as NonNullable<SearchQuery['level']>,
     };
   }
 
@@ -128,6 +144,14 @@ resultsGrid.addEventListener('click', (e) => {
   if (target === null) return;
   const id = target.dataset['id'];
   if (id === undefined) return;
+  selectedCoatId = id;
+
+  resultsGrid.querySelectorAll<HTMLButtonElement>('.result-item').forEach((item) => {
+    const isActive = item.dataset['id'] === id;
+    item.classList.toggle('result-item--active', isActive);
+    item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+
   const coat = getById(id);
   if (coat !== undefined) renderDetail(coat);
 });
@@ -160,4 +184,5 @@ tabsContainer?.addEventListener('click', (e) => {
 void (async () => {
   await getCountryRegistry('PL');
   await runSearch();
+  hljs.highlightAll();
 })();

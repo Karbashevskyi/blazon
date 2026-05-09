@@ -99,9 +99,9 @@
 
           <div id="tab-vanilla" class="tab-content">
             <h3>Install</h3>
-            <pre><code>pnpm add @blazon/core @blazon/types</code></pre>
+            <pre><code class="language-bash">pnpm add @blazon/core @blazon/types</code></pre>
             <h3>Usage</h3>
-            <pre><code>import {
+            <pre><code class="language-typescript">import {
   registerCountry,
   getCountryRegistry,
   getById,
@@ -130,9 +130,20 @@ const cities = searchRegistry({
 
           <div id="tab-angular" class="tab-content" hidden>
             <h3>Install</h3>
-            <pre><code>pnpm add @blazon/ngx @blazon/core @blazon/types</code></pre>
-            <h3>Provide in app config</h3>
-            <pre><code>// app.config.ts
+            <pre><code class="language-bash">pnpm add @blazon/ngx @blazon/core @blazon/types</code></pre>
+            <h3>Tree-shakeable — provide only what you need</h3>
+            <pre><code class="language-typescript">// app.config.ts
+import { warsaw, krakow } from '@blazon/core';
+import { provideBlazonIcons } from '@blazon/ngx';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    // Only Warsaw and Kraków are bundled — everything else is tree-shaken away
+    provideBlazonIcons([warsaw, krakow]),
+  ],
+};</code></pre>
+            <h3>Or load the full collection lazily</h3>
+            <pre><code class="language-typescript">// app.config.ts
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
@@ -146,7 +157,7 @@ export const appConfig: ApplicationConfig = {
   ],
 };</code></pre>
             <h3>Use the component</h3>
-            <pre><code>// my.component.ts
+            <pre><code class="language-typescript">// my.component.ts
 import { BlazonIconComponent } from '@blazon/ngx';
 
 @Component({
@@ -197,11 +208,11 @@ export class MyComponent {}</code></pre>
             </div>
             <div class="package-card">
               <h3><code>@blazon/core</code></h3>
-              <p>Framework-agnostic registry engine. Singleton registry, search, validation, and lazy HTTP loading.</p>
+              <p>Framework-agnostic registry engine. Singleton registry, search, validation, lazy HTTP loading, and tree-shakeable per-city exports.</p>
             </div>
             <div class="package-card">
               <h3><code>@blazon/ngx</code></h3>
-              <p>Angular adapter. Provides <code>provideBlazonIcons()</code> and the standalone <code>&lt;blazon-icon&gt;</code> component.</p>
+              <p>Angular adapter. Accepts either <code>provideBlazonIcons([warsaw])</code> for tree-shaking or a lazy-loader config object.</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,33 @@
+import type { CoatOfArms } from '@blazon/types';
+
+/**
+ * Herb Płońsk — Polish coat of arms (Płońsk)
+ * @id pl-city-plonsk
+ */
+const plonsk: CoatOfArms = {
+  "id": "pl-city-plonsk",
+  "name": "Herb Płońsk",
+  "description": "Coat of arms of Płońsk (Herb Płońsk), a city in Poland.",
+  "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-31.95 -30.46 963.14 948.41\"><title>Herb Płońsk</title><path d=\"M3.718 4.67 5.29 540.434c0 214.811 172.673 342.396 370.63 342.396 204.411 0 370.362-136.572 370.362-342.396L745.546 4.67z\" style=\"fill:#dc3632;fill-opacity:1;stroke:#000;stroke-width:7.43563509;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\"/><path d=\"m180.083 48.725-97.58 191.37h195.16z\" style=\"fill:#422877;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"/><path d=\"M66.085 213.541v49.244l28.43-1.861-28.43 384.641h227.942l-28.43-384.641 28.43 1.861v-49.244h-28.43v18.953h-58.72v-18.953h-53.643v18.953h-58.72v-18.953zm73.95 142.147c.76-.049 1.498 0 2.2 0 8.292 0 22.509 3.682 31.306 9.815v142.654l-62.612.17V365.333c7.444-5.14 20.127-9.074 29.106-9.646m75.812 0c.76-.049 1.497 0 2.2 0 8.291 0 22.508 3.682 31.306 9.815v142.654l-62.613.17V365.333c7.444-5.14 20.128-9.074 29.107-9.646\" style=\"fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"/><path d=\"m569.97 48.725-97.579 191.37h195.16z\" style=\"fill:#422877;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"/><path d=\"M455.973 213.541v49.244l28.43-1.861-28.43 384.641h227.942l-28.43-384.641 28.43 1.861v-49.244h-28.43v18.953h-58.72v-18.953h-53.643v18.953h-58.72v-18.953zm73.95 142.147c.76-.049 1.498 0 2.2 0 8.292 0 22.509 3.682 31.306 9.815v142.654l-62.612.17V365.333c7.444-5.14 20.127-9.074 29.106-9.646m75.812 0c.76-.049 1.497 0 2.2 0 8.291 0 22.508 3.682 31.306 9.815v142.654l-62.613.17V365.333c7.444-5.14 20.128-9.074 29.107-9.646\" style=\"fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"/><path d=\"M887.356 93.422a8.16 8.16 0 1 1-16.318 0 8.16 8.16 0 1 1 16.318 0\" style=\"opacity:.98999999;fill:#faf000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\" transform=\"translate(-4627.64 -116.675)scale(5.69091)\"/></svg>",
+  "metadata": {
+    "countryCode": "PL",
+    "type": "municipal",
+    "level": "city",
+    "region": "Poland",
+    "city": "Płońsk",
+    "updatedAt": "2026-05-08"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:POL%20P%C5%82o%C5%84sk%20COA%20%28do%202012%29.svg"
+  },
+  "tags": [
+    "poland",
+    "plonsk",
+    "city"
+  ]
+} as const;
+
+export { plonsk };

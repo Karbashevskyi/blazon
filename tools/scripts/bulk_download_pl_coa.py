@@ -143,11 +143,29 @@ async def download_svg(session, url: str) -> bytes | None:
         return None
 
 
+def _parse_length(value: str) -> float | None:
+    """Parse an SVG length value (px, mm, pt, cm, in, em, %) to user units (px)."""
+    value = value.strip()
+    UNITS = {"px": 1, "pt": 1.25, "mm": 3.7795276, "cm": 37.795276, "in": 96, "em": 16, "%": None}
+    for unit, factor in UNITS.items():
+        if value.endswith(unit):
+            try:
+                num = float(value[: -len(unit)])
+                return num * factor if factor is not None else None
+            except ValueError:
+                return None
+    try:
+        return float(value)
+    except ValueError:
+        return None
+
+
 def optimize_svg(svg_bytes: bytes, title: str) -> bytes:
     """
     Clean up SVG in-memory:
     - Strip XML declaration, DOCTYPE
-    - Remove absolute width/height, keep viewBox
+    - Synthesize viewBox from width/height if viewBox is missing
+    - Remove absolute width/height (keep viewBox for scalability)
     - Strip editor-specific namespaces/metadata from root element
     - Add role="img" and <title>
     - Run SVGO for path optimization
@@ -159,7 +177,17 @@ def optimize_svg(svg_bytes: bytes, title: str) -> bytes:
     svg = re.sub(r"<!DOCTYPE[^>]*>", "", svg)
     svg = svg.strip()
 
-    # Remove absolute width/height from root <svg>
+    # If no viewBox exists, synthesize one from width/height before stripping them
+    if not re.search(r'\bviewBox\s*=', svg):
+        w_match = re.search(r'<svg\b[^>]*\s+width="([^"]*)"', svg)
+        h_match = re.search(r'<svg\b[^>]*\s+height="([^"]*)"', svg)
+        if w_match and h_match:
+            w = _parse_length(w_match.group(1))
+            h = _parse_length(h_match.group(1))
+            if w and h and w > 0 and h > 0:
+                svg = re.sub(r'(<svg\b)', rf'\1 viewBox="0 0 {w:.4g} {h:.4g}"', svg, count=1)
+
+    # Remove absolute width/height from root <svg> so it scales freely
     svg = re.sub(r"(<svg\b[^>]*?)\s+width=\"[^\"]*\"", r"\1", svg)
     svg = re.sub(r"(<svg\b[^>]*?)\s+height=\"[^\"]*\"", r"\1", svg)
 

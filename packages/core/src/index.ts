@@ -34,6 +34,18 @@ export {
 
 export { createFetchLoader, parseCountryRegistry, type FetchOptions } from './infrastructure/loader.js';
 
+// ─── Polish coat of arms ───────────────────────────────────────────────────
+//
+// Tree-shakeable exports: import individual cities or the full collection.
+//
+// @example
+// ```ts
+// import { warsaw } from '@blazon/core';
+// import { plCities } from '@blazon/core';
+// ```
+
+export * from './pl/index.js';
+
 // ─── Convenience facade ────────────────────────────────────────────────────
 //
 // These module-level functions delegate to the global singleton registry.
