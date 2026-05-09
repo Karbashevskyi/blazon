@@ -2,7 +2,6 @@
   "name": "blazon",
   "version": "0.1.0",
   "description": "Open-source heraldry registry with universal core and framework adapters",
-  "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
