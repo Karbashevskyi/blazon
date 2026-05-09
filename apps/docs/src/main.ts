@@ -199,7 +199,7 @@ void (async (): Promise<void> => {
 
   // Auto-select the first coat on startup
   const firstCoat = getById(cityEntries[0]?.id ?? '');
-  if (firstCoat !== undefined && selectedCoatId === null) {
+  if (firstCoat !== undefined) {
     selectedCoatId = firstCoat.id;
     renderResults(searchRegistry({}));
     renderDetail(firstCoat);

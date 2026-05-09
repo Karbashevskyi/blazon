@@ -59,8 +59,9 @@ function shuffle<T>(arr: T[]): T[] {
 export function initGame(cityEntries: CoatOfArms[]): void {
   if (cityEntries.length < 4) return;
 
-  const gameArea = document.getElementById('game-area') as HTMLDivElement | null;
-  if (gameArea === null) return;
+  const maybeGameArea = document.getElementById('game-area') as HTMLDivElement | null;
+  if (maybeGameArea === null) return;
+  const gameArea: HTMLDivElement = maybeGameArea;
 
   // ── State ────────────────────────────────────────────────────────────
   let mode: GameMode = 'pick-name';
