@@ -23,9 +23,9 @@ Import only the cities you need — everything else is excluded from the bundle:
 ```ts
 import { plWarszawa, plKrakow, plWroclaw, plPoznan } from '@blazon/poland';
 
-console.log(plWarszawa.name);                          // 'Herb Warszawy'
-console.log(plWarszawa.id);                            // 'pl-city-warszawa'
-const svg = plWarszawa.assets.find(a => a.kind === 'arms')?.svg;
+console.log(plWarszawa.name); // 'Herb Warszawy'
+console.log(plWarszawa.id); // 'pl-city-warszawa'
+const svg = plWarszawa.assets.find((a) => a.kind === 'arms')?.svg;
 ```
 
 ### Full collection
@@ -47,8 +47,8 @@ import { polandRegistry } from '@blazon/poland';
 import { search, filterByKind, getById } from '@blazon/core';
 
 const results = search(polandRegistry, 'mermaid');
-const cities  = filterByKind(polandRegistry, 'city');
-const warsaw  = getById(polandRegistry, 'pl-city-warszawa');
+const cities = filterByKind(polandRegistry, 'city');
+const warsaw = getById(polandRegistry, 'pl-city-warszawa');
 ```
 
 ### Pre-filtered collections
@@ -70,9 +70,7 @@ import { plWarszawa, plKrakow } from '@blazon/poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBlazonIcons({ plWarszawa, plKrakow }),
-  ],
+  providers: [provideBlazonIcons({ plWarszawa, plKrakow })],
 };
 ```
 
@@ -80,13 +78,13 @@ export const appConfig: ApplicationConfig = {
 
 ## Exports
 
-| Export | Type | Description |
-|--------|------|-------------|
-| `plWarszawa`, `plKrakow`, … | `BlazonLocality` | Individual localities (495 total) |
-| `polandRegistry` | `BlazonCountryRegistry` | Full registry object |
-| `polandCities` | `readonly BlazonLocality[]` | Flat array of all 495 entries |
-| `polandCurrentCities` | `readonly BlazonLocality[]` | Non-historical entries |
-| `polandHistoricalCities` | `readonly BlazonLocality[]` | Historical entries only |
+| Export                      | Type                        | Description                       |
+| --------------------------- | --------------------------- | --------------------------------- |
+| `plWarszawa`, `plKrakow`, … | `BlazonLocality`            | Individual localities (495 total) |
+| `polandRegistry`            | `BlazonCountryRegistry`     | Full registry object              |
+| `polandCities`              | `readonly BlazonLocality[]` | Flat array of all 495 entries     |
+| `polandCurrentCities`       | `readonly BlazonLocality[]` | Non-historical entries            |
+| `polandHistoricalCities`    | `readonly BlazonLocality[]` | Historical entries only           |
 
 ### Naming convention
 

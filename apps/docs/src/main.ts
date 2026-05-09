@@ -122,9 +122,15 @@ function runSearch(): void {
 
 // ─── Event wiring ─────────────────────────────────────────────────────────
 
-searchInput.addEventListener('input', () => { runSearch(); });
-countryFilter.addEventListener('change', () => { runSearch(); });
-levelFilter.addEventListener('change', () => { runSearch(); });
+searchInput.addEventListener('input', () => {
+  runSearch();
+});
+countryFilter.addEventListener('change', () => {
+  runSearch();
+});
+levelFilter.addEventListener('change', () => {
+  runSearch();
+});
 
 resultsGrid.addEventListener('click', (e) => {
   const target = (e.target as HTMLElement).closest<HTMLButtonElement>('.result-item');

@@ -48,7 +48,9 @@ const svg = plWarszawa.assets.find((a) => a.kind === 'arms')?.svg;
 import { createRegistry } from '@blazon/core';
 import type { BlazonLocality } from '@blazon/types';
 
-const myLocalities: BlazonLocality[] = [/* … */];
+const myLocalities: BlazonLocality[] = [
+  /* … */
+];
 const registry = createRegistry('DE', 'Germany', myLocalities);
 ```
 
@@ -56,16 +58,16 @@ const registry = createRegistry('DE', 'Germany', myLocalities);
 
 ## API
 
-| Function | Signature | Description |
-|----------|-----------|-------------|
-| `getById` | `(registry, id) → BlazonLocality \| undefined` | Look up by unique ID |
-| `search` | `(registry, query, options?) → BlazonLocality[]` | Full-text search |
-| `filterByKind` | `(registry, kind) → BlazonLocality[]` | Filter by locality kind |
-| `filterByRegion` | `(registry, region) → BlazonLocality[]` | Filter by region name |
-| `getAsset` | `(locality, kind) → BlazonAsset \| undefined` | Get a specific asset |
-| `createRegistry` | `(countryCode, name, entries) → BlazonCountryRegistry` | Build a registry |
-| `normalizeQuery` | `(value) → string` | Lowercase + strip diacritics |
-| `extractEntries` | `(registry) → BlazonLocality[]` | Flatten registry to flat array |
+| Function         | Signature                                              | Description                    |
+| ---------------- | ------------------------------------------------------ | ------------------------------ |
+| `getById`        | `(registry, id) → BlazonLocality \| undefined`         | Look up by unique ID           |
+| `search`         | `(registry, query, options?) → BlazonLocality[]`       | Full-text search               |
+| `filterByKind`   | `(registry, kind) → BlazonLocality[]`                  | Filter by locality kind        |
+| `filterByRegion` | `(registry, region) → BlazonLocality[]`                | Filter by region name          |
+| `getAsset`       | `(locality, kind) → BlazonAsset \| undefined`          | Get a specific asset           |
+| `createRegistry` | `(countryCode, name, entries) → BlazonCountryRegistry` | Build a registry               |
+| `normalizeQuery` | `(value) → string`                                     | Lowercase + strip diacritics   |
+| `extractEntries` | `(registry) → BlazonLocality[]`                        | Flatten registry to flat array |
 
 All functions are **pure** — no global state, no singletons.
 

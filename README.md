@@ -74,7 +74,7 @@ import { getById, search } from '@blazon/core';
 import { polandRegistry } from '@blazon/poland';
 
 // Direct access to a locality
-console.log(plWarszawa.name);       // 'Herb Warszawy'
+console.log(plWarszawa.name); // 'Herb Warszawy'
 console.log(plWarszawa.assets[0].svg); // inline SVG string
 
 // Search across a registry
@@ -98,9 +98,7 @@ import { plWarszawa, plKrakow } from '@blazon/poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBlazonIcons({ plWarszawa, plKrakow }),
-  ],
+  providers: [provideBlazonIcons({ plWarszawa, plKrakow })],
 };
 ```
 
@@ -111,9 +109,7 @@ import { polandRegistry } from '@blazon/poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBlazonIcons(polandRegistry.entries),
-  ],
+  providers: [provideBlazonIcons(polandRegistry.entries)],
 };
 ```
 
@@ -134,14 +130,14 @@ export class MyComponent {}
 
 All functions are pure — they take a registry and return results. No singletons.
 
-| Function | Description |
-|----------|-------------|
-| `getById(registry, id)` | Look up a locality by unique ID |
-| `search(registry, query, options?)` | Full-text search across name, aliases, region |
-| `filterByKind(registry, kind)` | Filter by locality kind (`'city'`, `'region'`, …) |
-| `filterByRegion(registry, region)` | Filter by region name |
-| `getAsset(locality, kind)` | Get a specific asset (`'arms'`, `'flag'`, …) |
-| `createRegistry(countryCode, name, entries)` | Build a `BlazonCountryRegistry` |
+| Function                                     | Description                                       |
+| -------------------------------------------- | ------------------------------------------------- |
+| `getById(registry, id)`                      | Look up a locality by unique ID                   |
+| `search(registry, query, options?)`          | Full-text search across name, aliases, region     |
+| `filterByKind(registry, kind)`               | Filter by locality kind (`'city'`, `'region'`, …) |
+| `filterByRegion(registry, region)`           | Filter by region name                             |
+| `getAsset(locality, kind)`                   | Get a specific asset (`'arms'`, `'flag'`, …)      |
+| `createRegistry(countryCode, name, entries)` | Build a `BlazonCountryRegistry`                   |
 
 ---
 
@@ -151,17 +147,17 @@ All functions are pure — they take a registry and return results. No singleton
 
 Zero-runtime TypeScript type definitions.
 
-| Type | Description |
-|------|-------------|
-| `BlazonLocality` | Primary domain entity — id, name, countryCode, kind, assets, … |
-| `BlazonAsset` | An asset within a locality — `{ kind, svg }` |
-| `BlazonAssetKind` | `'arms' \| 'flag' \| 'seal' \| 'banner' \| 'symbol'` |
-| `BlazonLocalityKind` | `'country' \| 'region' \| 'county' \| 'city' \| 'municipality' \| 'district' \| 'historical'` |
-| `BlazonCountryRegistry` | `{ countryCode, name, entries: readonly BlazonLocality[] }` |
-| `BlazonLicense` | SPDX-based license descriptor |
-| `BlazonSource` | Source URL reference |
-| `BlazonSearchOptions` | `{ limit?, offset? }` |
-| `BlazonSearchResult` | `{ items, total, offset, limit }` |
+| Type                    | Description                                                                                   |
+| ----------------------- | --------------------------------------------------------------------------------------------- |
+| `BlazonLocality`        | Primary domain entity — id, name, countryCode, kind, assets, …                                |
+| `BlazonAsset`           | An asset within a locality — `{ kind, svg }`                                                  |
+| `BlazonAssetKind`       | `'arms' \| 'flag' \| 'seal' \| 'banner' \| 'symbol'`                                          |
+| `BlazonLocalityKind`    | `'country' \| 'region' \| 'county' \| 'city' \| 'municipality' \| 'district' \| 'historical'` |
+| `BlazonCountryRegistry` | `{ countryCode, name, entries: readonly BlazonLocality[] }`                                   |
+| `BlazonLicense`         | SPDX-based license descriptor                                                                 |
+| `BlazonSource`          | Source URL reference                                                                          |
+| `BlazonSearchOptions`   | `{ limit?, offset? }`                                                                         |
+| `BlazonSearchResult`    | `{ items, total, offset, limit }`                                                             |
 
 ### `@blazon/core`
 
@@ -257,6 +253,7 @@ pnpm typecheck      # TypeScript across the workspace
 ```
 
 **Design principles:**
+
 - `core` provides pure functions — no singleton, no global state
 - Adapters (`ngx`) accept `BlazonLocality[]` or a map — they never load data themselves
 - `types` has zero dependencies and zero runtime code

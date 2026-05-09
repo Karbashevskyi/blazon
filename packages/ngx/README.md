@@ -25,13 +25,12 @@ import { provideBlazonIcons } from '@blazon/ngx';
 import { plWarszawa, plKrakow, plWroclaw } from '@blazon/poland';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBlazonIcons({ plWarszawa, plKrakow, plWroclaw }),
-  ],
+  providers: [provideBlazonIcons({ plWarszawa, plKrakow, plWroclaw })],
 };
 ```
 
 `provideBlazonIcons` accepts:
+
 - `BlazonLocality[]` — an array
 - `Record<string, BlazonLocality>` — a map (named imports object)
 - `BlazonIconsConfig` — config object with optional `fallbackSvg`
@@ -62,11 +61,11 @@ Registers localities in Angular's DI system. Call once in `app.config.ts` or a f
 
 ### `<blazon-icon>`
 
-| Input | Type | Description |
-|-------|------|-------------|
-| `id` | `string` (required) | Locality ID, e.g. `"pl-city-warszawa"` |
-| `size` | `number` | Pixel size applied as `width` and `height` |
-| `alt` | `string` | Accessible label (`aria-label`). Defaults to `locality.name` |
+| Input  | Type                | Description                                                  |
+| ------ | ------------------- | ------------------------------------------------------------ |
+| `id`   | `string` (required) | Locality ID, e.g. `"pl-city-warszawa"`                       |
+| `size` | `number`            | Pixel size applied as `width` and `height`                   |
+| `alt`  | `string`            | Accessible label (`aria-label`). Defaults to `locality.name` |
 
 ### `BlazonIconsService`
 
@@ -80,7 +79,7 @@ export class MyService {
   private readonly icons = inject(BlazonIconsService);
 
   getSvg(id: string): string | undefined {
-    return this.icons.getById(id)?.assets.find(a => a.kind === 'arms')?.svg;
+    return this.icons.getById(id)?.assets.find((a) => a.kind === 'arms')?.svg;
   }
 }
 ```
@@ -94,9 +93,7 @@ import { polandRegistry } from '@blazon/poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBlazonIcons(polandRegistry.entries),
-  ],
+  providers: [provideBlazonIcons(polandRegistry.entries)],
 };
 ```
 
@@ -104,8 +101,8 @@ export const appConfig: ApplicationConfig = {
 
 ## Peer dependencies
 
-| Package | Version |
-|---------|---------|
-| `@angular/core` | `>=16.0.0` |
-| `@angular/common` | `>=16.0.0` |
+| Package                     | Version    |
+| --------------------------- | ---------- |
+| `@angular/core`             | `>=16.0.0` |
+| `@angular/common`           | `>=16.0.0` |
 | `@angular/platform-browser` | `>=16.0.0` |
