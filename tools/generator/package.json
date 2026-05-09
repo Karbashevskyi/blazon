@@ -4,7 +4,7 @@
   "description": "CLI tool that converts SVG files into Blazon registry entries",
   "type": "module",
   "bin": {
-    "blazon-generate": "./bin/generate.js"
+    "blazon-generate": "./dist/bin/generate.js"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
