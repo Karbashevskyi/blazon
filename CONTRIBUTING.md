@@ -122,7 +122,7 @@ assets/{cc}/{level}/{slug}/
 ```
 
 - `{cc}` — ISO 3166-1 alpha-2 country code, lowercase (`pl`, `de`, `gb`)
-- `{level}` — one of: `national`, `state`, `county`, `city`, `district`, `village`
+- `{level}` — one of: `country`, `region`, `county`, `city`, `district`, `municipality`, `historical`
 - `{slug}` — URL-safe name of the entity, lowercase, hyphens only (`warszawa`, `west-yorkshire`)
 
 **Example:** `assets/pl/city/krakow/`
@@ -221,9 +221,9 @@ Include:
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
-feat(core): add preload() method to BlazonRegistry
+feat(core): add filterByCountryCode() helper
 fix(ngx): resolve change detection issue on id input change
-feat(assets): add coat of arms for Kraków (pl-city-krakow)
+feat(poland): add coat of arms for Kraków (pl-city-krakow)
 docs: update generator CLI usage examples
 chore: upgrade Angular peer dep to ^20.0.0
 ```

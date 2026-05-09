@@ -13,11 +13,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { BlazonIconsService } from './blazon-icons.service.js';
 
 /**
- * `<blazon-icon>` — displays a heraldic coat of arms by registry ID.
+ * `<blazon-icon>` — displays a heraldic locality icon by registry ID.
  *
- * The component lazily loads the country registry on first render if needed,
- * then inlines the sanitized SVG. Falls back to the configured fallback SVG
- * (or nothing) when the entry is not found.
+ * Resolves the locality synchronously from the registered entries and inlines
+ * the sanitized SVG. Falls back to the configured fallback SVG (or nothing)
+ * when the entry is not registered.
  *
  * @example
  * ```html
@@ -42,8 +42,6 @@ import { BlazonIconsService } from './blazon-icons.service.js';
         [style.height.px]="size || null"
         [innerHTML]="svgContent()"
       ></span>
-    } @else if (isLoading()) {
-      <span class="blazon-icon__loading" aria-hidden="true"></span>
     }
   `,
   styles: [
@@ -63,28 +61,19 @@ import { BlazonIconsService } from './blazon-icons.service.js';
         width: 100%;
         height: 100%;
       }
-
-      .blazon-icon__loading {
-        display: inline-block;
-        width: var(--blazon-size, 1em);
-        height: var(--blazon-size, 1em);
-        background: currentColor;
-        opacity: 0.15;
-        border-radius: 2px;
-      }
     `,
   ],
 })
 export class BlazonIcon implements OnInit, OnChanges {
   /**
-   * The unique coat of arms identifier, e.g. `"pl-city-warszawa"`.
+   * The unique locality identifier, e.g. `"pl-city-warszawa"`.
    * Required. Changing this input triggers a new registry lookup.
    */
   @Input({ required: true }) id!: string;
 
   /**
    * Accessible label for the icon image (maps to `aria-label`).
-   * Defaults to the coat's `name` from the registry.
+   * Defaults to the locality `name` from the registry.
    */
   @Input() alt?: string;
 
@@ -95,39 +84,33 @@ export class BlazonIcon implements OnInit, OnChanges {
   @Input() size?: number;
 
   readonly svgContent = signal<string | null>(null);
-  readonly isLoading = signal(false);
 
   private readonly _service = inject(BlazonIconsService);
   private readonly _sanitizer = inject(DomSanitizer);
 
   ngOnInit(): void {
-    void this._load(this.id);
+    this._resolve(this.id);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // Skip the initial change — ngOnInit handles that
     if (!changes.id.isFirstChange()) {
-      void this._load(this.id);
+      this._resolve(this.id);
     }
   }
 
-  private async _load(id: string): Promise<void> {
-    this.isLoading.set(true);
-    this.svgContent.set(null);
+  private _resolve(id: string): void {
+    const locality = this._service.getById(id);
+    const armsAsset = locality?.assets.find((a) => a.kind === 'arms');
+    const raw = armsAsset?.svg ?? this._service.fallbackSvg;
 
-    try {
-      const coat = await this._service.resolve(id);
-      const raw = coat?.svg ?? this._service.fallbackSvg;
-
-      if (raw !== null) {
-        const safe = this._sanitizer.sanitize(SecurityContext.HTML, raw);
-        this.svgContent.set(safe);
-        if (this.alt === undefined && coat !== undefined) {
-          this.alt = coat.name;
-        }
+    if (raw != null) {
+      const safe = this._sanitizer.sanitize(SecurityContext.HTML, raw);
+      this.svgContent.set(safe);
+      if (this.alt === undefined && locality !== undefined) {
+        this.alt = locality.name;
       }
-    } finally {
-      this.isLoading.set(false);
+    } else {
+      this.svgContent.set(null);
     }
   }
 }

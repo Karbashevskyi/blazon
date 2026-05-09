@@ -9,8 +9,8 @@
     <a href="https://www.npmjs.com/package/@blazon/core">
       <img src="https://img.shields.io/npm/v/@blazon/core?style=flat-square&label=%40blazon%2Fcore" alt="npm @blazon/core" />
     </a>
-    <a href="https://www.npmjs.com/package/@blazon/country-poland">
-      <img src="https://img.shields.io/npm/v/@blazon/country-poland?style=flat-square&label=%40blazon%2Fcountry-poland" alt="npm @blazon/country-poland" />
+    <a href="https://www.npmjs.com/package/@blazon/poland">
+      <img src="https://img.shields.io/npm/v/@blazon/poland?style=flat-square&label=%40blazon%2Fpoland" alt="npm @blazon/poland" />
     </a>
     <a href="https://www.npmjs.com/package/@blazon/ngx">
       <img src="https://img.shields.io/npm/v/@blazon/ngx?style=flat-square&label=%40blazon%2Fngx" alt="npm @blazon/ngx" />
@@ -27,12 +27,12 @@
 
 Blazon is a typed, tree-shakeable, framework-agnostic registry for coats of arms and heraldic assets. It provides:
 
-- A **universal core** (`@blazon/core`) with lazy country loading, full-text search, and validation
-- **Typed domain models** (`@blazon/types`) with zero runtime overhead
-- **Country data packages** (`@blazon/country-poland`, …) — tree-shakeable named exports per city, import only what you need
-- An **Angular adapter** (`@blazon/ngx`) with a standalone `<blazon-icon>` component (Angular 16+)
-- A **generator CLI** (`@blazon/generator`) that converts SVG files into registry entries
-- A growing **asset library** (`assets/`) of CC0-licensed heraldic SVGs
+- A **universal core** (`@blazon/core`) — pure functional API: `getById`, `search`, `filterByKind`, `filterByRegion`, `createRegistry`
+- **Typed domain models** (`@blazon/types`) — `BlazonLocality`, `BlazonAsset`, `BlazonLicense`, `BlazonCountryRegistry` with zero runtime overhead
+- **Country data packages** (`@blazon/poland`, …) — tree-shakeable named exports per locality, import only what you need
+- An **Angular adapter** (`@blazon/ngx`) — standalone `<blazon-icon>` component with `provideBlazonIcons` (Angular 16+)
+- A **generator CLI** (`@blazon/generator`) — converts SVG files into registry entries
+- A growing **asset library** (`assets/`) of CC-licensed heraldic SVGs
 
 ---
 
@@ -41,88 +41,78 @@ Blazon is a typed, tree-shakeable, framework-agnostic registry for coats of arms
 ```
 blazon/
 ├── packages/
-│   ├── types/           @blazon/types            — TypeScript domain types (zero runtime)
-│   ├── core/            @blazon/core             — Framework-agnostic registry engine
-│   ├── country-poland/  @blazon/country-poland   — 495 Polish city coats of arms
-│   └── ngx/             @blazon/ngx              — Angular adapter (v16+)
+│   ├── types/     @blazon/types    — TypeScript domain types (zero runtime)
+│   ├── core/      @blazon/core     — Framework-agnostic pure functional API
+│   ├── poland/    @blazon/poland   — 495 Polish city coats of arms
+│   └── ngx/       @blazon/ngx     — Angular adapter (v16+)
 ├── apps/
-│   └── docs/            @blazon/docs             — Interactive documentation (Vite)
+│   ├── docs/      @blazon/docs    — Interactive documentation (Vite, private)
+│   └── game/      @blazon/game    — Heraldry quiz game (WIP, private)
 ├── tools/
-│   └── generator/       @blazon/generator        — SVG → registry JSON CLI
+│   └── generator/ @blazon/generator — SVG → registry entry CLI (private)
 └── assets/
     └── pl/
         └── city/
-            └── warszawa/                         — Coat of arms of Warsaw (PL)
+            └── warszawa/           — Coat of arms of Warsaw (PL)
 ```
 
 ---
 
 ## Quick Start
 
-### Vanilla JavaScript / TypeScript
+### Vanilla TypeScript
 
 ```bash
-pnpm add @blazon/core @blazon/country-poland @blazon/types
+pnpm add @blazon/core @blazon/poland @blazon/types
 ```
 
 **Tree-shakeable static imports** — only the cities you use end up in the bundle:
 
 ```ts
-import { warszawa, krakow, wroclaw } from '@blazon/country-poland';
+import { plWarszawa, plKrakow } from '@blazon/poland';
+import { getById, search } from '@blazon/core';
+import { polandRegistry } from '@blazon/poland';
 
-console.log(warszawa.name); // 'Herb Warszawy'
-console.log(krakow.svg); // inline SVG string
-```
+// Direct access to a locality
+console.log(plWarszawa.name);       // 'Herb Warszawy'
+console.log(plWarszawa.assets[0].svg); // inline SVG string
 
-**Or load dynamically via HTTP:**
-
-```ts
-import { registerCountry, getCountryRegistry, getById, searchRegistry } from '@blazon/core';
-
-// Register a lazy loader (called at most once, result is cached)
-registerCountry('PL', () => fetch('/registries/pl.json').then((r) => r.json()));
-
-// Load on demand
-const registry = await getCountryRegistry('PL');
-console.log(`${registry?.entries.length} entries loaded`);
+// Search across a registry
+const results = search(polandRegistry, 'mermaid', { limit: 10 });
 
 // Look up by ID
-const warsaw = getById('pl-city-warszawa');
-
-// Search with filters
-const cities = searchRegistry({ countryCode: 'PL', level: 'city', limit: 10 });
+const warsaw = getById(polandRegistry, 'pl-city-warszawa');
 ```
 
 ### Angular (v16+)
 
 ```bash
-pnpm add @blazon/ngx @blazon/core @blazon/country-poland @blazon/types
+pnpm add @blazon/ngx @blazon/poland @blazon/types
 ```
 
 **Provide only what you need — everything else is tree-shaken away:**
 
 ```ts
 // app.config.ts
-import { warszawa, krakow } from '@blazon/country-poland';
-import { provideBlazonIcons } from '@blazon/ngx';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideBlazonIcons([warszawa, krakow])],
-};
-```
-
-**Or lazy-load the full collection at runtime:**
-
-```ts
-// app.config.ts
+import { plWarszawa, plKrakow } from '@blazon/poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBlazonIcons({
-      loaders: { PL: () => fetch('/registries/pl.json').then((r) => r.json()) },
-      preload: ['PL'],
-    }),
+    provideBlazonIcons({ plWarszawa, plKrakow }),
+  ],
+};
+```
+
+**Or provide the full collection:**
+
+```ts
+import { polandRegistry } from '@blazon/poland';
+import { provideBlazonIcons } from '@blazon/ngx';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBlazonIcons(polandRegistry.entries),
   ],
 };
 ```
@@ -142,29 +132,16 @@ export class MyComponent {}
 
 ## Core API
 
-| Function                        | Description                                                 |
-| ------------------------------- | ----------------------------------------------------------- |
-| `registerCountry(code, loader)` | Register a lazy loader for a country's registry data        |
-| `getCountryRegistry(code)`      | Load and return a country's full registry (async, cached)   |
-| `getById(id)`                   | Retrieve a coat of arms by unique ID from loaded registries |
-| `searchRegistry(query)`         | Search all loaded registries with filter + pagination       |
-| `getRegistry()`                 | Access the global `BlazonRegistry` singleton directly       |
+All functions are pure — they take a registry and return results. No singletons.
 
-### Search Query
-
-```ts
-import type { SearchQuery } from '@blazon/types';
-
-const query: SearchQuery = {
-  text: 'mermaid', // full-text across name, description, blazon
-  countryCode: 'PL', // ISO 3166-1 alpha-2 (case-insensitive)
-  level: 'city', // 'national' | 'state' | 'county' | 'city' | 'district' | 'village'
-  type: 'municipal', // 'national' | 'regional' | 'municipal' | 'historical' | 'ecclesiastical' | 'other'
-  tags: ['capital'], // all tags must match (AND)
-  limit: 20,
-  offset: 0,
-};
-```
+| Function | Description |
+|----------|-------------|
+| `getById(registry, id)` | Look up a locality by unique ID |
+| `search(registry, query, options?)` | Full-text search across name, aliases, region |
+| `filterByKind(registry, kind)` | Filter by locality kind (`'city'`, `'region'`, …) |
+| `filterByRegion(registry, region)` | Filter by region name |
+| `getAsset(locality, kind)` | Get a specific asset (`'arms'`, `'flag'`, …) |
+| `createRegistry(countryCode, name, entries)` | Build a `BlazonCountryRegistry` |
 
 ---
 
@@ -172,46 +149,53 @@ const query: SearchQuery = {
 
 ### `@blazon/types`
 
-Zero-runtime TypeScript type definitions. All exports are `type`-only.
+Zero-runtime TypeScript type definitions.
 
-| Type              | Description                                                    |
-| ----------------- | -------------------------------------------------------------- |
-| `CoatOfArms`      | Primary domain entity — id, name, svg, metadata, license, tags |
-| `CountryRegistry` | A country's collection of coats of arms                        |
-| `CoatMetadata`    | Heraldic and administrative metadata                           |
-| `AssetLicense`    | SPDX-based license descriptor                                  |
-| `SearchQuery`     | Search and filter parameters                                   |
-| `RegistryLoader`  | Lazy factory: `() => Promise<CountryRegistry>`                 |
+| Type | Description |
+|------|-------------|
+| `BlazonLocality` | Primary domain entity — id, name, countryCode, kind, assets, … |
+| `BlazonAsset` | An asset within a locality — `{ kind, svg }` |
+| `BlazonAssetKind` | `'arms' \| 'flag' \| 'seal' \| 'banner' \| 'symbol'` |
+| `BlazonLocalityKind` | `'country' \| 'region' \| 'county' \| 'city' \| 'municipality' \| 'district' \| 'historical'` |
+| `BlazonCountryRegistry` | `{ countryCode, name, entries: readonly BlazonLocality[] }` |
+| `BlazonLicense` | SPDX-based license descriptor |
+| `BlazonSource` | Source URL reference |
+| `BlazonSearchOptions` | `{ limit?, offset? }` |
+| `BlazonSearchResult` | `{ items, total, offset, limit }` |
 
 ### `@blazon/core`
 
-Framework-agnostic registry engine. **Does not include country data.**
+Framework-agnostic pure functional API. **No singletons. No side effects.**
 
-- `BlazonRegistry` — singleton with full CRUD and search
-- `search()` / `count()` — pure search functions
-- `validateCoatOfArms()` / `assertCoatOfArms()` / `isCoatOfArms()` — validation layer
-- `createFetchLoader()` — HTTP loader for browser/Node.js
-- `parseCountryRegistry()` — validates registry JSON at load time
+```ts
+import { getById, search, filterByKind, createRegistry } from '@blazon/core';
+```
 
-### `@blazon/country-poland`
+### `@blazon/poland`
 
 495 Polish city coats of arms as tree-shakeable named exports.
 
 ```ts
-// Only these two cities end up in the bundle
-import { warszawa, krakow } from '@blazon/country-poland';
+// Individual localities (tree-shaken)
+import { plWarszawa, plKrakow, plWroclaw } from '@blazon/poland';
 
-// Full collection (for lazy-loading scenarios)
-import { plCities } from '@blazon/country-poland';
+// Full registry
+import { polandRegistry } from '@blazon/poland';
+
+// Pre-filtered collections
+import { polandCities, polandCurrentCities, polandHistoricalCities } from '@blazon/poland';
 ```
+
+Export naming: `pl` prefix + PascalCase city name — e.g. `plWarszawa`, `plAleksandrowKujawski`.
 
 ### `@blazon/ngx`
 
 Angular 16+ standalone adapter.
 
-- `provideBlazonIcons(config)` — accepts an array of `CoatOfArms` objects (tree-shaking) or a lazy-loader config
-- `BlazonIcon` — standalone `<blazon-icon>` with signal-based loading state
-- `BlazonIconsService` — injectable wrapper around `BlazonRegistry`
+- `provideBlazonIcons(entries)` — accepts `BlazonLocality[]` (array), `Record<string, BlazonLocality>` (map), or `BlazonIconsConfig`
+- `BlazonIcon` / `BlazonIconComponent` — standalone `<blazon-icon id="..." [size]="48" [alt]="..." />`
+- `BlazonIconsService` — injectable, synchronous lookup from registered entries
+- `BLAZON_ICONS_CONFIG_TOKEN`, `BLAZON_ICONS_ENTRIES_TOKEN` — injection tokens for advanced DI
 
 ---
 
@@ -221,38 +205,16 @@ Each asset lives in `assets/{cc}/{level}/{slug}/`:
 
 ```
 assets/pl/city/warszawa/
-├── warszawa.svg           # Source SVG (heraldic, accessible markup)
-├── warszawa.meta.json     # Sidecar metadata (GeneratorInput)
-└── index.json             # Generated registry entry (do not edit manually)
+└── warszawa.svg    # Source SVG (heraldic, accessible markup)
 ```
 
 ### ID convention
 
-`{countryCode}-{level}-{slug}` — e.g. `pl-city-warsaw`, `de-national`, `gb-county-kent`
+`{countryCode}-{kind}-{slug}` — e.g. `pl-city-warszawa`, `pl-region-mazowieckie`
 
 ### License
 
-All assets in this repository are released under **CC0-1.0** unless noted otherwise in the sidecar `meta.json`. SVGs derived from third-party sources must carry the original source URL.
-
----
-
-## Generator CLI
-
-```bash
-# Dry-run (preview output)
-pnpm exec tsx tools/generator/bin/generate.ts assets/pl/city
-
-# Write index.json files
-pnpm exec tsx tools/generator/bin/generate.ts --write assets/pl/city
-
-# Generate a full country bundle
-pnpm exec tsx tools/generator/bin/generate.ts \
-  --write \
-  --bundle dist/registries/pl.json \
-  --country PL \
-  --country-name Poland \
-  assets/pl
-```
+All assets in this repository are licensed as specified per-entry in the `license` field of each `BlazonLocality`. Most Polish city assets are CC BY-SA 3.0 or CC BY-SA 4.0. See each entry for the exact SPDX identifier.
 
 ---
 
@@ -274,55 +236,40 @@ pnpm install
 ### Common commands
 
 ```bash
-pnpm build          # Build all packages
-pnpm dev            # Start all dev servers / watchers
-pnpm typecheck      # Run TypeScript across the workspace
+pnpm build          # Build all packages (Turborepo, respects dep graph)
 pnpm lint           # ESLint all packages
 pnpm format         # Prettier format
-pnpm test           # Run all tests
+pnpm typecheck      # TypeScript across the workspace
 ```
-
-### Adding a new coat of arms
-
-1. Create the folder: `assets/{cc}/{level}/{slug}/`
-2. Add `{slug}.svg` — clean, accessible SVG markup
-3. Add `{slug}.meta.json` — sidecar metadata (see [Generator CLI](#generator-cli))
-4. Run: `pnpm exec tsx tools/generator/bin/generate.ts --write assets/{cc}`
-5. Verify the generated `index.json`
-6. Open a pull request with the SVG, meta, and generated JSON
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
 
 ---
 
 ## Architecture
 
-Blazon follows clean DDD-inspired boundaries:
-
 ```
-@blazon/types       ← Domain language (types only, no logic)
+@blazon/types       ← Domain language (types only, zero runtime)
       ↑
-@blazon/core        ← Domain logic (registry, search, validation, loading)
+@blazon/core        ← Pure functions (getById, search, filterByKind, …)
       ↑
-@blazon/ngx         ← Framework adapter (Angular DI, components — no business logic)
+@blazon/poland      ← Country data (imports from @blazon/types)
+      ↑
+@blazon/ngx         ← Angular adapter (imports from @blazon/types)
 ```
 
-**Rules:**
-
-- Adapters (`ngx`, future `react`, `vue`) import from `core` but never duplicate logic
-- `core` imports from `types` only
-- `types` has zero dependencies
+**Design principles:**
+- `core` provides pure functions — no singleton, no global state
+- Adapters (`ngx`) accept `BlazonLocality[]` or a map — they never load data themselves
+- `types` has zero dependencies and zero runtime code
+- Country packages are independent — add `@blazon/germany` without touching `core`
 
 ---
 
 ## Contributing
 
-Contributions are very welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ---
 
 ## License
 
 MIT © Blazon Contributors
-
-Heraldic assets may carry individual licenses — see each entry's `license` field and the sidecar `meta.json`.

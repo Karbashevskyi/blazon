@@ -1,0 +1,28 @@
+import type { BlazonLocality } from '@blazon/types';
+
+/**
+ * Herb Blachownia — Polish locality
+ * @id pl-city-blachownia
+ */
+const plBlachownia: BlazonLocality = {
+  id: 'pl-city-blachownia',
+  name: 'Herb Blachownia',
+  countryCode: 'PL',
+  kind: 'city',
+  region: 'Poland',
+  aliases: ['poland', 'blachownia', 'city'],
+  assets: [
+    {
+      kind: 'arms',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-40.77 -50.52 1283.53 1546.83"><title>Herb Blachownia</title><path d="M1424.06-295.436h1188.45v963.02c0 622.122-1188.448 629.136-1188.448 0z" style="opacity:1;fill:#048204;fill-opacity:1;stroke:#000;stroke-width:13.53196716;stroke-miterlimit:4;stroke-opacity:1" transform="translate(-1417.295 302.202)"/><g style="opacity:1"><path d="M262.857-121.924v988.572H560s235.714-22.5 235.714-270c0-208.929-252.857-260-252.857-260s201.429-46.429 201.429-250C744.286-25.495 560-120.495 560-120.495z" style="fill:#007fff;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(126.207 308.954)"/><path d="M467.624-60.5v209.813H401.21v30.906h-61.438V234.5h292.157v-67.844l-64.688-17.344h-6.031V5.938h-35.72v143.376h-22.156V-60.5z" style="fill:#fe2828;fill-opacity:1;fill-rule:evenodd;stroke:#000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(126.207 308.954)"/><path d="M366.419 730.219C389.98 764.334 426.572 790.72 470.106 804h128.625c43.534-13.28 80.126-39.666 103.688-73.781z" style="opacity:1;fill:#fe2828;fill-opacity:1;stroke:#000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(100.493 308.954)"/><path d="M508.34 414.5v302.875h180.72zm-20 25.719L379.779 717.375h108.563z" style="fill:#fff;fill-rule:evenodd;stroke:#000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(100.493 308.954)"/><path d="M144.128-138.175c4.591.255 61.125 23.38 61.125 70.719v865.875c0 40.528-75.277 86.537-81.28 86.812h364.405c47.453 0 89.46-2.687 126.032-8.969 36.57-6.281 67.788-15.532 93.656-27.718 25.866-12.186 49.673-28.894 71.437-50.125s39.616-48.026 53.532-80.438c13.913-32.412 20.843-69.603 20.843-111.562 0-49.246-10.235-93.027-30.75-131.344s-51.488-69.783-92.875-94.406c-31.754-19.095-70.107-32.307-115.062-39.594-12.874-2.115-28.107-3.795-45.625-5.063 1.784-.275 3.587-.552 5.344-.843 33.039-5.48 61.223-13.527 84.593-24.157s44.9-25.23 64.563-43.75c19.662-18.52 35.772-41.914 48.344-70.187 12.57-28.273 18.843-60.711 18.843-97.313 0-42.956-9.247-81.139-27.78-114.562-18.536-33.423-46.517-60.865-83.907-82.344-28.689-16.656-63.324-28.175-103.938-34.531-29.01-4.602-71.1-6.5-126.218-6.5zm152.25 33.406h166.563c37.598 0 66.305 2.038 86.094 6.156 27.703 5.689 51.337 16.001 70.906 30.907 25.505 19.22 44.575 43.778 57.219 73.687 12.642 29.91 18.937 64.09 18.937 102.531 0 32.754-4.27 61.793-12.844 87.094s-19.557 46.24-32.968 62.813q-20.12 24.858-44.032 39.125-23.912 14.269-57.718 21.625c-22.538 4.903-48.445 7.343-77.688 7.343H296.378zm0 462.719h190.75c43.058 0 75.9 2.346 98.563 7.062 31.727 6.515 58.839 18.305 81.25 35.375 29.208 22.013 51.02 50.154 65.5 84.407 14.478 34.253 21.718 73.382 21.719 117.406-.001 37.51-4.9 70.744-14.72 99.719s-22.421 52.958-37.78 71.937c-15.36 18.98-32.151 33.92-50.407 44.813s-40.284 19.134-66.093 24.75-55.48 8.437-88.97 8.437H296.379z" style="font-size:919.77764893px;font-style:normal;font-weight:400;opacity:1;fill:#fff;fill-opacity:1;stroke:#000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;font-family:Arial" transform="translate(126.207 308.954)"/></g></svg>',
+    },
+  ],
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  },
+  sources: [{ url: 'https://commons.wikimedia.org/wiki/File:POL%20Blachownia%20COA.svg' }],
+};
+
+export { plBlachownia };

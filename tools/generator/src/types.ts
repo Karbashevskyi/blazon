@@ -1,4 +1,23 @@
-import type { CoatType, AdministrativeLevel, AssetLicense } from '@blazon/types';
+/** Heraldic asset type (matches BlazonAssetKind from @blazon/types) */
+export type CoatType = 'arms' | 'flag' | 'seal' | 'banner' | 'symbol';
+
+/** Administrative level (matches BlazonLocalityKind from @blazon/types) */
+export type AdministrativeLevel =
+  | 'country'
+  | 'region'
+  | 'county'
+  | 'city'
+  | 'municipality'
+  | 'district'
+  | 'historical';
+
+/** License descriptor */
+export interface AssetLicense {
+  readonly spdx: string;
+  readonly name: string;
+  readonly url: string;
+  readonly author?: string;
+}
 
 /**
  * Input descriptor for the generator CLI.

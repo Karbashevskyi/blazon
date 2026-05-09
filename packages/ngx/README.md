@@ -1,110 +1,111 @@
 # @blazon/ngx
 
-> Angular 16+ adapter for the Blazon heraldry registry.
-> Provides `provideBlazonIcons()` and the standalone `<blazon-icon>` component.
+> Angular adapter for the Blazon heraldry registry. Angular 16+.
 
-## Requirements
+Part of the [Blazon](https://github.com/blazon-registry/blazon) monorepo.
 
-- Angular ≥ 16
-- `@blazon/core` ≥ 0.1.0
+---
 
-## Install
+## Installation
 
 ```bash
-pnpm add @blazon/ngx @blazon/core @blazon/country-poland @blazon/types
+pnpm add @blazon/ngx @blazon/poland @blazon/types
 ```
+
+---
 
 ## Setup
 
-### Option 1 — Tree-shakeable static imports (recommended for known icons)
+### 1. Provide icons
 
-Import only the cities you need. Everything else is tree-shaken out of the bundle:
-
-```ts
-// app.config.ts
-import { ApplicationConfig } from '@angular/core';
-import { warszawa, krakow, wroclaw } from '@blazon/country-poland';
-import { provideBlazonIcons } from '@blazon/ngx';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideBlazonIcons([warszawa, krakow, wroclaw])],
-};
-```
-
-### Option 2 — Lazy HTTP loader (for large or dynamic collections)
+In `app.config.ts`, register the localities you want to use:
 
 ```ts
-// app.config.ts
-import { ApplicationConfig } from '@angular/core';
 import { provideBlazonIcons } from '@blazon/ngx';
+import { plWarszawa, plKrakow, plWroclaw } from '@blazon/poland';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBlazonIcons({
-      // Lazy loaders — invoked at most once per country
-      loaders: {
-        PL: () => fetch('/registries/pl.json').then((r) => r.json()),
-        DE: () => import('./registries/de').then((m) => m.default),
-      },
-      // Eagerly pre-load on bootstrap (optional)
-      preload: ['PL'],
-      // SVG shown when an ID is not found (optional)
-      fallbackSvg: '<svg>...</svg>',
-    }),
+    provideBlazonIcons({ plWarszawa, plKrakow, plWroclaw }),
   ],
 };
 ```
 
-## `<blazon-icon>` Component
+`provideBlazonIcons` accepts:
+- `BlazonLocality[]` — an array
+- `Record<string, BlazonLocality>` — a map (named imports object)
+- `BlazonIconsConfig` — config object with optional `fallbackSvg`
+
+### 2. Use the component
 
 ```ts
 import { BlazonIcon } from '@blazon/ngx';
 
 @Component({
+  standalone: true,
   imports: [BlazonIcon],
   template: `
-    <!-- Basic usage -->
-    <blazon-icon id="pl-city-warszawa" />
-
-    <!-- With explicit size and accessible label -->
-    <blazon-icon id="pl-city-warszawa" [size]="64" alt="Warsaw coat of arms" />
-
-    <!-- CSS custom property for responsive sizing -->
-    <blazon-icon id="pl-city-warszawa" style="--blazon-size: 3rem" />
+    <blazon-icon id="pl-city-warszawa" [size]="64" />
+    <blazon-icon id="pl-city-krakow" alt="Coat of arms of Kraków" />
   `,
 })
 export class MyComponent {}
 ```
 
-### Inputs
+---
 
-| Input  | Type     | Required | Description                                                      |
-| ------ | -------- | -------- | ---------------------------------------------------------------- |
-| `id`   | `string` | ✅       | Registry ID, e.g. `"pl-city-warszawa"`                           |
-| `alt`  | `string` | —        | Accessible label (`aria-label`). Defaults to the entry's `name`. |
-| `size` | `number` | —        | Pixel size applied to width and height.                          |
+## API
 
-## `BlazonIconsService`
+### `provideBlazonIcons(entries)`
 
-Access the service directly for programmatic use:
+Registers localities in Angular's DI system. Call once in `app.config.ts` or a feature module.
+
+### `<blazon-icon>`
+
+| Input | Type | Description |
+|-------|------|-------------|
+| `id` | `string` (required) | Locality ID, e.g. `"pl-city-warszawa"` |
+| `size` | `number` | Pixel size applied as `width` and `height` |
+| `alt` | `string` | Accessible label (`aria-label`). Defaults to `locality.name` |
+
+### `BlazonIconsService`
+
+Injectable service with synchronous access to registered localities:
 
 ```ts
-import { inject } from '@angular/core';
 import { BlazonIconsService } from '@blazon/ngx';
 
 @Injectable()
 export class MyService {
-  private readonly blazon = inject(BlazonIconsService);
+  private readonly icons = inject(BlazonIconsService);
 
-  async getWarsaw() {
-    return this.blazon.resolve('pl-city-warsaw');
+  getSvg(id: string): string | undefined {
+    return this.icons.getById(id)?.assets.find(a => a.kind === 'arms')?.svg;
   }
 }
 ```
 
-## Architecture notes
+---
 
-- `BlazonIconsService` is a thin Angular wrapper — no business logic
-- All registry logic lives in `@blazon/core`
-- The component uses `ChangeDetectionStrategy.OnPush` and Angular signals
-- SVG content is sanitized via Angular's `DomSanitizer` before rendering
+## Full collection example
+
+```ts
+import { polandRegistry } from '@blazon/poland';
+import { provideBlazonIcons } from '@blazon/ngx';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBlazonIcons(polandRegistry.entries),
+  ],
+};
+```
+
+---
+
+## Peer dependencies
+
+| Package | Version |
+|---------|---------|
+| `@angular/core` | `>=16.0.0` |
+| `@angular/common` | `>=16.0.0` |
+| `@angular/platform-browser` | `>=16.0.0` |

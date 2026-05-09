@@ -1,0 +1,32 @@
+import type { BlazonLocality } from '@blazon/types';
+
+/**
+ * Herb Oleśnica (świętokrzyskie) — Polish locality
+ * @id pl-city-olesnica-swietokrzyskie
+ */
+const plOlesnicaSwietokrzyskie: BlazonLocality = {
+  id: 'pl-city-olesnica-swietokrzyskie',
+  name: 'Herb Oleśnica (świętokrzyskie)',
+  countryCode: 'PL',
+  kind: 'city',
+  region: 'Poland',
+  aliases: ['poland', 'olesnica-swietokrzyskie', 'city'],
+  assets: [
+    {
+      kind: 'arms',
+      svg: '<svg role="img" viewBox="-4.44 -6.07 220.70 278.05"\n   xmlns="http://www.w3.org/2000/svg"\n   id="svg2"\n   version="1.0"><title>Herb Oleśnica (świętokrzyskie)</title><metadata\n     id="metadata7"><rdf:RDF><cc:Work\n         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type\n           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs\n     id="defs5" /><sodipodi:namedview\n     borderopacity="1.0"\n     bordercolor="#666666"\n     pagecolor="#ffffff"\n     id="base" /><path\n     id="path1364"\n     style="fill:#dd0000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"\n     d="M 105.80049,261.67987 C 38.492551,260.57688 4.9000214,209.59906 3.7261414,180.56616 L 3.7261414,4.2320076 L 105.90023,4.2320076 L 208.0743,4.2320076 L 208.0743,180.56616 C 206.90042,209.59906 173.30789,260.57688 105.80049,261.67987 z " /><path\n     id="path3154"\n     style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"\n     d="M 105.80049,261.67987 C 38.492551,260.57688 4.9000214,209.59906 3.7261414,180.56616 L 3.7261414,109.32716 L 105.90023,109.32716 L 208.0743,109.32716 L 208.0743,180.56616 C 206.90042,209.59906 173.30789,260.57688 105.80049,261.67987 z " /><path\n     style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;visibility:visible;display:inline;overflow:visible"\n     d="M 87.045059,4.6811438 L 122.61043,4.6811438 L 122.61043,259.75677 C 109.91772,261.91686 100.35494,261.78461 87.045059,259.53635 L 87.045059,4.6811438 z "\n     id="rect2493" /><rect\n     style="opacity:1;color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"\n     id="rect2517"\n     width="35.619499"\n     height="203.37563"\n     x="108.19025"\n     y="-207.57516"\n     transform="matrix(0,1,-1,0,0,0)" /><path\n     d="M 147.37903,161.92082 L 147.37903,179.48321 L 156.56581,193.48221 L 165.75261,179.48321 L 174.93941,193.48221 L 184.12618,179.48321 L 184.12618,161.92082 L 174.93941,176.17435 L 165.75261,161.92082 L 156.56583,176.17435 L 147.37903,161.92082 z "\n     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"\n     id="path5025" /></svg>',
+    },
+  ],
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  },
+  sources: [
+    {
+      url: 'https://commons.wikimedia.org/wiki/File:POL%20Ole%C5%9Bnica%20%28%C5%9Bwi%C4%99tokrzyskie%29%20COA.svg',
+    },
+  ],
+};
+
+export { plOlesnicaSwietokrzyskie };

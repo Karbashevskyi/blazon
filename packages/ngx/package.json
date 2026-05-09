@@ -26,7 +26,6 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@blazon/core": "workspace:*",
     "@blazon/types": "workspace:*"
   },
   "peerDependencies": {

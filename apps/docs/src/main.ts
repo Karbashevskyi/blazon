@@ -5,8 +5,9 @@
  * No framework dependency — plain TypeScript with the Vite dev server.
  */
 
-import { registerCountry, getCountryRegistry, searchRegistry, getById } from '@blazon/core';
-import type { CoatOfArms, SearchQuery } from '@blazon/types';
+import { getById, search, filterByKind } from '@blazon/core';
+import type { BlazonLocality, BlazonLocalityKind } from '@blazon/types';
+import { polandRegistry } from '@blazon/poland';
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
 import bash from 'highlight.js/lib/languages/bash';
@@ -15,23 +16,6 @@ import { initGame } from './game.js';
 
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('bash', bash);
-
-// ─── Load all generated city entries via Vite glob import ─────────────────
-
-const cityModules = import.meta.glob<CoatOfArms>('../../../assets/pl/city/*/index.json', {
-  eager: true,
-});
-
-const cityEntries: CoatOfArms[] = Object.values(cityModules);
-
-// Register Poland loader
-registerCountry('PL', () =>
-  Promise.resolve({
-    countryCode: 'PL',
-    name: 'Poland',
-    entries: cityEntries,
-  }),
-);
 
 // ─── DOM helpers ──────────────────────────────────────────────────────────
 
@@ -49,6 +33,10 @@ function escapeHtml(raw: string): string {
     .replace(/"/g, '&quot;');
 }
 
+function getSvg(locality: BlazonLocality): string {
+  return locality.assets.find((a) => a.kind === 'arms')?.svg ?? '';
+}
+
 // ─── Demo registry viewer ─────────────────────────────────────────────────
 
 const resultsGrid = el('results') as HTMLDivElement;
@@ -61,88 +49,82 @@ const countryFilter = el('country-filter') as HTMLSelectElement;
 const levelFilter = el('level-filter') as HTMLSelectElement;
 let selectedCoatId: string | null = null;
 
-function renderResults(coats: readonly CoatOfArms[]): void {
-  const visibleIds = new Set(coats.map((coat) => coat.id));
+function renderResults(localities: readonly BlazonLocality[]): void {
+  const visibleIds = new Set(localities.map((c) => c.id));
   if (selectedCoatId !== null && !visibleIds.has(selectedCoatId)) {
     selectedCoatId = null;
   }
 
-  resultsGrid.innerHTML = coats
+  resultsGrid.innerHTML = localities
     .map((c) => {
       const isActive = selectedCoatId === c.id;
+      const svg = getSvg(c);
       return `<button class="result-item${isActive ? ' result-item--active' : ''}" data-id="${escapeHtml(c.id)}" tabindex="0" aria-pressed="${isActive ? 'true' : 'false'}">
-          <div class="result-item__svg">${c.svg}</div>
+          <div class="result-item__svg">${svg}</div>
           <span class="result-item__name">${escapeHtml(c.name)}</span>
         </button>`;
     })
     .join('');
 
   resultsMeta.textContent =
-    coats.length === 0
+    localities.length === 0
       ? 'No results found.'
-      : `Showing ${String(coats.length)} result${coats.length === 1 ? '' : 's'}`;
+      : `Showing ${String(localities.length)} result${localities.length === 1 ? '' : 's'}`;
 
-  // Show/hide empty-state placeholder based on selection
   if (selectedCoatId === null) {
     detailPanel.hidden = true;
     detailPanelEmpty.hidden = false;
   }
 }
 
-function renderDetail(coat: CoatOfArms): void {
+function renderDetail(locality: BlazonLocality): void {
   detailPanel.hidden = false;
   detailPanelEmpty.hidden = true;
+  const svg = getSvg(locality);
+  const license = locality.license;
+  const source = locality.sources?.[0];
   coatDetail.innerHTML = `
     <div class="coat-detail">
-      <div class="coat-detail__svg-wrap">${coat.svg}</div>
+      <div class="coat-detail__svg-wrap">${svg}</div>
       <div class="coat-detail__meta">
-        <div class="meta-row meta-row--current"><span class="meta-label">Viewing</span><strong>${escapeHtml(coat.name)}</strong></div>
-        <div class="meta-row"><span class="meta-label">Name</span><span>${escapeHtml(coat.name)}</span></div>
-        <div class="meta-row"><span class="meta-label">ID</span><code>${escapeHtml(coat.id)}</code></div>
-        <div class="meta-row"><span class="meta-label">Country</span><span>${escapeHtml(coat.metadata.countryCode)}</span></div>
-        <div class="meta-row"><span class="meta-label">Level</span><span>${escapeHtml(coat.metadata.level)}</span></div>
-        <div class="meta-row"><span class="meta-label">Type</span><span>${escapeHtml(coat.metadata.type)}</span></div>
-        ${coat.metadata.blazon ? `<div class="meta-row"><span class="meta-label">Blazon</span><em>${escapeHtml(coat.metadata.blazon)}</em></div>` : ''}
-        <div class="meta-row"><span class="meta-label">License</span><a href="${escapeHtml(coat.license.url)}" target="_blank" rel="noopener">${escapeHtml(coat.license.spdx)}</a></div>
-        ${coat.tags ? `<div class="meta-row"><span class="meta-label">Tags</span><span class="meta-tags">${coat.tags.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join('')}</span></div>` : ''}
+        <div class="meta-row meta-row--current"><span class="meta-label">Viewing</span><strong>${escapeHtml(locality.name)}</strong></div>
+        <div class="meta-row"><span class="meta-label">Name</span><span>${escapeHtml(locality.name)}</span></div>
+        <div class="meta-row"><span class="meta-label">ID</span><code>${escapeHtml(locality.id)}</code></div>
+        <div class="meta-row"><span class="meta-label">Country</span><span>${escapeHtml(locality.countryCode)}</span></div>
+        <div class="meta-row"><span class="meta-label">Kind</span><span>${escapeHtml(locality.kind)}</span></div>
+        ${locality.region ? `<div class="meta-row"><span class="meta-label">Region</span><span>${escapeHtml(locality.region)}</span></div>` : ''}
+        ${license ? `<div class="meta-row"><span class="meta-label">License</span><a href="${escapeHtml(license.url)}" target="_blank" rel="noopener">${escapeHtml(license.spdx)}</a></div>` : ''}
+        ${source ? `<div class="meta-row"><span class="meta-label">Source</span><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">View source</a></div>` : ''}
+        ${locality.aliases ? `<div class="meta-row"><span class="meta-label">Aliases</span><span class="meta-tags">${locality.aliases.map((t) => `<span class="badge">${escapeHtml(t)}</span>`).join('')}</span></div>` : ''}
       </div>
     </div>`;
 }
 
-async function runSearch(): Promise<void> {
-  let query: SearchQuery = {};
-
+function runSearch(): void {
   const textVal = searchInput.value.trim();
-  if (textVal.length > 0) query = { ...query, text: textVal };
+  const kindVal = levelFilter.value as BlazonLocalityKind | '';
 
-  const countryVal = countryFilter.value;
-  if (countryVal.length > 0) query = { ...query, countryCode: countryVal };
+  let results: readonly BlazonLocality[];
 
-  const levelVal = levelFilter.value;
-  if (levelVal.length > 0) {
-    query = {
-      ...query,
-      level: levelVal as NonNullable<SearchQuery['level']>,
-    };
-  }
-
-  // Ensure the selected country is loaded
-  if (countryVal.length > 0) {
-    await getCountryRegistry(countryVal);
+  if (kindVal) {
+    results = filterByKind(polandRegistry, kindVal);
+    if (textVal) {
+      results = search(results, textVal);
+    }
+  } else if (textVal) {
+    results = search(polandRegistry, textVal);
   } else {
-    // Load all registered countries for demo
-    await getCountryRegistry('PL');
+    results = polandRegistry.entries;
   }
 
-  const results = searchRegistry(query);
   renderResults(results);
 }
 
 // ─── Event wiring ─────────────────────────────────────────────────────────
 
-searchInput.addEventListener('input', () => void runSearch());
-countryFilter.addEventListener('change', () => void runSearch());
-levelFilter.addEventListener('change', () => void runSearch());
+searchInput.addEventListener('input', () => { runSearch(); });
+countryFilter.addEventListener('change', () => { runSearch(); });
+levelFilter.addEventListener('change', () => { runSearch(); });
 
 resultsGrid.addEventListener('click', (e) => {
   const target = (e.target as HTMLElement).closest<HTMLButtonElement>('.result-item');
@@ -157,8 +139,8 @@ resultsGrid.addEventListener('click', (e) => {
     item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
 
-  const coat = getById(id);
-  if (coat !== undefined) renderDetail(coat);
+  const locality = getById(polandRegistry, id);
+  if (locality !== undefined) renderDetail(locality);
 });
 
 // ─── Tab switching ────────────────────────────────────────────────────────
@@ -186,18 +168,16 @@ tabsContainer?.addEventListener('click', (e) => {
 
 // ─── Bootstrap ────────────────────────────────────────────────────────────
 
-void (async (): Promise<void> => {
-  await getCountryRegistry('PL');
-  await runSearch();
+((): void => {
+  runSearch();
 
-  // Auto-select the first coat on startup
-  const firstCoat = getById(cityEntries[0]?.id ?? '');
-  if (firstCoat !== undefined) {
-    selectedCoatId = firstCoat.id;
-    renderResults(searchRegistry({}));
-    renderDetail(firstCoat);
+  const firstLocality = polandRegistry.entries.at(0);
+  if (firstLocality !== undefined) {
+    selectedCoatId = firstLocality.id;
+    renderResults(polandRegistry.entries);
+    renderDetail(firstLocality);
   }
 
   hljs.highlightAll();
-  initGame(cityEntries);
+  initGame(polandRegistry.entries);
 })();

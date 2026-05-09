@@ -1,6 +1,7 @@
 {
   "name": "@blazon/generator",
   "version": "0.1.0",
+  "private": true,
   "description": "CLI tool that converts SVG files into Blazon registry entries",
   "repository": {
     "type": "git",

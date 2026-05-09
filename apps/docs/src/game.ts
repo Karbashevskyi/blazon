@@ -7,7 +7,7 @@
  *  3. pick-coat  — see a city name, pick the correct coat from 4 options
  */
 
-import type { CoatOfArms } from '@blazon/types';
+import type { BlazonLocality } from '@blazon/types';
 
 type GameMode = 'type-name' | 'pick-name' | 'pick-coat';
 
@@ -21,9 +21,13 @@ function escHtml(raw: string): string {
     .replace(/"/g, '&quot;');
 }
 
+function getSvg(locality: BlazonLocality): string {
+  return locality.assets.find((a) => a.kind === 'arms')?.svg ?? '';
+}
+
 /** Strip "Herb " prefix that all entries carry. */
-function cityLabel(coat: CoatOfArms): string {
-  return coat.name.replace(/^Herb\s+/i, '');
+function cityLabel(locality: BlazonLocality): string {
+  return locality.name.replace(/^Herb\s+/i, '');
 }
 
 /** Normalize for fuzzy comparison: lowercase, strip diacritics, keep only alphanumeric. */
@@ -56,7 +60,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 // ─── Public init ──────────────────────────────────────────────────────────
 
-export function initGame(cityEntries: CoatOfArms[]): void {
+export function initGame(cityEntries: readonly BlazonLocality[]): void {
   if (cityEntries.length < 4) return;
 
   const maybeGameArea = document.getElementById('game-area') as HTMLDivElement | null;
@@ -65,8 +69,8 @@ export function initGame(cityEntries: CoatOfArms[]): void {
 
   // ── State ────────────────────────────────────────────────────────────
   let mode: GameMode = 'pick-name';
-  let current: CoatOfArms = cityEntries[0];
-  let options: CoatOfArms[] = [];
+  let current: BlazonLocality = cityEntries[0];
+  let options: BlazonLocality[] = [];
   let answered = false;
   let lastCorrect = false;
   let selectedId: string | null = null;
@@ -135,7 +139,7 @@ export function initGame(cityEntries: CoatOfArms[]): void {
       <div class="game-card" data-mode="type-name">
         <p class="game-question">Which city does this coat of arms belong to?</p>
         <div class="game-coat-display">
-          <div class="game-coat-svg">${current.svg}</div>
+          <div class="game-coat-svg">${getSvg(current)}</div>
         </div>
         ${
           answered
@@ -185,7 +189,7 @@ export function initGame(cityEntries: CoatOfArms[]): void {
       <div class="game-card" data-mode="pick-name">
         <p class="game-question">Which city has this coat of arms?</p>
         <div class="game-coat-display">
-          <div class="game-coat-svg">${current.svg}</div>
+          <div class="game-coat-svg">${getSvg(current)}</div>
         </div>
         <div class="game-name-options">
           ${options
@@ -243,7 +247,7 @@ export function initGame(cityEntries: CoatOfArms[]): void {
               }
               const dis = answered ? ' disabled' : '';
               return `<button class="${cls}" data-id="${escHtml(opt.id)}"${dis}>
-                <div class="game-coat-option-svg">${opt.svg}</div>
+                <div class="game-coat-option-svg">${getSvg(opt)}</div>
               </button>`;
             })
             .join('')}

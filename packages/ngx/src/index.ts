@@ -7,12 +7,11 @@
  * ```ts
  * // app.config.ts
  * import { provideBlazonIcons } from '@blazon/ngx';
+ * import { plWarszawa, plKrakow } from '@blazon/poland';
  *
  * export const appConfig: ApplicationConfig = {
  *   providers: [
- *     provideBlazonIcons({
- *       loaders: { PL: () => import('./data/pl.registry').then(m => m.default) },
- *     }),
+ *     provideBlazonIcons({ plWarszawa, plKrakow }),
  *   ],
  * };
  *

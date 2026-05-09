@@ -1,0 +1,28 @@
+import type { BlazonLocality } from '@blazon/types';
+
+/**
+ * Herb Wyszków — Polish locality
+ * @id pl-city-wyszkow
+ */
+const plWyszkow: BlazonLocality = {
+  id: 'pl-city-wyszkow',
+  name: 'Herb Wyszków',
+  countryCode: 'PL',
+  kind: 'city',
+  region: 'Poland',
+  aliases: ['poland', 'wyszkow', 'city'],
+  assets: [
+    {
+      kind: 'arms',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 875"><title>Herb Wyszków</title><path d="M746.247 493.108c0 208.016-166.209 376.651-371.258 376.651S3.75 701.124 3.75 493.108V5.241h742.5v487.867" style="fill:#fff;fill-opacity:1;stroke:none;stroke-width:7.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M3.75 291.875v201.219c0 31.023 3.686 61.188 10.656 90.031h721.188c6.971-28.843 10.656-59.008 10.656-90.031V291.875z" style="opacity:1;fill:red;fill-opacity:1;stroke:none;stroke-width:7.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M746.249 493.108c-.002 208.016-166.211 376.651-371.26 376.651S3.75 701.124 3.75 493.108V5.241h742.5z" style="fill:none;fill-opacity:1;stroke:#000;stroke-width:7.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/></svg>',
+    },
+  ],
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  },
+  sources: [{ url: 'https://commons.wikimedia.org/wiki/File:POL%20Wyszk%C3%B3w%20COA.svg' }],
+};
+
+export { plWyszkow };

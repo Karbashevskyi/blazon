@@ -1,111 +1,85 @@
 # @blazon/core
 
-> Framework-agnostic Blazon heraldry registry engine.
->
-> Country data lives in separate packages (e.g. [`@blazon/country-poland`](../country-poland)).
-> `@blazon/core` is a pure engine — no SVG data is bundled.
+> Framework-agnostic pure functional API for the Blazon heraldry registry.
 
-## Install
+Country data lives in separate packages (e.g. [`@blazon/poland`](../poland)).
+
+---
+
+## Installation
 
 ```bash
 pnpm add @blazon/core @blazon/types
 ```
 
+---
+
+## Usage
+
+```ts
+import { getById, search, filterByKind, filterByRegion, createRegistry } from '@blazon/core';
+import { polandRegistry } from '@blazon/poland';
+
+// Look up by ID
+const warsaw = getById(polandRegistry, 'pl-city-warszawa');
+console.log(warsaw?.name); // 'Herb Warszawy'
+
+// Full-text search
+const results = search(polandRegistry, 'mermaid', { limit: 10 });
+
+// Filter by locality kind
+const cities = filterByKind(polandRegistry, 'city');
+
+// Filter by region
+const mazovian = filterByRegion(polandRegistry, 'Mazowieckie');
+```
+
+### Tree-shaking with `@blazon/poland`
+
+```ts
+import { plWarszawa, plKrakow } from '@blazon/poland';
+
+const svg = plWarszawa.assets.find((a) => a.kind === 'arms')?.svg;
+```
+
+### Building a custom registry
+
+```ts
+import { createRegistry } from '@blazon/core';
+import type { BlazonLocality } from '@blazon/types';
+
+const myLocalities: BlazonLocality[] = [/* … */];
+const registry = createRegistry('DE', 'Germany', myLocalities);
+```
+
+---
+
 ## API
 
-### Module-level helpers (recommended)
+| Function | Signature | Description |
+|----------|-----------|-------------|
+| `getById` | `(registry, id) → BlazonLocality \| undefined` | Look up by unique ID |
+| `search` | `(registry, query, options?) → BlazonLocality[]` | Full-text search |
+| `filterByKind` | `(registry, kind) → BlazonLocality[]` | Filter by locality kind |
+| `filterByRegion` | `(registry, region) → BlazonLocality[]` | Filter by region name |
+| `getAsset` | `(locality, kind) → BlazonAsset \| undefined` | Get a specific asset |
+| `createRegistry` | `(countryCode, name, entries) → BlazonCountryRegistry` | Build a registry |
+| `normalizeQuery` | `(value) → string` | Lowercase + strip diacritics |
+| `extractEntries` | `(registry) → BlazonLocality[]` | Flatten registry to flat array |
 
-```ts
-import {
-  registerCountry,
-  getCountryRegistry,
-  getById,
-  searchRegistry,
-  getRegistry,
-} from '@blazon/core';
+All functions are **pure** — no global state, no singletons.
 
-// Register a lazy country loader (called at most once, result is cached)
-registerCountry('PL', () => fetch('/registries/pl.json').then((r) => r.json()));
+---
 
-// Load on demand
-const registry = await getCountryRegistry('PL');
-
-// Get by ID (from already-loaded registries)
-const coat = getById('pl-city-warszawa');
-
-// Search with filters and pagination
-const results = searchRegistry({
-  countryCode: 'PL',
-  level: 'city',
-  text: 'mermaid',
-  limit: 10,
-  offset: 0,
-});
-```
-
-### Tree-shaking with `@blazon/country-poland`
-
-For static imports, use the country package directly — the registry engine is not needed:
-
-```ts
-import { warszawa, krakow } from '@blazon/country-poland';
-
-console.log(warszawa.name); // 'Herb Warszawy'
-console.log(krakow.svg); // inline SVG string
-```
-
-### BlazonRegistry singleton
-
-```ts
-import { getRegistry } from '@blazon/core';
-
-const registry = getRegistry();
-registry.preload(['PL', 'DE']);
-console.log(registry.getLoadedCountries());
-```
-
-### Validation
-
-```ts
-import { validateCoatOfArms, isCoatOfArms, assertCoatOfArms } from '@blazon/core';
-
-// Returns { valid, errors[] }
-const result = validateCoatOfArms(unknownData);
-
-// Type guard
-if (isCoatOfArms(unknownData)) {
-  /* narrowed to CoatOfArms */
-}
-
-// Throws with descriptive message if invalid
-assertCoatOfArms(unknownData, 'loading pl.json');
-```
-
-### HTTP loader
-
-```ts
-import { createFetchLoader } from '@blazon/core';
-
-registerCountry(
-  'PL',
-  createFetchLoader('PL', {
-    baseUrl: '/assets/registries/',
-  }),
-);
-```
-
-## Architecture
-
-`@blazon/core` is structured with DDD-inspired layers:
+## Source layout
 
 ```
 src/
-├── domain/
-│   ├── registry.ts      BlazonRegistry singleton
-│   ├── search.ts        Pure search functions
-│   └── validation.ts    Schema validation
-└── infrastructure/
-    └── loader.ts        HTTP loader factory
+├── get-by-id.ts        getById()
+├── search.ts           search() + matchesQuery()
+├── filter.ts           filterByKind(), filterByRegion(), getAsset()
+├── create-registry.ts  createRegistry()
+├── normalize-query.ts  normalizeQuery()
+├── extract-entries.ts  extractEntries()
+└── index.ts            barrel exports
 ```
-
-No DOM, no framework, no side effects at module load time.

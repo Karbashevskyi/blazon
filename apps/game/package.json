@@ -1,0 +1,15 @@
+{
+  "name": "@blazon/game",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Blazon heraldry game — work in progress",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Game app coming soon'",
+    "build": "echo 'Game app coming soon'",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "rimraf": "catalog:"
+  }
+}

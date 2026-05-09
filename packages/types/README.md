@@ -10,29 +10,33 @@ pnpm add @blazon/types
 
 ## Exports
 
-| Type                  | Description                                          |
-| --------------------- | ---------------------------------------------------- |
-| `CoatOfArms`          | Primary domain entity                                |
-| `CountryRegistry`     | A country's collection of coats of arms              |
-| `RegistryLoader`      | Lazy factory: `() => Promise<CountryRegistry>`       |
-| `CoatMetadata`        | Heraldic and administrative metadata                 |
-| `AssetLicense`        | SPDX-based license descriptor                        |
-| `SearchQuery`         | Search and filter parameters                         |
-| `SearchResult<T>`     | Paginated result wrapper                             |
-| `CoatType`            | `'national' \| 'regional' \| 'municipal' \| ...`     |
-| `AdministrativeLevel` | `'national' \| 'state' \| 'county' \| 'city' \| ...` |
-| `HeraldricTincture`   | Classic heraldic colours and metals                  |
+| Type | Description |
+|------|-------------|
+| `BlazonLocality` | Primary domain entity — id, name, countryCode, kind, assets, … |
+| `BlazonAsset` | An asset within a locality — `{ kind, svg }` |
+| `BlazonAssetKind` | `'arms' \| 'flag' \| 'seal' \| 'banner' \| 'symbol'` |
+| `BlazonLocalityKind` | `'country' \| 'region' \| 'county' \| 'city' \| 'municipality' \| 'district' \| 'historical'` |
+| `BlazonCountryRegistry` | `{ countryCode, name, entries: readonly BlazonLocality[] }` |
+| `BlazonLicense` | SPDX-based license descriptor — `{ spdx, name, url, author? }` |
+| `BlazonSource` | Source URL reference — `{ url, name? }` |
+| `BlazonSearchOptions` | `{ limit?, offset? }` |
+| `BlazonSearchResult<T>` | `{ items, total, offset, limit }` |
 
 ## Example
 
 ```ts
-import type { CoatOfArms, SearchQuery, CoatMetadata } from '@blazon/types';
+import type { BlazonLocality, BlazonLocalityKind, BlazonCountryRegistry } from '@blazon/types';
 
-const query: SearchQuery = {
+const kind: BlazonLocalityKind = 'city';
+
+const locality: BlazonLocality = {
+  id: 'pl-city-warszawa',
+  name: 'Herb Warszawy',
   countryCode: 'PL',
-  level: 'city',
-  text: 'mermaid',
-  limit: 20,
+  kind: 'city',
+  region: 'Mazowieckie',
+  assets: [{ kind: 'arms', svg: '<svg>…</svg>' }],
+  license: { spdx: 'CC-BY-SA-3.0', name: 'Creative Commons', url: 'https://creativecommons.org/licenses/by-sa/3.0/' },
 };
 ```
 

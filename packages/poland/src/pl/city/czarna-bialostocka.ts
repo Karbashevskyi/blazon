@@ -1,0 +1,30 @@
+import type { BlazonLocality } from '@blazon/types';
+
+/**
+ * Herb Czarna Białostocka — Polish locality
+ * @id pl-city-czarna-bialostocka
+ */
+const plCzarnaBialostocka: BlazonLocality = {
+  id: 'pl-city-czarna-bialostocka',
+  name: 'Herb Czarna Białostocka',
+  countryCode: 'PL',
+  kind: 'city',
+  region: 'Poland',
+  aliases: ['poland', 'czarna-bialostocka', 'city'],
+  assets: [
+    {
+      kind: 'arms',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-21.86 -24.01 590.27 648.24"><title>Herb Czarna Białostocka</title><path d="M0 0h546.551v380.375C538.992 669.598 0 677.375 0 380.375z" style="stroke:none;fill-rule:evenodd;fill:#222"/><path d="M12.746 15.84H533.81v362.59c-7.27 275.828-521.063 283.246-521.063 0zm340.489 297.289h31.175v47.375h-31.175zm-113.039 0h62.062v72.934h-62.062zm-79.129 0h31.175v47.375h-31.175zm-34.199.289c0 186.621 296.781 184.82 296.781-.789l53.492.504c-.359 9.644-.359 16.918-2.375 24.695h30.094v41.039h-40.821c-11.086 24.407-14.757 34.414-27.863 47.59l21.957 22.031-41.324 41.614-24.047-24.192c-28.293 17.133-54.504 29.446-90.359 34.414l-.141 22.68H240.2v-23.687c-32.903-5.903-60.551-13.821-86.688-33.407l-24.117 24.262-41.543-41.687 21.672-21.887c-11.086-14.543-21.957-28.871-28.727-47.735h-38.95v-41.039h27.864c-2.016-9.14-2.016-15.695-1.727-24.695l58.895.285" style="stroke:none;fill-rule:evenodd;fill:#fffdfd"/><path d="m355.395 108.074 21.742 24.84h-16.848l34.629 26.856-28.222-4.032 57.597 58.461h-25.054l43.199 37.871h-42.117l58.316 47.375h-65.445l-48.383-48.308h29.156l-37.941-51.621h32.109l-41.469-46.727 22.246-19.871h-16.199l22.68-24.84zM272.45 55.656l37.437 37.653h-21.094l35.063 39.168-32.039.359 57.957 57.094h-34.125L357.551 244l-36.719.141 55.078 55.148H157.825l55.007-55.293h-39.527l53.492-54.07H193.75l59.184-57.887-37.582.43 42.406-39.168h-22.894l37.582-37.652zm-92.231 52.418-21.742 24.84h16.848l-34.629 26.856 28.222-4.032-57.597 58.461h25.054l-43.27 37.871h42.192l-55.726 47.375h63.644l47.52-47.804h-37.653l52.27-52.559h-31.461l50.758-50.687-37.942-15.477h16.2l-22.68-24.84" style="stroke:none;fill-rule:evenodd;fill:#3f796c"/></svg>',
+    },
+  ],
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  },
+  sources: [
+    { url: 'https://commons.wikimedia.org/wiki/File:POL%20Czarna%20Bia%C5%82ostocka%20COA.svg' },
+  ],
+};
+
+export { plCzarnaBialostocka };

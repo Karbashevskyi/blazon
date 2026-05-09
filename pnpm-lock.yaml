@@ -77,6 +77,9 @@ importers:
       '@blazon/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@blazon/poland':
+        specifier: workspace:*
+        version: link:../../packages/poland
       '@blazon/types':
         specifier: workspace:*
         version: link:../../packages/types
@@ -91,20 +94,13 @@ importers:
         specifier: 'catalog:'
         version: 6.4.2(@types/node@25.6.2)(tsx@4.21.0)
 
-  packages/core:
-    dependencies:
-      '@blazon/types':
-        specifier: workspace:*
-        version: link:../types
+  apps/game:
     devDependencies:
       rimraf:
         specifier: 'catalog:'
         version: 6.1.3
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
 
-  packages/country-poland:
+  packages/core:
     dependencies:
       '@blazon/types':
         specifier: workspace:*
@@ -119,9 +115,6 @@ importers:
 
   packages/ngx:
     dependencies:
-      '@blazon/core':
-        specifier: workspace:*
-        version: link:../core
       '@blazon/types':
         specifier: workspace:*
         version: link:../types
@@ -135,6 +128,19 @@ importers:
       '@angular/platform-browser':
         specifier: ^19.0.0
         version: 19.2.21(@angular/common@19.2.21(@angular/core@19.2.21(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.21(rxjs@7.8.2)(zone.js@0.15.1))
+      rimraf:
+        specifier: 'catalog:'
+        version: 6.1.3
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+
+  packages/poland:
+    dependencies:
+      '@blazon/types':
+        specifier: workspace:*
+        version: link:../types
+    devDependencies:
       rimraf:
         specifier: 'catalog:'
         version: 6.1.3

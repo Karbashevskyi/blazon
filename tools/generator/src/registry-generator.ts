@@ -15,11 +15,11 @@ export function deriveId(
 ): string {
   const parts: string[] = [input.countryCode.toLowerCase()];
 
-  if (input.level === 'city' || input.level === 'district' || input.level === 'village') {
+  if (input.level === 'city' || input.level === 'district' || input.level === 'municipality') {
     parts.push(input.level);
     const name = input.city ?? basename(dirname(svgPath));
     parts.push(slugify(name));
-  } else if (input.level === 'state' || input.level === 'county') {
+  } else if (input.level === 'region' || input.level === 'county') {
     parts.push(input.level);
     const name = input.region ?? basename(dirname(svgPath));
     parts.push(slugify(name));

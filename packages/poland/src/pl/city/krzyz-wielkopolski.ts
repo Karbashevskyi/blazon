@@ -1,0 +1,30 @@
+import type { BlazonLocality } from '@blazon/types';
+
+/**
+ * Herb Krzyż Wielkopolski — Polish locality
+ * @id pl-city-krzyz-wielkopolski
+ */
+const plKrzyzWielkopolski: BlazonLocality = {
+  id: 'pl-city-krzyz-wielkopolski',
+  name: 'Herb Krzyż Wielkopolski',
+  countryCode: 'PL',
+  kind: 'city',
+  region: 'Poland',
+  aliases: ['poland', 'krzyz-wielkopolski', 'city'],
+  assets: [
+    {
+      kind: 'arms',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-28.74 -25.40 593.64 685.88"><title>Herb Krzyż Wielkopolski</title><path d="M.317 0H542.46v408.664c.461 146.16-115.902 226.41-276.621 223.414C105.125 629.082-6.75 539.058.317 408.664z" style="stroke:none;fill-rule:evenodd;fill:#222"/><path d="M12.094 12.628h518.297v392.411c.441 140.343-110.805 217.406-264.453 214.527-153.645-2.879-260.602-89.32-253.844-214.527z" style="stroke:none;fill-rule:evenodd;fill:#3ba66d"/><path d="M118.91 210.539 272.625 62.542l150.969 147.997h-74.109l-43.918-44.442v136.684H373.5v48.871h-67.933v59.199h43.574v42.676h-43.574v83.289h-68.622v-83.289h-43.574v-42.676h43.574v-59.199h-67.933v-48.871h67.933V166.718l-42.542 43.821h-75.481" style="stroke:none;fill-rule:evenodd;fill:#fff101"/></svg>',
+    },
+  ],
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  },
+  sources: [
+    { url: 'https://commons.wikimedia.org/wiki/File:POL%20Krzy%C5%BC%20Wielkopolski%20COA.svg' },
+  ],
+};
+
+export { plKrzyzWielkopolski };

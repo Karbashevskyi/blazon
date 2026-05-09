@@ -1,0 +1,28 @@
+import type { BlazonLocality } from '@blazon/types';
+
+/**
+ * Herb Jagiellonów — Polish locality
+ * @id pl-city-jagiellonow
+ */
+const plJagiellonow: BlazonLocality = {
+  id: 'pl-city-jagiellonow',
+  name: 'Herb Jagiellonów',
+  countryCode: 'PL',
+  kind: 'city',
+  region: 'Poland',
+  aliases: ['poland', 'jagiellonow', 'city'],
+  assets: [
+    {
+      kind: 'arms',
+      svg: '<svg role="img" viewBox="-17.34 -20.55 554.70 641.10"\n   xmlns="http://www.w3.org/2000/svg"\n   xmlns:xlink="http://www.w3.org/1999/xlink"\n   id="svg13496"><title>Herb Jagiellonów</title><defs\n     id="defs3"><linearGradient\n       id="linearGradient15908"><stop\n         id="stop15910"\n         offset="0"\n         style="stop-color:#ffff00;stop-opacity:1;" /><stop\n         id="stop15912"\n         offset="1.0000000"\n         style="stop-color:#c6c800;stop-opacity:1.0000000;" /></linearGradient><linearGradient\n       id="linearGradient10413"><stop\n         id="stop10415"\n         offset="0"\n         style="stop-color:#0040ff;stop-opacity:1;" /><stop\n         id="stop10417"\n         offset="1.0000000"\n         style="stop-color:#0000c4;stop-opacity:1.0000000;" /></linearGradient><linearGradient\n       y2="731.13635"\n       x2="397.58499"\n       y1="220.91516"\n       x1="397.58484"\n       gradientTransform="matrix(0.224617,0.000000,0.000000,0.261529,437.6852,280.0154)"\n       gradientUnits="userSpaceOnUse"\n       id="linearGradient13522"\n       xlink:href="#linearGradient10413" /><linearGradient\n       gradientUnits="userSpaceOnUse"\n       y2="331.55014"\n       x2="704.42664"\n       y1="261.74667"\n       x1="704.42664"\n       gradientTransform="matrix(0.750433,0.000000,0.000000,1.332564,-1.635510,0.000000)"\n       id="linearGradient15914"\n       xlink:href="#linearGradient15908" /><linearGradient\n       y2="731.13635"\n       x2="397.58499"\n       y1="220.91516"\n       x1="397.58484"\n       gradientTransform="matrix(0.224617,0.000000,0.000000,0.261529,437.6852,280.0154)"\n       gradientUnits="userSpaceOnUse"\n       id="linearGradient17439"\n       xlink:href="#linearGradient10413" /><linearGradient\n       y2="331.55014"\n       x2="704.42664"\n       y1="261.74667"\n       x1="704.42664"\n       gradientTransform="matrix(0.750433,0.000000,0.000000,1.332564,-1.635510,5.311983e-14)"\n       gradientUnits="userSpaceOnUse"\n       id="linearGradient17441"\n       xlink:href="#linearGradient15908" /></defs><sodipodi:namedview\n     showguides="true"\n     borderopacity="1.0"\n     bordercolor="#666666"\n     pagecolor="#ffffff"\n     id="base" /><metadata\n     id="metadata4"><rdf:RDF\n       id="RDF5"><cc:Work\n         id="Work6"\n         rdf:about=""><dc:format\n           id="format7">image/svg+xml</dc:format><dc:type\n           rdf:resource="http://purl.org/dc/dcmitype/StillImage"\n           id="type9" /></cc:Work></rdf:RDF></metadata><g\n     id="layer1"><g\n       transform="matrix(4.280080,0.000000,0.000000,4.240072,-1995.557,-1415.151)"\n       id="g17434"><path\n         id="path6559"\n         d="M 466.98949,334.50985 L 466.98949,401.47214 C 466.98950,438.30400 525.41668,473.14779 526.98949,474.50985 C 528.56231,473.14777 586.98949,438.05839 586.74388,400.98091 L 586.98949,334.50985 L 526.98949,334.50985 L 466.98949,334.50985 z "\n         style="fill:url(#linearGradient17439);fill-opacity:1.0000000;fill-rule:nonzero;stroke:#000000;stroke-width:1.5000000;stroke-miterlimit:4.0000000;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000" /><path\n         id="path17432"\n         d="M 519.30199,351.10807 L 519.30199,366.07682 L 499.17699,366.07682 L 499.17699,385.48307 L 519.30199,385.48307 L 519.30199,406.23307 L 499.05199,406.23307 L 499.05199,425.63932 L 519.30199,425.63932 L 519.30199,450.32682 L 535.52074,450.32682 L 535.52074,425.63932 L 554.80199,425.63932 L 554.80199,406.23307 L 535.52074,406.23307 L 535.52074,385.48307 L 554.92699,385.48307 L 554.92699,366.07682 L 535.52074,366.07682 L 535.52074,351.10807 L 519.30199,351.10807 z "\n         style="opacity:0.55251139;fill:#000000;fill-opacity:0.50196081;fill-rule:nonzero;stroke:none;stroke-width:2.3000000;stroke-miterlimit:4.0000000;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000" /><path\n         id="rect14385"\n         d="M 519.30199,346.46875 L 519.30199,361.43750 L 499.17699,361.43750 L 499.17699,380.84375 L 519.30199,380.84375 L 519.30199,401.59375 L 499.05199,401.59375 L 499.05199,421.00000 L 519.30199,421.00000 L 519.30199,445.68750 L 535.52074,445.68750 L 535.52074,421.00000 L 554.80199,421.00000 L 554.80199,401.59375 L 535.52074,401.59375 L 535.52074,380.84375 L 554.92699,380.84375 L 554.92699,361.43750 L 535.52074,361.43750 L 535.52074,346.46875 L 519.30199,346.46875 z "\n         style="fill:url(#linearGradient17441);fill-opacity:1.0000000;fill-rule:nonzero;stroke:#000000;stroke-width:1.5000000;stroke-miterlimit:4.0000000;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000" /></g></g></svg>',
+    },
+  ],
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  },
+  sources: [{ url: 'https://commons.wikimedia.org/wiki/File:POL%20Jagiellon%C3%B3w%20COA.svg' }],
+};
+
+export { plJagiellonow };

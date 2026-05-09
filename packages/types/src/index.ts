@@ -7,9 +7,8 @@
  * @packageDocumentation
  */
 
-export type { CoatOfArms } from './coat-of-arms.js';
-export type { CountryRegistry, RegistryLoader } from './registry.js';
-export type { CoatMetadata } from './metadata.js';
-export type { AssetLicense } from './license.js';
-export type { SearchQuery, SearchResult } from './query.js';
-export type { HeraldricTincture, CoatType, AdministrativeLevel } from './tinctures.js';
+export type { BlazonLocality, BlazonLocalityKind } from './locality.js';
+export type { BlazonAsset, BlazonAssetKind } from './asset.js';
+export type { BlazonCountryRegistry } from './registry.js';
+export type { BlazonLicense, BlazonSource } from './license.js';
+export type { BlazonSearchOptions, BlazonSearchResult } from './search.js';
