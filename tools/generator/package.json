@@ -2,6 +2,10 @@
   "name": "@blazon/generator",
   "version": "0.1.0",
   "description": "CLI tool that converts SVG files into Blazon registry entries",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Karbashevskyi/blazon.git"
+  },
   "type": "module",
   "bin": {
     "blazon-generate": "./dist/bin/generate.js"

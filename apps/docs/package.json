@@ -2,6 +2,10 @@
   "name": "@blazon/docs",
   "version": "0.1.0",
   "description": "Blazon heraldry registry — interactive documentation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Karbashevskyi/blazon.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
