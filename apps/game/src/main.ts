@@ -71,4 +71,4 @@ const cities = filterByKind(polandRegistry, 'city');
 
 // ─── Boot quiz ────────────────────────────────────────────────────────────────
 
-initGame(cities, t);
+initGame(cities, t, lang);

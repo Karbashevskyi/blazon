@@ -8,7 +8,9 @@
  */
 
 import type { BlazonLocality } from '@blazon/types';
-import type { Translations } from './i18n.ts';
+import type { Translations } from './i18n';
+import type { CityLang } from './city-names';
+import { getCityName } from './city-names';
 
 type GameMode = 'pick-name' | 'pick-coat' | 'type-name';
 
@@ -26,8 +28,8 @@ function getSvg(locality: BlazonLocality): string {
   return locality.assets.find((a) => a.kind === 'arms')?.svg ?? '';
 }
 
-/** Strip "Herb " prefix that all entries carry. */
-function cityLabel(locality: BlazonLocality): string {
+/** Strip "Herb " prefix that all entries carry (Polish fallback). */
+function polishLabel(locality: BlazonLocality): string {
   return locality.name.replace(/^Herb\s+/i, '');
 }
 
@@ -61,12 +63,21 @@ function shuffle<T>(arr: T[]): T[] {
 
 // ─── Public init ──────────────────────────────────────────────────────────────
 
-export function initGame(cityEntries: readonly BlazonLocality[], t: Translations): void {
+export function initGame(
+  cityEntries: readonly BlazonLocality[],
+  t: Translations,
+  lang: CityLang,
+): void {
   if (cityEntries.length < 4) return;
 
   const maybeGameArea = document.getElementById('game-area') as HTMLDivElement | null;
   if (maybeGameArea === null) return;
   const gameArea: HTMLDivElement = maybeGameArea;
+
+  // ── Localised city label ─────────────────────────────────────────────────
+  function cityLabel(locality: BlazonLocality): string {
+    return getCityName(locality.id, lang, polishLabel(locality));
+  }
 
   // ── State ─────────────────────────────────────────────────────────────────
   let mode: GameMode = 'pick-name';
