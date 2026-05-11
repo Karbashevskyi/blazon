@@ -40,9 +40,8 @@ Thumbs.db
 coverage/
 .nyc_output/
 
-# Changesets
-.changeset/*.md
-!.changeset/config.json
+# Changesets — only ignore the static README, actual changeset files must be tracked
+.changeset/README.md
 
 # Vite
 .vite/
