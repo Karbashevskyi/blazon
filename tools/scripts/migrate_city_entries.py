@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Migrates @blazon/country-poland city entry files from CoatOfArms to BlazonLocality shape.
+Migrates @blazon/poland city entry files from CoatOfArms to BlazonLocality shape.
 
 Usage:
   python3 tools/scripts/migrate_city_entries.py
@@ -10,7 +10,7 @@ import json
 import sys
 from pathlib import Path
 
-CITY_DIR = Path('packages/country-poland/src/pl/city')
+CITY_DIR = Path('packages/poland/src/pl/city')
 
 LEVEL_MAP: dict[str, str] = {
     'national': 'country',

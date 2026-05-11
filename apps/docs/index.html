@@ -112,10 +112,10 @@
 
           <div id="tab-vanilla" class="tab-content">
             <h3>Install</h3>
-            <pre><code class="language-bash">pnpm add @blazon/core @blazon/country-poland @blazon/types</code></pre>
+            <pre><code class="language-bash">pnpm add @blazon/core @blazon/poland @blazon/types</code></pre>
             <h3>Tree-shakeable static imports</h3>
             <pre><code class="language-typescript">// Import only the cities you need — the rest are tree-shaken away
-import { warszawa, krakow, wroclaw } from '@blazon/country-poland';
+import { warszawa, krakow, wroclaw } from '@blazon/poland';
 
 console.log(warszawa.name);  // 'Herb Warszawy'
 console.log(krakow.svg);     // inline SVG string</code></pre>
@@ -143,10 +143,10 @@ const cities = searchRegistry({ countryCode: 'PL', level: 'city', limit: 10 });<
 
           <div id="tab-angular" class="tab-content" hidden>
             <h3>Install</h3>
-            <pre><code class="language-bash">pnpm add @blazon/ngx @blazon/core @blazon/country-poland @blazon/types</code></pre>
+            <pre><code class="language-bash">pnpm add @blazon/ngx @blazon/core @blazon/poland @blazon/types</code></pre>
             <h3>Tree-shakeable — provide only what you need</h3>
             <pre><code class="language-typescript">// app.config.ts
-import { warszawa, krakow } from '@blazon/country-poland';
+import { warszawa, krakow } from '@blazon/poland';
 import { provideBlazonIcons } from '@blazon/ngx';
 
 export const appConfig: ApplicationConfig = {
@@ -243,10 +243,10 @@ export class MyComponent {}</code></pre>
               </p>
             </div>
             <div class="package-card">
-              <h3><code>@blazon/country-poland</code></h3>
+              <h3><code>@blazon/poland</code></h3>
               <p>
-                495 Polish city coats of arms as tree-shakeable named exports.
-                <code>import { warszawa, krakow } from '@blazon/country-poland'</code>
+                506 Polish city coats of arms as tree-shakeable named exports.
+                <code>import { warszawa, krakow } from '@blazon/poland'</code>
               </p>
             </div>
             <div class="package-card">

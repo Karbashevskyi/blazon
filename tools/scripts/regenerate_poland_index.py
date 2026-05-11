@@ -10,9 +10,9 @@ import re
 import sys
 from pathlib import Path
 
-CITY_DIR = Path('packages/country-poland/src/pl/city')
+CITY_DIR = Path('packages/poland/src/pl/city')
 CITY_INDEX = CITY_DIR / 'index.ts'
-PL_INDEX = Path('packages/country-poland/src/pl/index.ts')
+PL_INDEX = Path('packages/poland/src/pl/index.ts')
 
 
 def get_export_name(path: Path) -> str | None:
