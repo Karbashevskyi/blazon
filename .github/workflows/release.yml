@@ -38,13 +38,20 @@ jobs:
       - name: Build all packages
         run: pnpm build
 
-      - name: Create Release PR or publish
-        uses: changesets/action@v1
-        with:
-          publish: pnpm release
-          title: "chore: release packages"
-          commit: "chore: release packages"
+      - name: Configure git bot identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Version packages (if changesets exist)
+        run: |
+          pnpm changeset version
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: version packages [skip ci]"
+          git push
+
+      - name: Publish packages
+        run: pnpm release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: "true"
