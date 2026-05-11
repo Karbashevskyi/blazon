@@ -1,0 +1,28 @@
+import type { BlazonLocality } from '@blazon/types';
+
+/**
+ * Herb Rzeszów — Polish locality
+ * @id pl-city-rzeszow
+ */
+const plRzeszow: BlazonLocality = {
+  id: 'pl-city-rzeszow',
+  name: 'Herb Rzeszów',
+  countryCode: 'PL',
+  kind: 'city',
+  region: 'Subcarpathian Voivodeship',
+  aliases: ['poland', 'rzeszow', 'city'],
+  assets: [
+    {
+      kind: 'arms',
+      svg: '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n<svg\n   xmlns:dc="http://purl.org/dc/elements/1.1/"\n   xmlns:cc="http://creativecommons.org/ns#"\n   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n   xmlns:svg="http://www.w3.org/2000/svg"\n   xmlns="http://www.w3.org/2000/svg"\n   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"\n   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"\n   version="1.0"\n   id="Warstwa_1"\n   x="0px"\n   y="0px"\n   width="530"\n   height="650"\n   viewBox="0 0 529.99999 650.00002"\n   enable-background="new 0 0 120.245 148.396"\n   xml:space="preserve"\n   sodipodi:docname="POL_Rzeszów_COA.svg"\n   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata\n   id="metadata11"><rdf:RDF><cc:Work\n       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type\n         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs\n   id="defs9" /><sodipodi:namedview\n   pagecolor="#ffffff"\n   bordercolor="#666666"\n   borderopacity="1"\n   objecttolerance="10"\n   gridtolerance="10"\n   guidetolerance="10"\n   inkscape:pageopacity="0"\n   inkscape:pageshadow="2"\n   inkscape:window-width="1920"\n   inkscape:window-height="1001"\n   id="namedview7"\n   showgrid="false"\n   inkscape:zoom="0.48821478"\n   inkscape:cx="-51.563412"\n   inkscape:cy="111.73578"\n   inkscape:window-x="-9"\n   inkscape:window-y="-9"\n   inkscape:window-maximized="1"\n   inkscape:current-layer="Warstwa_1" />\n<path\n   fill-rule="evenodd"\n   clip-rule="evenodd"\n   fill="#2f52a0"\n   d="M 368.38404,493.00193 287.06258,304.4656 476.38513,380.9086 476.66281,184.1173 287.61794,260.27974 370.5394,78.494696 169.44838,78.437704 248.66738,260.33234 60.504055,182.8328 v 202.81924 l 188.163325,-81.7432 -81.54185,188.53633 c 67.08647,-0.022 134.17253,0.32879 201.25851,0.55676 z M 267.06993,650 c 25.49122,-18.70739 52.56646,-26.54795 80.87463,-33.87635 32.19299,-8.33406 69.40162,-7.16136 99.18631,-10.96177 48.41537,-6.17765 82.76775,-22.77021 82.76775,-98.67929 L 530,0 H 0.33498274 L 0,506.4782 c 0,68.67004 31.399043,88.44277 75.232596,95.98426 35.397634,6.09015 77.539654,2.67453 114.607764,12.80895 27.24154,7.44786 55.62534,16.428 77.22957,34.72859 z"\n   id="path2"\n   sodipodi:nodetypes="ccccccccccccccasccccsac"\n   style="fill:#314a8c;fill-opacity:1;stroke-width:4.39579" />\n<polygon\n   fill-rule="evenodd"\n   clip-rule="evenodd"\n   fill="#ffffff"\n   points="65.254,59.37 84.067,17.904 38.444,17.891 56.417,59.383 13.728,41.705 13.728,87.969 56.417,69.323 37.918,112.329 46.416,112.329 83.578,112.456 65.128,69.45 108.082,86.887 108.144,41.998 "\n   id="polygon4"\n   transform="scale(4.4076677,4.383954)" />\n</svg>',
+    },
+  ],
+  license: {
+    spdx: 'CC0-1.0',
+    name: 'Creative Commons Zero v1.0 Universal',
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/',
+  },
+  sources: [{ url: 'https://commons.wikimedia.org/wiki/File:POL_Rzesz%C3%B3w_COA.svg' }],
+};
+
+export { plRzeszow };

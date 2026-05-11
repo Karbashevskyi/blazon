@@ -256,6 +256,7 @@ import { plKargowa } from './city/kargowa.js';
 import { plKarlino } from './city/karlino.js';
 import { plKarpacz } from './city/karpacz.js';
 import { plKartuzy } from './city/kartuzy.js';
+import { plKatowice } from './city/katowice.js';
 import { plKatowiceZaleze } from './city/katowice-zaleze.js';
 import { plKatyWroclawskie } from './city/katy-wroclawskie.js';
 import { plKazimierzDolny } from './city/kazimierz-dolny.js';
@@ -264,6 +265,7 @@ import { plKcynia } from './city/kcynia.js';
 import { plKedzierzynKozle } from './city/kedzierzyn-kozle.js';
 import { plKepno } from './city/kepno.js';
 import { plKiczyce } from './city/kiczyce.js';
+import { plKielce } from './city/kielce.js';
 import { plKietrz } from './city/kietrz.js';
 import { plKisielice } from './city/kisielice.js';
 import { plKlecko } from './city/klecko.js';
@@ -354,6 +356,7 @@ import { plLipiany } from './city/lipiany.js';
 import { plLipinkiLuzyckie } from './city/lipinki-luzyckie.js';
 import { plLipno } from './city/lipno.js';
 import { plLipsk } from './city/lipsk.js';
+import { plLodz } from './city/lodz.js';
 import { plLowicz } from './city/lowicz.js';
 import { plLubaczow } from './city/lubaczow.js';
 import { plLuban } from './city/luban.js';
@@ -404,9 +407,11 @@ import { plOkuniew } from './city/okuniew.js';
 import { plOlesnicaSwietokrzyskie } from './city/olesnica-swietokrzyskie.js';
 import { plOleszyce } from './city/oleszyce.js';
 import { plOlkusz } from './city/olkusz.js';
+import { plOlsztyn } from './city/olsztyn.js';
 import { plOlszyna } from './city/olszyna.js';
 import { plOpalenica } from './city/opalenica.js';
 import { plOpoczno } from './city/opoczno.js';
+import { plOpole } from './city/opole.js';
 import { plOrchowo } from './city/orchowo.js';
 import { plOrlowWojewodztwoLodzkie } from './city/orlow-wojewodztwo-lodzkie.js';
 import { plOsieck } from './city/osieck.js';
@@ -449,6 +454,7 @@ import { plRychwal } from './city/rychwal.js';
 import { plRydultowy } from './city/rydultowy.js';
 import { plRyglice } from './city/ryglice.js';
 import { plRzepin } from './city/rzepin.js';
+import { plRzeszow } from './city/rzeszow.js';
 import { plRzezawa } from './city/rzezawa.js';
 import { plRzgow } from './city/rzgow.js';
 import { plSieniawa } from './city/sieniawa.js';
@@ -464,6 +470,7 @@ import { plStrykow } from './city/strykow.js';
 import { plStrzelno } from './city/strzelno.js';
 import { plSwidnik } from './city/swidnik.js';
 import { plSzczebrzeszyn } from './city/szczebrzeszyn.js';
+import { plSzczecin } from './city/szczecin.js';
 import { plSzlichtyngowa } from './city/szlichtyngowa.js';
 import { plSzydlow } from './city/szydlow.js';
 import { plTarnogrod } from './city/tarnogrod.js';
@@ -486,6 +493,7 @@ import { plWiskitkiAlt } from './city/wiskitki-alt.js';
 import { plWiskitki } from './city/wiskitki.js';
 import { plWodzislawSlaski } from './city/wodzislaw-slaski.js';
 import { plWojcieszow } from './city/wojcieszow.js';
+import { plWroclaw } from './city/wroclaw.js';
 import { plWrzesnia } from './city/wrzesnia.js';
 import { plWysoka } from './city/wysoka.js';
 import { plWyszkow } from './city/wyszkow.js';
@@ -753,6 +761,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plKarlino,
   plKarpacz,
   plKartuzy,
+  plKatowice,
   plKatowiceZaleze,
   plKatyWroclawskie,
   plKazimierzDolny,
@@ -761,6 +770,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plKedzierzynKozle,
   plKepno,
   plKiczyce,
+  plKielce,
   plKietrz,
   plKisielice,
   plKlecko,
@@ -851,6 +861,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plLipinkiLuzyckie,
   plLipno,
   plLipsk,
+  plLodz,
   plLowicz,
   plLubaczow,
   plLuban,
@@ -901,9 +912,11 @@ export const polandCities: readonly BlazonLocality[] = [
   plOlesnicaSwietokrzyskie,
   plOleszyce,
   plOlkusz,
+  plOlsztyn,
   plOlszyna,
   plOpalenica,
   plOpoczno,
+  plOpole,
   plOrchowo,
   plOrlowWojewodztwoLodzkie,
   plOsieck,
@@ -946,6 +959,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plRydultowy,
   plRyglice,
   plRzepin,
+  plRzeszow,
   plRzezawa,
   plRzgow,
   plSieniawa,
@@ -961,6 +975,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plStrzelno,
   plSwidnik,
   plSzczebrzeszyn,
+  plSzczecin,
   plSzlichtyngowa,
   plSzydlow,
   plTarnogrod,
@@ -983,6 +998,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plWiskitki,
   plWodzislawSlaski,
   plWojcieszow,
+  plWroclaw,
   plWrzesnia,
   plWysoka,
   plWyszkow,

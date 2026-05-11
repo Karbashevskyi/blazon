@@ -14,6 +14,30 @@ export type CityLang = 'en' | 'pl' | 'uk' | 'de';
  */
 export const CITY_NAMES: Readonly<Record<string, Partial<Record<CityLang, string>>>> = {
   // ── Major cities ────────────────────────────────────────────────────────────
+  'pl-city-katowice': {
+    en: 'Katowice',
+    pl: 'Katowice',
+    uk: 'Катовіце',
+    de: 'Kattowitz',
+  },
+  'pl-city-lodz': {
+    en: 'Lodz',
+    pl: 'Łódź',
+    uk: 'Лодзь',
+    de: 'Lodz',
+  },
+  'pl-city-olsztyn': {
+    en: 'Olsztyn',
+    pl: 'Olsztyn',
+    uk: 'Ольштин',
+    de: 'Allenstein',
+  },
+  'pl-city-opole': {
+    en: 'Opole',
+    pl: 'Opole',
+    uk: 'Ополе',
+    de: 'Oppeln',
+  },
   'pl-city-warsaw': {
     en: 'Warsaw',
     uk: 'Варшава',
@@ -162,6 +186,12 @@ export const CITY_NAMES: Readonly<Record<string, Partial<Record<CityLang, string
   'pl-city-walcz': {
     uk: 'Валч',
     de: 'Deutsch Krone',
+  },
+  'pl-city-wroclaw': {
+    en: 'Wroclaw',
+    pl: 'Wrocław',
+    uk: 'Вроцлав',
+    de: 'Breslau',
   },
   'pl-city-zagan': {
     uk: 'Жагань',
