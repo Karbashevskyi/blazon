@@ -20,11 +20,19 @@ export const CITY_NAMES: Readonly<Record<string, Partial<Record<CityLang, string
     uk: 'Катовіце',
     de: 'Kattowitz',
   },
+  'pl-city-kozuchow': {
+    en: 'Kozuchow',
+    pl: 'Kożuchów',
+  },
   'pl-city-lodz': {
     en: 'Lodz',
     pl: 'Łódź',
     uk: 'Лодзь',
     de: 'Lodz',
+  },
+  'pl-city-lubycza-krolewska': {
+    en: 'Lubycza Krolewska',
+    pl: 'Lubycza Królewska',
   },
   'pl-city-olsztyn': {
     en: 'Olsztyn',
@@ -37,6 +45,10 @@ export const CITY_NAMES: Readonly<Record<string, Partial<Record<CityLang, string
     pl: 'Opole',
     uk: 'Ополе',
     de: 'Oppeln',
+  },
+  'pl-city-pobiedziska': {
+    en: 'Pobiedziska',
+    pl: 'Pobiedziska',
   },
   'pl-city-warsaw': {
     en: 'Warsaw',

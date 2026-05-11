@@ -309,6 +309,7 @@ import { plKozienice } from './city/kozienice.js';
 import { plKozle } from './city/kozle.js';
 import { plKozlowaGoraDzielnicaPiekarSlaskich } from './city/kozlowa-gora-dzielnica-piekar-slaskich.js';
 import { plKozminek } from './city/kozminek.js';
+import { plKozuchow } from './city/kozuchow.js';
 import { plKrakow } from './city/krakow.js';
 import { plKrapkowice } from './city/krapkowice.js';
 import { plKrasnik } from './city/krasnik.js';
@@ -372,6 +373,7 @@ import { plLubon } from './city/lubon.js';
 import { plLubraniec } from './city/lubraniec.js';
 import { plLubsko } from './city/lubsko.js';
 import { plLubszaWojSlaskie } from './city/lubsza-woj-slaskie.js';
+import { plLubyczaKrolewska } from './city/lubycza-krolewska.js';
 import { plLwowekSlaski } from './city/lwowek-slaski.js';
 import { plLwowek } from './city/lwowek.js';
 import { plMaciejowice } from './city/maciejowice.js';
@@ -428,6 +430,7 @@ import { plPiotrkowTrybunalski } from './city/piotrkow-trybunalski.js';
 import { plPlock } from './city/plock.js';
 import { plPlonsk } from './city/plonsk.js';
 import { plPniewy } from './city/pniewy.js';
+import { plPobiedziska } from './city/pobiedziska.js';
 import { plPolice } from './city/police.js';
 import { plPolkowice } from './city/polkowice.js';
 import { plPoreba } from './city/poreba.js';
@@ -814,6 +817,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plKozle,
   plKozlowaGoraDzielnicaPiekarSlaskich,
   plKozminek,
+  plKozuchow,
   plKrakow,
   plKrapkowice,
   plKrasnik,
@@ -877,6 +881,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plLubraniec,
   plLubsko,
   plLubszaWojSlaskie,
+  plLubyczaKrolewska,
   plLwowekSlaski,
   plLwowek,
   plMaciejowice,
@@ -933,6 +938,7 @@ export const polandCities: readonly BlazonLocality[] = [
   plPlock,
   plPlonsk,
   plPniewy,
+  plPobiedziska,
   plPolice,
   plPolkowice,
   plPoreba,
