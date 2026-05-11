@@ -1,6 +1,6 @@
 {
   "name": "@blazon/poland",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Polish localities — tree-shakeable, typed heraldic data for the Blazon registry",
   "repository": {
     "type": "git",

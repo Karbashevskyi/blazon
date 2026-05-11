@@ -1,5 +1,12 @@
 # @blazon/game
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [7239de9]
+  - @blazon/poland@0.4.0
+
 ## 0.0.2
 
 ### Patch Changes

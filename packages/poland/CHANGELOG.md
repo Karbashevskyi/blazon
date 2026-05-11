@@ -1,5 +1,11 @@
 # @blazon/poland
 
+## 0.4.0
+
+### Minor Changes
+
+- 7239de9: Fix SVG viewBox for Szczecin, Łódź, Opole, Wrocław — all four now scale correctly at any size.
+
 ## 0.3.0
 
 ### Minor Changes

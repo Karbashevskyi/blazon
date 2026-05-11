@@ -1,6 +1,6 @@
 {
   "name": "@blazon/game",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "description": "Blazon Heraldry Quiz — multi-language quiz game for Polish coats of arms",
   "type": "module",

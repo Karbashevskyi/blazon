@@ -1,6 +1,6 @@
 {
   "name": "@blazon/docs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "description": "Blazon heraldry registry — interactive documentation",
   "repository": {
